@@ -1,0 +1,45 @@
+{
+  "titulo_documento": "Presupuesto mensual de julio",
+  "mes_nombre": "julio",
+  "mes_anterior": "junio",
+  "mensualidad_anterior_monto": "144.999",
+  "gastos_mes_anterior": [
+    {
+      "descripcion": "Transporte",
+      "monto": "14.000"
+    },
+    {
+      "descripcion": "Comida",
+      "monto": "27.000"
+    },
+    {
+      "descripcion": "Regalo (cumpleaños)",
+      "monto": "26.000"
+    },
+    {
+      "descripcion": "Celular (cuota 1/12)",
+      "monto": "42.416"
+    },
+    {
+      "descripcion": "Peluquería",
+      "monto": "10.000"
+    },
+    {
+      "descripcion": "Inversiones",
+      "monto": "16.000"
+    }
+  ],
+  "considerandos_adicionales": [
+    "Que para el mes de julio se proyecta un presupuesto total de \\textbf{\\$131.416 ARS}, eliminando el rubro “Ocio y otros” como medida de ajuste.",
+    "Que el solicitante mantiene un compromiso mensual de pago por el celular POCO X6 Pro 5G, abonando la cuota \\textbf{2/12} de \\textbf{\\$42.416 ARS}.",
+    "Que el solicitante ha recibido una transferencia parcial de \\textbf{\\$50.000 ARS} correspondiente a parte del presupuesto.",
+    "Que se debe aplicar una penalización de \\textbf{\\$2.500 ARS} por llegada tarde registrada durante junio.",
+    "$1.200 aguante eñ %es"
+  ],
+  "articulos": [
+    "Aprobar el presupuesto mensual correspondiente al mes de julio de 2025 por un total de \\textbf{\\$131.416 ARS}, conforme al detalle del Anexo I.",
+    "Registrar que: \\begin{itemize} \\item Se ha transferido previamente la suma de \\textbf{\\$50.000 ARS}. \\item La cuota \\textbf{2/12} del celular (\\textbf{\\$42.416 ARS}) será abonada directamente por el solicitante y no será transferida. \\item La penalización por llegada tarde (\\textbf{\\$2.500 ARS}) será descontada del monto final. \\end{itemize} Por lo tanto, el monto neto a transferir asciende a \\textbf{\\$36.500 ARS}.",
+    "El solicitante continuará registrando y rindiendo cuentas de sus gastos mensuales, conforme al esquema de control financiero vigente."
+  ],
+  "anexo": {}
+}
