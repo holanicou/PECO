@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="es" class="">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Control - PECO</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = { darkMode: "class" };
+    </script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/static/css/styles.css" />
+</head>
+<body class="text-slate-800 dark:text-slate-200 flex items-center justify-center min-h-screen p-4 overflow-hidden">
+    
+    <!-- Contenido Principal -->
+    <div id="main-content" class="main-content w-full max-w-6xl bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-2xl p-6 md:p-8 grid-cols-1 lg:grid-cols-5 gap-8">
+        
+        <!-- Columna de Acciones -->
+        <div class="lg:col-span-3 flex flex-col gap-6">
+            
+            <!-- Header -->
+            <header class="flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <img src="/static/05_Templates_y_Recursos/logo.png" alt="Logo PECO" class="h-12 w-12 dark:hidden" onerror="this.onerror=null;this.src='https://placehold.co/48x48/1e293b/ffffff?text=P';" />
+                    <img src="/static/05_Templates_y_Recursos/logo_light.png" alt="Logo PECO" class="h-12 w-12 hidden dark:block" onerror="this.onerror=null;this.src='https://placehold.co/48x48/e2e8f0/1e293b?text=P';" />
+                    <div>
+                        <h1 class="text-3xl font-bold text-cyan-600 dark:text-cyan-400">Panel de Control PECO</h1>
+                        <p class="text-slate-500 dark:text-slate-400 mt-1">Tu centro de gestión financiera personal.</p>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+                    <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                    </svg>
+                    <svg class="w-6 h-6 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
+                    </svg>
+                </button>
+            </header>
+
+            <!-- Formularios -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                
+                <!-- Registrar Gasto -->
+                <div class="card">
+                    <h2 class="text-xl font-semibold mb-4">Registrar Gasto</h2>
+                    <form id="form-registrar" class="flex flex-col gap-4">
+                        <input type="date" id="fecha-gasto" name="fecha" required class="input-field" />
+                        <input type="number" step="0.01" id="monto-gasto" name="monto" required class="input-field" placeholder="Monto (ARS)" />
+                        <input type="text" id="categoria-gasto" name="categoria" required class="input-field" placeholder="Categoría" />
+                        <input type="text" id="desc-gasto" name="desc" required class="input-field" placeholder="Descripción" />
+                        <button type="submit" class="btn-primary w-full">Registrar</button>
+                    </form>
+                </div>
+                
+                <!-- Registrar Inversión -->
+                <div class="card">
+                    <h2 class="text-xl font-semibold mb-4">Registrar Inversión</h2>
+                    <form id="form-invertir" class="flex flex-col gap-4">
+                        <input type="date" id="fecha-inversion" name="fecha" required class="input-field" />
+                        <input type="text" id="activo-inversion" name="activo" required class="input-field" placeholder="Activo (Ej: SPY)" />
+                        <select id="tipo-inversion" name="tipo" required class="input-field">
+                            <option value="Compra">Compra</option>
+                            <option value="Venta">Venta</option>
+                        </select>
+                        <input type="number" step="0.01" id="monto-inversion" name="monto" required class="input-field" placeholder="Monto (ARS)" />
+                        <button type="submit" class="btn-secondary w-full">Registrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Acciones Generales -->
+            <div class="card">
+                <h2 class="text-xl font-semibold mb-4">Acciones Generales</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button id="btn-editar-res" class="btn-warning w-full">Editar y Generar Resolución</button>
+                    <button id="btn-analizar" class="btn-success w-full">Analizar Finanzas</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna de la Terminal -->
+        <div class="lg:col-span-2 flex flex-col bg-white/50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 rounded-xl p-6 h-[40rem] lg:h-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-slate-500 dark:text-slate-400">Terminal de Salida</h2>
+                <button id="btn-clear" title="Limpiar terminal" class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 6h18" />
+                        <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+                    </svg>
+                </button>
+            </div>
+            <div id="terminal-output" class="terminal"></div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Resolución -->
+    <div id="modal-resolucion" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div id="modal-content" class="bg-white dark:bg-slate-800 w-full max-w-4xl rounded-xl shadow-lg p-6 flex flex-col max-h-[90vh]">
+            <h2 class="text-2xl font-bold mb-4">Editor de Resolución</h2>
+            <div id="resolucion-form-container" class="space-y-6 overflow-y-auto pr-4">
+                <!-- El contenido del formulario se generará aquí con JS -->
+            </div>
+            <div class="flex gap-4 mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+                <button id="btn-guardar-generar" class="flex-grow btn-warning">Guardar y Generar PDF</button>
+                <button id="btn-cerrar-modal" class="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 font-bold py-2.5 px-4 rounded-lg">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de la aplicación -->
+    <script src="/static/js/theme.js"></script>
+    <script src="/static/js/notifications.js"></script>
+    <script src="/static/js/terminal.js"></script>
+    <script src="/static/js/forms.js"></script>
+    <script src="/static/js/app.js"></script>
+</body>
+</html>

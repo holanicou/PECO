@@ -1,45 +1,27 @@
 {
-  "titulo_documento": "Presupuesto mensual de julio",
-  "mes_nombre": "julio",
-  "mes_anterior": "junio",
-  "mensualidad_anterior_monto": "144.999",
-  "gastos_mes_anterior": [
-    {
-      "descripcion": "Transporte",
-      "monto": "14.000"
-    },
-    {
-      "descripcion": "Comida",
-      "monto": "27.000"
-    },
-    {
-      "descripcion": "Regalo (cumpleaños)",
-      "monto": "26.000"
-    },
-    {
-      "descripcion": "Celular (cuota 1/12)",
-      "monto": "42.416"
-    },
-    {
-      "descripcion": "Peluquería",
-      "monto": "10.000"
-    },
-    {
-      "descripcion": "Inversiones",
-      "monto": "16.000"
-    }
-  ],
-  "considerandos_adicionales": [
-    "Que para el mes de julio se proyecta un presupuesto total de \\textbf{\\$131.416 ARS}, eliminando el rubro “Ocio y otros” como medida de ajuste.",
-    "Que el solicitante mantiene un compromiso mensual de pago por el celular POCO X6 Pro 5G, abonando la cuota \\textbf{2/12} de \\textbf{\\$42.416 ARS}.",
-    "Que el solicitante ha recibido una transferencia parcial de \\textbf{\\$50.000 ARS} correspondiente a parte del presupuesto.",
-    "Que se debe aplicar una penalización de \\textbf{\\$2.500 ARS} por llegada tarde registrada durante junio.",
-    "$1.200 aguante eñ %es"
+  "mes_iso": "2025-07",
+  "titulo_base": "Presupuesto mensual",
+  "visto": "La necesidad de cubrir los gastos mensuales y mantener un control financiero.",
+  "considerandos": [
+    { "tipo": "gasto_anterior", "descripcion": "Transporte", "monto": "14000" },
+    { "tipo": "gasto_anterior", "descripcion": "Comida", "monto": "27000" },
+    { "tipo": "texto", "contenido": "Que el solicitante mantiene un compromiso de pago por el celular POCO X6 Pro 5G, correspondiente a la cuota 2/12." },
+    { "tipo": "texto", "contenido": "Que se mantiene una política de ahorro y planificación a largo plazo." }
   ],
   "articulos": [
-    "Aprobar el presupuesto mensual correspondiente al mes de julio de 2025 por un total de \\textbf{\\$131.416 ARS}, conforme al detalle del Anexo I.",
-    "Registrar que: \\begin{itemize} \\item Se ha transferido previamente la suma de \\textbf{\\$50.000 ARS}. \\item La cuota \\textbf{2/12} del celular (\\textbf{\\$42.416 ARS}) será abonada directamente por el solicitante y no será transferida. \\item La penalización por llegada tarde (\\textbf{\\$2.500 ARS}) será descontada del monto final. \\end{itemize} Por lo tanto, el monto neto a transferir asciende a \\textbf{\\$36.500 ARS}.",
-    "El solicitante continuará registrando y rindiendo cuentas de sus gastos mensuales, conforme al esquema de control financiero vigente."
+    "Aprobar el presupuesto por un total de $$MONTO_TOTAL ARS, conforme al detalle del Anexo I.",
+    "El solicitante continuará registrando y rindiendo cuentas de sus gastos mensuales."
   ],
-  "anexo": {}
+  "anexo": {
+    "titulo": "Detalle del presupuesto mensual solicitado",
+    "items": [
+      { "categoria": "Cuota Celular (2/12)", "monto": "42416" },
+      { "categoria": "Inversiones CEDEARs", "monto": "50000" },
+      { "categoria": "Transporte", "monto": "14000" }
+    ],
+    "penalizaciones": [
+      { "categoria": "Penalización llegada tarde", "monto": "-2500" }
+    ],
+    "nota_final": "El monto final a transferir será ajustado según los adelantos y penalizaciones correspondientes."
+  }
 }

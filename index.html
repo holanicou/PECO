@@ -1,338 +1,1650 @@
 <!DOCTYPE html>
-<html lang="es" class=""> <!-- La clase 'dark' se añadirá aquí con JS -->
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Panel de Control - ECOP</title>
+<html lang="es" class="">
+  <!-- La clase 'dark' se añadirá aquí con JS -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panel de Control - PECO</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
     <script>
-        tailwind.config = { darkMode: 'class' }
+      tailwind.config = { darkMode: "class" };
     </script>
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            /* MEJORA: Gradiente animado para MODO CLARO */
-            background: linear-gradient(-45deg, #e0f2fe, #f1f5f9, #f8fafc, #e0f2fe);
-            background-size: 400% 400%;
-            animation: gradientBG 20s ease infinite;
+      body {
+        font-family: "Inter", sans-serif;
+        /* MEJORA: Gradiente animado para MODO CLARO */
+        background: linear-gradient(-45deg, #e0f2fe, #f1f5f9, #f8fafc, #e0f2fe);
+        background-size: 400% 400%;
+        animation: gradientBG 20s ease infinite;
+      }
+      .dark body {
+        background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #082f49);
+        background-size: 400% 400%;
+        animation: gradientBG 15s ease infinite;
+      }
+      @keyframes gradientBG {
+        0% {
+          background-position: 0% 50%;
         }
-        .dark body {
-            background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #082f49);
-            background-size: 400% 400%;
-            animation: gradientBG 15s ease infinite;
+        50% {
+          background-position: 100% 50%;
         }
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        100% {
+          background-position: 0% 50%;
         }
-        #terminal-output::-webkit-scrollbar, #modal-content::-webkit-scrollbar { width: 8px; }
-        #terminal-output::-webkit-scrollbar-track, #modal-content::-webkit-scrollbar-track { background: #f1f5f9; }
-        .dark #terminal-output::-webkit-scrollbar-track, .dark #modal-content::-webkit-scrollbar-track { background: #1e293b; }
-        #terminal-output::-webkit-scrollbar-thumb, #modal-content::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
-        .dark #terminal-output::-webkit-scrollbar-thumb, .dark #modal-content::-webkit-scrollbar-thumb { background-color: #475569; }
-        
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .main-content { display: none; }
-        .main-content.visible { display: grid; animation: fadeIn 0.8s ease-in-out forwards; }
+      }
+      #terminal-output::-webkit-scrollbar,
+      #modal-content::-webkit-scrollbar {
+        width: 8px;
+      }
+      #terminal-output::-webkit-scrollbar-track,
+      #modal-content::-webkit-scrollbar-track {
+        background: #f1f5f9;
+      }
+      .dark #terminal-output::-webkit-scrollbar-track,
+      .dark #modal-content::-webkit-scrollbar-track {
+        background: #1e293b;
+      }
+      #terminal-output::-webkit-scrollbar-thumb,
+      #modal-content::-webkit-scrollbar-thumb {
+        background-color: #cbd5e1;
+        border-radius: 10px;
+      }
+      .dark #terminal-output::-webkit-scrollbar-thumb,
+      .dark #modal-content::-webkit-scrollbar-thumb {
+        background-color: #475569;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      .main-content {
+        display: none;
+      }
+      .main-content.visible {
+        display: grid;
+        animation: fadeIn 0.8s ease-in-out forwards;
+      }
+
+      /* Loading animations */
+      @keyframes spin {
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      .loading-spinner {
+        animation: spin 1s linear infinite;
+      }
+
+      @keyframes pulse {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.5;
+        }
+      }
+      .loading-pulse {
+        animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+      }
+
+      @keyframes progress {
+        from {
+          width: 0%;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      .progress-bar {
+        animation: progress 30s linear forwards;
+      }
+
+      /* Button loading states */
+      .btn-loading {
+        position: relative;
+        color: transparent !important;
+      }
+      .btn-loading::after {
+        content: "";
+        position: absolute;
+        width: 16px;
+        height: 16px;
+        top: 50%;
+        left: 50%;
+        margin-left: -8px;
+        margin-top: -8px;
+        border: 2px solid transparent;
+        border-top-color: currentColor;
+        border-radius: 50%;
+        animation: spin 1s linear infinite;
+        color: white;
+      }
+
+      /* Enhanced notification styles */
+      .notification-enter {
+        transform: translateX(100%);
+        opacity: 0;
+      }
+
+      .notification-enter-active {
+        transform: translateX(0);
+        opacity: 1;
+        transition: all 0.3s ease-out;
+      }
+
+      .notification-exit {
+        transform: translateX(0);
+        opacity: 1;
+      }
+
+      .notification-exit-active {
+        transform: translateX(100%);
+        opacity: 0;
+        transition: all 0.3s ease-in;
+      }
+
+      /* Form validation styles */
+      .field-error {
+        border-color: #ef4444 !important;
+        background-color: rgba(254, 226, 226, 0.5) !important;
+      }
+
+      .dark .field-error {
+        background-color: rgba(127, 29, 29, 0.2) !important;
+      }
+
+      .field-success {
+        border-color: #10b981 !important;
+        background-color: rgba(209, 250, 229, 0.5) !important;
+      }
+
+      .dark .field-success {
+        background-color: rgba(6, 78, 59, 0.2) !important;
+      }
     </style>
-</head>
-<body class="text-slate-800 dark:text-slate-200 flex items-center justify-center min-h-screen p-4 overflow-hidden">
-
+  </head>
+  <body
+    class="text-slate-800 dark:text-slate-200 flex items-center justify-center min-h-screen p-4 overflow-hidden"
+  >
     <!-- Contenido Principal -->
-    <div id="main-content" class="main-content w-full max-w-6xl bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-2xl p-6 md:p-8 grid-cols-1 lg:grid-cols-5 gap-8">
-        
-        <!-- Columna de Acciones -->
-        <div class="lg:col-span-3 flex flex-col gap-6">
-            <header class="flex justify-between items-center">
-                <div class="flex items-center gap-4">
-                    <img src="/static/05_Templates_y_Recursos/logo.png" alt="Logo ECOP" class="h-12 w-12 dark:hidden" onerror="this.onerror=null;this.src='https://placehold.co/48x48/1e293b/ffffff?text=N';">
-                    <img src="/static/05_Templates_y_Recursos/logo_light.png" alt="Logo ECOP" class="h-12 w-12 hidden dark:block" onerror="this.onerror=null;this.src='https://placehold.co/48x48/e2e8f0/1e293b?text=N';">
-                    <div>
-                        <h1 class="text-3xl font-bold text-cyan-600 dark:text-cyan-400">Panel de Control ECOP</h1>
-                        <p class="text-slate-500 dark:text-slate-400 mt-1">Tu centro de gestión financiera personal.</p>
-                    </div>
-                </div>
-                <button id="theme-toggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
-                    <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
-                    <svg class="w-6 h-6 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
-                </button>
-            </header>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <!-- Registrar Gasto -->
-                <div class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
-                    <h2 class="text-xl font-semibold mb-4">Registrar Gasto</h2>
-                    <form id="form-registrar" class="flex flex-col gap-4">
-                        <input type="date" id="fecha-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
-                        <input type="number" step="0.01" id="monto-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none" placeholder="Monto (ARS)">
-                        <input type="text" id="categoria-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none" placeholder="Categoría">
-                        <input type="text" id="desc-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none" placeholder="Descripción">
-                        <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 rounded-lg transition-all">Registrar</button>
-                    </form>
-                </div>
-                <!-- Registrar Inversión -->
-                <div class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
-                    <h2 class="text-xl font-semibold mb-4">Registrar Inversión</h2>
-                    <form id="form-invertir" class="flex flex-col gap-4">
-                        <input type="date" id="fecha-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                        <input type="text" id="activo-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Activo (Ej: SPY)">
-                        <select id="tipo-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
-                            <option value="Compra">Compra</option>
-                            <option value="Venta">Venta</option>
-                        </select>
-                        <input type="number" step="0.01" id="monto-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Monto (ARS)">
-                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-lg transition-all">Registrar</button>
-                    </form>
-                </div>
+    <div
+      id="main-content"
+      class="main-content w-full max-w-6xl bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-2xl p-6 md:p-8 grid-cols-1 lg:grid-cols-5 gap-8"
+    >
+      <!-- Columna de Acciones -->
+      <div class="lg:col-span-3 flex flex-col gap-6">
+        <header class="flex justify-between items-center">
+          <div class="flex items-center gap-4">
+            <img
+              src="/static/05_Templates_y_Recursos/logo.png"
+              alt="Logo PECO"
+              class="h-12 w-12 dark:hidden"
+              onerror="this.onerror=null;this.src='https://placehold.co/48x48/1e293b/ffffff?text=N';"
+            />
+            <img
+              src="/static/05_Templates_y_Recursos/logo_light.png"
+              alt="Logo PECO"
+              class="h-12 w-12 hidden dark:block"
+              onerror="this.onerror=null;this.src='https://placehold.co/48x48/e2e8f0/1e293b?text=N';"
+            />
+            <div>
+              <h1 class="text-3xl font-bold text-cyan-600 dark:text-cyan-400">
+                Panel de Control PECO
+              </h1>
+              <p class="text-slate-500 dark:text-slate-400 mt-1">
+                Tu centro de gestión financiera personal.
+              </p>
             </div>
+          </div>
+          <button
+            id="theme-toggle"
+            class="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors"
+          >
+            <svg
+              class="w-6 h-6 hidden dark:block"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
+              ></path>
+            </svg>
+            <svg
+              class="w-6 h-6 dark:hidden"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
+              ></path>
+            </svg>
+          </button>
+        </header>
 
-            <!-- Acciones Generales -->
-            <div class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
-                <h2 class="text-xl font-semibold mb-4">Acciones Generales</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <button id="btn-editar-res" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg transition-all">Editar y Generar Resolución</button>
-                    <button id="btn-analizar" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition-all">Analizar Finanzas</button>
-                </div>
-            </div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Registrar Gasto -->
+          <div
+            class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl"
+          >
+            <h2 class="text-xl font-semibold mb-4">Registrar Gasto</h2>
+            <form id="form-registrar" class="flex flex-col gap-4">
+              <input
+                type="date"
+                id="fecha-gasto"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+              />
+              <input
+                type="number"
+                step="0.01"
+                id="monto-gasto"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                placeholder="Monto (ARS)"
+              />
+              <input
+                type="text"
+                id="categoria-gasto"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                placeholder="Categoría"
+              />
+              <input
+                type="text"
+                id="desc-gasto"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none"
+                placeholder="Descripción"
+              />
+              <button
+                type="submit"
+                class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 rounded-lg transition-all"
+              >
+                Registrar
+              </button>
+            </form>
+          </div>
+          <!-- Registrar Inversión -->
+          <div
+            class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl"
+          >
+            <h2 class="text-xl font-semibold mb-4">Registrar Inversión</h2>
+            <form id="form-invertir" class="flex flex-col gap-4">
+              <input
+                type="date"
+                id="fecha-inversion"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              />
+              <input
+                type="text"
+                id="activo-inversion"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                placeholder="Activo (Ej: SPY)"
+              />
+              <select
+                id="tipo-inversion"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+              >
+                <option value="Compra">Compra</option>
+                <option value="Venta">Venta</option>
+              </select>
+              <input
+                type="number"
+                step="0.01"
+                id="monto-inversion"
+                required
+                class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none"
+                placeholder="Monto (ARS)"
+              />
+              <button
+                type="submit"
+                class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-lg transition-all"
+              >
+                Registrar
+              </button>
+            </form>
+          </div>
         </div>
 
-        <!-- Columna de la Terminal -->
-        <div class="lg:col-span-2 flex flex-col bg-white/50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 rounded-xl p-6 h-[40rem] lg:h-auto">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-lg font-semibold text-slate-500 dark:text-slate-400">Terminal de Salida</h2>
-                <button id="btn-clear" title="Limpiar terminal" class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
-                </button>
-            </div>
-            <div id="terminal-output" class="flex-grow bg-slate-100 dark:bg-black/50 rounded-lg p-4 font-mono text-xs text-slate-600 dark:text-slate-300 overflow-y-auto"></div>
+        <!-- Acciones Generales -->
+        <div
+          class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl"
+        >
+          <h2 class="text-xl font-semibold mb-4">Acciones Generales</h2>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <button
+              id="btn-editar-res"
+              class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg transition-all"
+            >
+              Editar y Generar Resolución
+            </button>
+            <button
+              id="btn-analizar"
+              class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition-all"
+            >
+              Analizar Finanzas
+            </button>
+          </div>
         </div>
+      </div>
+
+      <!-- Columna de la Terminal -->
+      <div
+        class="lg:col-span-2 flex flex-col bg-white/50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 rounded-xl p-6 h-[40rem] lg:h-auto"
+      >
+        <div class="flex justify-between items-center mb-4">
+          <h2 class="text-lg font-semibold text-slate-500 dark:text-slate-400">
+            Terminal de Salida
+          </h2>
+          <button
+            id="btn-clear"
+            title="Limpiar terminal"
+            class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M3 6h18" />
+              <path
+                d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"
+              />
+            </svg>
+          </button>
+        </div>
+        <div
+          id="terminal-output"
+          class="flex-grow bg-slate-100 dark:bg-black/50 rounded-lg p-4 font-mono text-xs text-slate-600 dark:text-slate-300 overflow-y-auto"
+        ></div>
+      </div>
     </div>
 
     <!-- Modal para Editar Resolución -->
-    <div id="modal-resolucion" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
-        <div id="modal-content" class="bg-white dark:bg-slate-800 w-full max-w-4xl rounded-xl shadow-lg p-6 flex flex-col max-h-[90vh]">
-            <h2 class="text-2xl font-bold mb-4">Editor de Resolución</h2>
-            <div id="resolucion-form-container" class="space-y-6 overflow-y-auto pr-4">
-                <!-- El contenido del formulario se generará aquí con JS -->
-            </div>
-            <div class="flex gap-4 mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
-                <button id="btn-guardar-generar" class="flex-grow bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg">Guardar y Generar PDF</button>
-                <button id="btn-cerrar-modal" class="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 font-bold py-2.5 px-4 rounded-lg">Cancelar</button>
-            </div>
+    <div
+      id="modal-resolucion"
+      class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden"
+    >
+      <div
+        id="modal-content"
+        class="bg-white dark:bg-slate-800 w-full max-w-4xl rounded-xl shadow-lg p-6 flex flex-col max-h-[90vh]"
+      >
+        <h2 class="text-2xl font-bold mb-4">Editor de Resolución</h2>
+        <div
+          id="resolucion-form-container"
+          class="space-y-6 overflow-y-auto pr-4"
+        >
+          <!-- El contenido del formulario se generará aquí con JS -->
         </div>
+        <div
+          class="flex gap-4 mt-6 pt-4 border-t border-slate-200 dark:border-slate-700"
+        >
+          <button
+            id="btn-guardar-generar"
+            class="flex-grow bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg"
+          >
+            Guardar y Generar PDF
+          </button>
+          <button
+            id="btn-cerrar-modal"
+            class="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 font-bold py-2.5 px-4 rounded-lg"
+          >
+            Cancelar
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // --- INICIALIZACIÓN Y ELEMENTOS DEL DOM ---
-            const mainContent = document.getElementById('main-content');
-            mainContent.classList.add('visible');
+      document.addEventListener('DOMContentLoaded', () => {
+          // --- INICIALIZACIÓN Y ELEMENTOS DEL DOM ---
+          const mainContent = document.getElementById('main-content');
+          mainContent.classList.add('visible');
 
-            // --- LÓGICA DE MODO OSCURO ---
-            const themeToggle = document.getElementById('theme-toggle');
-            const applyTheme = (theme) => document.documentElement.classList.toggle('dark', theme === 'dark');
-            themeToggle.addEventListener('click', () => {
-                const isDark = document.documentElement.classList.toggle('dark');
-                localStorage.setItem('theme', isDark ? 'dark' : 'light');
-            });
-            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-            applyTheme(savedTheme);
+          // --- LÓGICA DE MODO OSCURO ---
+          const themeToggle = document.getElementById('theme-toggle');
+          const applyTheme = (theme) => document.documentElement.classList.toggle('dark', theme === 'dark');
+          themeToggle.addEventListener('click', () => {
+              const isDark = document.documentElement.classList.toggle('dark');
+              localStorage.setItem('theme', isDark ? 'dark' : 'light');
+          });
+          const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          applyTheme(savedTheme);
 
-            // --- LÓGICA DE FECHAS ---
-            const today = new Date().toISOString().split('T')[0];
-            document.getElementById('fecha-gasto').value = today;
-            document.getElementById('fecha-inversion').value = today;
-            
-            // --- LÓGICA DE LA TERMINAL ---
-            const terminalOutput = document.getElementById('terminal-output');
-            function printToTerminal(text, type = 'info') {
-                const lines = String(text).split('\n');
-                lines.forEach(line => {
-                    if (line.trim() === '') return;
-                    const p = document.createElement('p');
-                    p.style.opacity = 0;
-                    let prefix = '>'; let textColor = 'dark:text-slate-300 text-slate-600';
-                    if (type === 'command') { prefix = '$'; textColor = 'dark:text-cyan-400 text-cyan-600'; }
-                    if (type === 'success') { prefix = '[OK]'; textColor = 'dark:text-emerald-400 text-emerald-600'; }
-                    if (type === 'error') { prefix = '[ERROR]'; textColor = 'dark:text-red-400 text-red-500'; }
-                    p.innerHTML = `<span class="dark:text-green-400 text-green-600 flex-shrink-0">${prefix}&nbsp;</span> <span class="${textColor}">${line.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</span>`;
-                    p.className = 'flex';
-                    terminalOutput.appendChild(p);
-                    setTimeout(() => p.style.opacity = 1, 10);
-                });
-                // CORRECCIÓN SCROLL
-                terminalOutput.scrollTo({ top: terminalOutput.scrollHeight, behavior: 'smooth' });
-            }
-            printToTerminal('Bienvenido al panel de control de ECOP.');
-            printToTerminal('Servidor local conectado. Esperando acciones...');
+          // --- LÓGICA DE FECHAS ---
+          const today = new Date().toISOString().split('T')[0];
+          document.getElementById('fecha-gasto').value = today;
+          document.getElementById('fecha-inversion').value = today;
 
-            // --- LÓGICA DE COMUNICACIÓN CON EL BACKEND ---
-            async function sendCommand(button, command, args = {}) {
-                if(button) button.disabled = true;
-                const originalText = button ? button.innerHTML : '';
-                if(button) button.innerHTML = `<span class="animate-pulse">Ejecutando...</span>`;
-                const commandString = `python ecop.py ${command}` + (Object.keys(args).length > 0 ? ' ...' : '');
-                printToTerminal(commandString, 'command');
-                try {
-                    const response = await fetch('/ejecutar', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ comando: command, args: args })
-                    });
-                    const data = await response.json();
-                    printToTerminal(data.salida, response.ok ? 'info' : 'error');
-                } catch (error) {
-                    printToTerminal(`Error de conexión con el servidor: ${error}`, 'error');
-                } finally {
-                    if(button) {
-                        button.disabled = false;
-                        button.innerHTML = originalText;
-                    }
-                }
-            }
+          // --- ENHANCED NOTIFICATION SYSTEM ---
+          function showNotification(message, type = 'info', duration = 5000, details = null, suggestions = null) {
+              const notification = document.createElement('div');
+              const icons = {
+                  success: '✓',
+                  error: '✗',
+                  warning: '⚠',
+                  info: 'ℹ'
+              };
+              const colors = {
+                  success: 'bg-emerald-500 border-emerald-600',
+                  error: 'bg-red-500 border-red-600',
+                  warning: 'bg-yellow-500 border-yellow-600',
+                  info: 'bg-blue-500 border-blue-600'
+              };
 
-            // --- MANEJADORES DE EVENTOS ---
-            document.getElementById('form-registrar').addEventListener('submit', (e) => {
-                e.preventDefault();
-                sendCommand(e.target.querySelector('button'), 'registrar', {
-                    fecha: document.getElementById('fecha-gasto').value,
-                    monto: document.getElementById('monto-gasto').value,
-                    categoria: document.getElementById('categoria-gasto').value,
-                    desc: document.getElementById('desc-gasto').value
-                });
-                e.target.reset();
-                document.getElementById('fecha-gasto').value = today;
-            });
+              notification.className = `fixed top-4 right-4 ${colors[type]} text-white px-4 py-3 rounded-lg shadow-lg border-l-4 z-50 max-w-md transform translate-x-full transition-transform duration-300 ease-out`;
 
-            document.getElementById('form-invertir').addEventListener('submit', (e) => {
-                e.preventDefault();
-                sendCommand(e.target.querySelector('button'), 'invertir', {
-                    fecha: document.getElementById('fecha-inversion').value,
-                    activo: document.getElementById('activo-inversion').value,
-                    tipo: document.getElementById('tipo-inversion').value,
-                    monto: document.getElementById('monto-inversion').value
-                });
-                e.target.reset();
-                document.getElementById('fecha-inversion').value = today;
-            });
+              let detailsHtml = '';
+              if (details && typeof details === 'object') {
+                  const detailEntries = Object.entries(details).slice(0, 3); // Limit to 3 details
+                  if (detailEntries.length > 0) {
+                      detailsHtml = `
+                          <div class="mt-2 text-xs opacity-90 border-t border-white/20 pt-2">
+                              ${detailEntries.map(([key, value]) => `<div><strong>${key}:</strong> ${String(value).substring(0, 50)}${String(value).length > 50 ? '...' : ''}</div>`).join('')}
+                          </div>
+                      `;
+                  }
+              }
 
-            document.getElementById('btn-analizar').addEventListener('click', (e) => sendCommand(e.target, 'analizar'));
-            document.getElementById('btn-clear').addEventListener('click', () => {
-                terminalOutput.innerHTML = '';
-                printToTerminal('Terminal limpiada.');
-            });
+              let suggestionsHtml = '';
+              if (suggestions && Array.isArray(suggestions) && suggestions.length > 0) {
+                  const limitedSuggestions = suggestions.slice(0, 2); // Limit to 2 suggestions
+                  suggestionsHtml = `
+                      <div class="mt-2 text-xs opacity-90 border-t border-white/20 pt-2">
+                          <div class="font-semibold mb-1">💡 Sugerencias:</div>
+                          ${limitedSuggestions.map(suggestion => `<div>• ${suggestion}</div>`).join('')}
+                      </div>
+                  `;
+              }
 
-            // --- LÓGICA DEL MODAL DE RESOLUCIÓN MEJORADO ---
-            const modal = document.getElementById('modal-resolucion');
-            const formContainer = document.getElementById('resolucion-form-container');
-            const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-            
-            const createInput = (label, id, value, type = 'text') => `<div class="flex flex-col"><label for="${id}" class="mb-1 text-sm font-medium">${label}</label><input type="${type}" id="${id}" value="${value}" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg p-2"></div>`;
-            const createSelect = (label, id, options, selected) => `<div class="flex flex-col"><label for="${id}" class="mb-1 text-sm font-medium">${label}</label><select id="${id}" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg p-2">${options.map(o => `<option value="${o}" ${o === selected ? 'selected' : ''}>${o.charAt(0).toUpperCase() + o.slice(1)}</option>`).join('')}</select></div>`;
-            const createDynamicList = (title, listId, items, fields) => {
-                let itemsHtml = items.map((item, index) => {
-                    const itemValue = typeof item === 'object' ? item : { text: item };
-                    const itemFields = fields.map(field => `<input type="${field.type || 'text'}" value="${itemValue[field.key]}" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="${field.key}" placeholder="${field.placeholder}">`).join('');
-                    return `<div class="flex items-center gap-2 p-2 border-b border-slate-200 dark:border-slate-700">${itemFields}<button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button></div>`;
-                }).join('');
-                return `<div><h4 class="font-medium mb-2">${title}</h4><div id="${listId}">${itemsHtml}</div><button data-add-item="${listId}" class="mt-2 text-sm text-cyan-600 dark:text-cyan-500 font-semibold">+ Agregar Item</button></div>`;
-            };
+              notification.innerHTML = `
+                  <div class="flex items-start gap-3">
+                      <span class="text-lg font-bold flex-shrink-0 mt-0.5">${icons[type]}</span>
+                      <div class="flex-1 min-w-0">
+                          <p class="font-medium break-words">${message}</p>
+                          ${detailsHtml}
+                          ${suggestionsHtml}
+                      </div>
+                      <button onclick="this.parentElement.parentElement.remove()" class="text-white/80 hover:text-white text-xl leading-none flex-shrink-0">&times;</button>
+                  </div>
+              `;
 
-            document.getElementById('btn-editar-res').addEventListener('click', async () => {
-                const response = await fetch('/get-config');
-                const data = await response.json();
-                if (response.ok) {
-                    const currentMonthIndex = new Date().getMonth();
-                    const currentMonthName = meses[currentMonthIndex];
-                    const prevMonthName = meses[(currentMonthIndex + 11) % 12];
+              document.body.appendChild(notification);
 
-                    formContainer.innerHTML = `
-                        <h3 class="font-bold text-lg">Datos Generales</h3>
-                        ${createSelect('Mes de la Resolución', 'config-mes', meses, data.mes_nombre || currentMonthName)}
-                        <h3 class="font-bold text-lg mt-4">Justificación (Mes Anterior)</h3>
-                        <div class="grid grid-cols-2 gap-4">
-                            ${createInput('Mes Anterior', 'config-mes-anterior', data.mes_anterior || prevMonthName, 'text')}
-                            ${createInput('Monto Mensualidad Anterior', 'config-monto-anterior', data.mensualidad_anterior_monto, 'number')}
-                        </div>
-                        ${createDynamicList('Gastos del Mes Anterior', 'gastos-list', data.gastos_mes_anterior, [{key: 'descripcion', placeholder: 'Descripción'}, {key: 'monto', placeholder: 'Monto'}])}
-                        ${createDynamicList('Considerandos Adicionales', 'considerandos-list', data.considerandos_adicionales, [{key: 'text', placeholder: 'Texto del considerando'}])}
-                        ${createDynamicList('Artículos', 'articulos-list', data.articulos, [{key: 'text', placeholder: 'Texto del artículo'}])}
-                    `;
-                    modal.classList.remove('hidden');
-                    // MEJORA: Mes anterior automático
-                    document.getElementById('config-mes').addEventListener('change', (e) => {
-                        const selectedIndex = meses.indexOf(e.target.value);
-                        const prevIndex = (selectedIndex + 11) % 12;
-                        document.getElementById('config-mes-anterior').value = meses[prevIndex];
-                    });
-                } else {
-                    printToTerminal(`Error al cargar la configuracion: ${data.error}`, 'error');
-                }
-            });
+              // Animate in
+              setTimeout(() => {
+                  notification.style.transform = 'translateX(0)';
+              }, 10);
 
-            formContainer.addEventListener('click', e => {
-                const listId = e.target.dataset.addItem;
-                if (listId) {
-                    const listContainer = document.getElementById(listId);
-                    const newItem = document.createElement('div');
-                    newItem.className = 'flex items-center gap-2 p-2 border-b border-slate-200 dark:border-slate-700';
-                    if (listId === 'gastos-list') {
-                        newItem.innerHTML = `<input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="descripcion" placeholder="Descripción"><input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="monto" placeholder="Monto"><button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button>`;
-                    } else {
-                        newItem.innerHTML = `<input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="text" placeholder="Nuevo item"><button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button>`;
-                    }
-                    listContainer.appendChild(newItem);
-                }
-                // MEJORA: El listener para eliminar ahora está en el contenedor
-                if (e.target.matches('[data-remove-item]')) { 
-                    e.target.closest('.flex').remove(); 
-                }
-            });
+              // Auto remove with longer duration for error messages with details
+              const adjustedDuration = (type === 'error' && (details || suggestions)) ? Math.max(duration, 10000) : duration;
+              if (adjustedDuration > 0) {
+                  setTimeout(() => {
+                      notification.style.transform = 'translateX(full)';
+                      setTimeout(() => notification.remove(), 300);
+                  }, adjustedDuration);
+              }
 
-            document.getElementById('btn-cerrar-modal').addEventListener('click', () => modal.classList.add('hidden'));
+              return notification;
+          }
 
-            document.getElementById('btn-guardar-generar').addEventListener('click', async (e) => {
-                const newConfig = {
-                    titulo_documento: `Presupuesto mensual de ${document.getElementById('config-mes').value}`,
-                    mes_nombre: document.getElementById('config-mes').value,
-                    mes_anterior: document.getElementById('config-mes-anterior').value,
-                    mensualidad_anterior_monto: document.getElementById('config-monto-anterior').value,
-                    gastos_mes_anterior: Array.from(document.getElementById('gastos-list').children).map(item => ({
-                        descripcion: item.querySelector('[data-list-key="descripcion"]').value,
-                        monto: item.querySelector('[data-list-key="monto"]').value
-                    })),
-                    considerandos_adicionales: Array.from(document.getElementById('considerandos-list').children).map(item => item.querySelector('[data-list-key="text"]').value),
-                    articulos: Array.from(document.getElementById('articulos-list').children).map(item => item.querySelector('[data-list-key="text"]').value),
-                    anexo: {} // Se mantiene simple, el backend podría añadir más lógica si es necesario
-                };
-                
-                const button = e.target;
-                button.disabled = true;
-                button.innerHTML = `<span class="animate-pulse">Guardando...</span>`;
-                try {
-                    const saveResponse = await fetch('/save-config', {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify(newConfig, null, 2)
-                    });
-                    const saveData = await saveResponse.json();
-                    printToTerminal(saveData.salida || saveData.error, saveResponse.ok ? 'success' : 'error');
-                    if (saveResponse.ok) {
-                        await sendCommand(null, 'generar');
-                    }
-                } catch (error) {
-                    printToTerminal(`Error al guardar: ${error}`, 'error');
-                } finally {
-                    button.disabled = false;
-                    button.innerHTML = "Guardar y Generar PDF";
-                    modal.classList.add('hidden');
-                }
-            });
-        });
+          // --- ENHANCED TERMINAL WITH BETTER ERROR DISPLAY ---
+          const terminalOutput = document.getElementById('terminal-output');
+          function printToTerminal(text, type = 'info', details = null, suggestions = null) {
+              const lines = String(text).split('\n');
+              lines.forEach(line => {
+                  if (line.trim() === '') return;
+                  const p = document.createElement('p');
+                  p.style.opacity = 0;
+                  let prefix = '>'; let textColor = 'dark:text-slate-300 text-slate-600';
+                  let bgColor = '';
+
+                  if (type === 'command') {
+                      prefix = '$';
+                      textColor = 'dark:text-cyan-400 text-cyan-600';
+                  }
+                  if (type === 'success') {
+                      prefix = '[OK]';
+                      textColor = 'dark:text-emerald-400 text-emerald-600';
+                      bgColor = 'bg-emerald-50 dark:bg-emerald-900/20 border-l-2 border-emerald-500 pl-2';
+                  }
+                  if (type === 'error') {
+                      prefix = '[ERROR]';
+                      textColor = 'dark:text-red-400 text-red-500';
+                      bgColor = 'bg-red-50 dark:bg-red-900/20 border-l-2 border-red-500 pl-2';
+                  }
+                  if (type === 'warning') {
+                      prefix = '[WARN]';
+                      textColor = 'dark:text-yellow-400 text-yellow-600';
+                      bgColor = 'bg-yellow-50 dark:bg-yellow-900/20 border-l-2 border-yellow-500 pl-2';
+                  }
+
+                  p.innerHTML = `<span class="dark:text-green-400 text-green-600 flex-shrink-0">${prefix}&nbsp;</span> <span class="${textColor}">${line.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</span>`;
+                  p.className = `flex ${bgColor} py-1 rounded`;
+                  terminalOutput.appendChild(p);
+                  setTimeout(() => p.style.opacity = 1, 10);
+              });
+
+              // Enhanced error details display
+              if (details && (type === 'error' || type === 'warning')) {
+                  const detailsContainer = document.createElement('div');
+                  detailsContainer.className = 'ml-4 mt-1 p-2 bg-slate-100 dark:bg-slate-800 rounded text-xs border-l-2 border-slate-300 dark:border-slate-600';
+                  detailsContainer.style.opacity = 0;
+
+                  const detailsTitle = document.createElement('div');
+                  detailsTitle.className = 'font-semibold text-slate-600 dark:text-slate-400 mb-1';
+                  detailsTitle.textContent = 'Detalles del error:';
+                  detailsContainer.appendChild(detailsTitle);
+
+                  if (typeof details === 'object') {
+                      Object.entries(details).forEach(([key, value]) => {
+                          const detailLine = document.createElement('div');
+                          detailLine.className = 'text-slate-500 dark:text-slate-400';
+                          detailLine.innerHTML = `<strong>${key}:</strong> ${String(value).replace(/</g, "&lt;").replace(/>/g, "&gt;")}`;
+                          detailsContainer.appendChild(detailLine);
+                      });
+                  } else {
+                      const detailLine = document.createElement('div');
+                      detailLine.className = 'text-slate-500 dark:text-slate-400';
+                      detailLine.textContent = String(details);
+                      detailsContainer.appendChild(detailLine);
+                  }
+
+                  terminalOutput.appendChild(detailsContainer);
+                  setTimeout(() => detailsContainer.style.opacity = 1, 20);
+              }
+
+              // Enhanced suggestions display
+              if (suggestions && Array.isArray(suggestions) && suggestions.length > 0) {
+                  const suggestionsContainer = document.createElement('div');
+                  suggestionsContainer.className = 'ml-4 mt-1 p-2 bg-blue-50 dark:bg-blue-900/20 rounded text-xs border-l-2 border-blue-400';
+                  suggestionsContainer.style.opacity = 0;
+
+                  const suggestionsTitle = document.createElement('div');
+                  suggestionsTitle.className = 'font-semibold text-blue-600 dark:text-blue-400 mb-1 flex items-center gap-1';
+                  suggestionsTitle.innerHTML = '💡 Sugerencias:';
+                  suggestionsContainer.appendChild(suggestionsTitle);
+
+                  suggestions.forEach((suggestion, index) => {
+                      const suggestionLine = document.createElement('div');
+                      suggestionLine.className = 'text-blue-600 dark:text-blue-300 flex items-start gap-2 mt-1';
+                      suggestionLine.innerHTML = `<span class="text-blue-400">•</span> <span>${suggestion.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</span>`;
+                      suggestionsContainer.appendChild(suggestionLine);
+                  });
+
+                  terminalOutput.appendChild(suggestionsContainer);
+                  setTimeout(() => suggestionsContainer.style.opacity = 1, 30);
+              }
+
+              // CORRECCIÓN SCROLL
+              terminalOutput.scrollTo({ top: terminalOutput.scrollHeight, behavior: 'smooth' });
+          }
+          printToTerminal('Bienvenido al panel de control de PECO.');
+          printToTerminal('Servidor local conectado. Esperando acciones...');
+
+          // Setup real-time form validation
+          setupRealTimeValidation();
+
+          // Check system status on startup
+          checkSystemStatus();
+
+          // --- SYSTEM STATUS VALIDATION ---
+          async function checkSystemStatus() {
+              try {
+                  printToTerminal('Verificando estado del sistema...', 'info');
+                  const response = await fetch('/validar-sistema');
+                  const data = await response.json();
+
+                  if (response.ok && data.success) {
+                      const systemData = data.data;
+
+                      if (systemData.system_status === 'ok') {
+                          printToTerminal('✓ Sistema validado correctamente', 'success');
+                      } else if (systemData.system_status === 'warning') {
+                          printToTerminal('⚠ Sistema funcional con advertencias', 'warning');
+                          if (systemData.issues) {
+                              systemData.issues.forEach(issue => {
+                                  printToTerminal(`  - ${issue}`, 'warning');
+                              });
+                          }
+                      }
+
+                      // Show system capabilities
+                      if (systemData.latex_available) {
+                          printToTerminal('✓ LaTeX disponible para generación de PDFs', 'info');
+                      } else {
+                          printToTerminal('✗ LaTeX no disponible - PDFs no se pueden generar', 'warning',
+                              null,
+                              ['Instale MiKTeX o TeX Live para habilitar generación de PDFs']
+                          );
+                      }
+
+                      if (systemData.data_integrity && systemData.data_integrity.success) {
+                          printToTerminal('✓ Integridad de datos verificada', 'info');
+                      } else if (systemData.data_integrity) {
+                          printToTerminal(`⚠ Problemas de integridad: ${systemData.data_integrity.message}`, 'warning');
+                      }
+
+                  } else {
+                      const message = data.message || 'Error validando sistema';
+                      const errorCode = data.error_code ? ` (${data.error_code})` : '';
+                      printToTerminal(message + errorCode, 'error', data.details, data.suggestions);
+                  }
+
+              } catch (error) {
+                  printToTerminal('Error verificando estado del sistema', 'warning',
+                      { error: error.message },
+                      ['El sistema puede funcionar con limitaciones', 'Algunas funciones pueden no estar disponibles']
+                  );
+              }
+          }
+
+          // --- ENHANCED LOADING STATE MANAGEMENT ---
+          function setButtonLoading(button, isLoading, loadingText = 'Procesando...') {
+              if (!button) return;
+
+              if (isLoading) {
+                  button.disabled = true;
+                  button.dataset.originalText = button.innerHTML;
+                  button.classList.add('btn-loading');
+                  button.innerHTML = `
+                      <div class="flex items-center justify-center gap-2">
+                          <svg class="loading-spinner w-4 h-4" fill="none" viewBox="0 0 24 24">
+                              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span>${loadingText}</span>
+                      </div>
+                  `;
+              } else {
+                  button.disabled = false;
+                  button.classList.remove('btn-loading');
+                  button.innerHTML = button.dataset.originalText || button.innerHTML;
+              }
+          }
+
+          function setFormLoading(form, isLoading) {
+              if (!form) return;
+
+              const inputs = form.querySelectorAll('input, select, button');
+              inputs.forEach(input => {
+                  if (isLoading) {
+                      input.disabled = true;
+                      if (input.tagName === 'BUTTON' && input.type === 'submit') {
+                          setButtonLoading(input, true);
+                      }
+                  } else {
+                      input.disabled = false;
+                      if (input.tagName === 'BUTTON' && input.type === 'submit') {
+                          setButtonLoading(input, false);
+                      }
+                  }
+              });
+
+              // Add visual loading overlay to form
+              if (isLoading) {
+                  form.style.position = 'relative';
+                  const overlay = document.createElement('div');
+                  overlay.className = 'absolute inset-0 bg-white/50 dark:bg-slate-800/50 backdrop-blur-sm rounded-xl flex items-center justify-center z-10';
+                  overlay.id = 'form-loading-overlay';
+                  overlay.innerHTML = `
+                      <div class="flex flex-col items-center gap-2 text-slate-600 dark:text-slate-300">
+                          <svg class="loading-spinner w-6 h-6" fill="none" viewBox="0 0 24 24">
+                              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <span class="text-sm font-medium">Procesando...</span>
+                      </div>
+                  `;
+                  form.appendChild(overlay);
+              } else {
+                  const overlay = form.querySelector('#form-loading-overlay');
+                  if (overlay) overlay.remove();
+              }
+          }
+
+          function showProgressBar(container, duration = 30000, label = 'Procesando...') {
+              const progressContainer = document.createElement('div');
+              progressContainer.className = 'w-full bg-slate-100 dark:bg-slate-800 rounded-lg p-3 mb-3 border border-slate-200 dark:border-slate-700';
+              progressContainer.id = 'progress-container';
+
+              progressContainer.innerHTML = `
+                  <div class="flex items-center justify-between mb-2">
+                      <span class="text-sm font-medium text-slate-600 dark:text-slate-300">${label}</span>
+                      <span class="text-xs text-slate-500 dark:text-slate-400" id="progress-time">0s</span>
+                  </div>
+                  <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                      <div class="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full progress-bar"
+                           style="width: 0%; animation-duration: ${duration}ms;"></div>
+                  </div>
+                  <div class="mt-2 text-xs text-slate-500 dark:text-slate-400" id="progress-status">
+                      Iniciando operación...
+                  </div>
+              `;
+
+              if (container) {
+                  container.insertBefore(progressContainer, container.firstChild);
+              }
+
+              // Update progress status and time
+              const startTime = Date.now();
+              const statusElement = progressContainer.querySelector('#progress-status');
+              const timeElement = progressContainer.querySelector('#progress-time');
+
+              const updateInterval = setInterval(() => {
+                  const elapsed = Math.floor((Date.now() - startTime) / 1000);
+                  timeElement.textContent = `${elapsed}s`;
+
+                  // Update status based on elapsed time
+                  if (elapsed < 5) {
+                      statusElement.textContent = 'Iniciando operación...';
+                  } else if (elapsed < 15) {
+                      statusElement.textContent = 'Procesando datos...';
+                  } else if (elapsed < 30) {
+                      statusElement.textContent = 'Finalizando proceso...';
+                  } else {
+                      statusElement.textContent = 'Operación en progreso - Esto puede tomar un momento...';
+                  }
+              }, 1000);
+
+              // Store cleanup function
+              progressContainer.cleanup = () => {
+                  clearInterval(updateInterval);
+                  progressContainer.remove();
+              };
+
+              return progressContainer;
+          }
+
+          function showLoadingOverlay(message = 'Cargando...', showProgress = false) {
+              const overlay = document.createElement('div');
+              overlay.id = 'global-loading-overlay';
+              overlay.className = 'fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50';
+
+              overlay.innerHTML = `
+                  <div class="bg-white dark:bg-slate-800 rounded-xl p-6 shadow-2xl max-w-sm w-full mx-4">
+                      <div class="flex flex-col items-center gap-4">
+                          <svg class="loading-spinner w-8 h-8 text-blue-500" fill="none" viewBox="0 0 24 24">
+                              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                          </svg>
+                          <div class="text-center">
+                              <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-200">${message}</h3>
+                              <p class="text-sm text-slate-500 dark:text-slate-400 mt-1">Por favor espere...</p>
+                          </div>
+                          ${showProgress ? `
+                              <div class="w-full bg-slate-200 dark:bg-slate-700 rounded-full h-2">
+                                  <div class="bg-gradient-to-r from-blue-500 to-cyan-500 h-2 rounded-full loading-pulse"></div>
+                              </div>
+                          ` : ''}
+                      </div>
+                  </div>
+              `;
+
+              document.body.appendChild(overlay);
+              return overlay;
+          }
+
+          function hideLoadingOverlay() {
+              const overlay = document.getElementById('global-loading-overlay');
+              if (overlay) overlay.remove();
+          }
+
+          // --- ENHANCED BACKEND COMMUNICATION WITH LOADING STATES ---
+          async function sendCommand(button, command, args = {}) {
+              const commandString = `python peco.py ${command}` + (Object.keys(args).length > 0 ? ' ...' : '');
+              printToTerminal(commandString, 'command');
+
+              // Set loading state with command-specific text
+              const loadingTexts = {
+                  'registrar': 'Registrando gasto...',
+                  'invertir': 'Registrando inversión...',
+                  'analizar': 'Analizando datos...',
+                  'generar-pdf': 'Generando PDF...'
+              };
+
+              const progressLabels = {
+                  'registrar': 'Registrando gasto',
+                  'invertir': 'Registrando inversión',
+                  'analizar': 'Analizando finanzas',
+                  'generar-pdf': 'Generando PDF'
+              };
+
+              setButtonLoading(button, true, loadingTexts[command] || 'Procesando...');
+
+              // Show progress bar for long operations with appropriate duration
+              let progressBar = null;
+              const longOperations = ['analizar', 'generar-pdf'];
+              if (longOperations.includes(command)) {
+                  const terminalContainer = document.getElementById('terminal-output').parentElement;
+                  const progressDuration = command === 'generar-pdf' ? 45000 : 20000; // 45s for PDF, 20s for analysis
+                  progressBar = showProgressBar(terminalContainer, progressDuration, progressLabels[command] || 'Procesando');
+              }
+
+              // Enhanced timeout handling with multiple warning stages
+              const timeoutDurations = {
+                  'registrar': 15000,    // 15s for simple operations
+                  'invertir': 15000,     // 15s for simple operations
+                  'analizar': 45000,     // 45s for analysis
+                  'generar-pdf': 90000   // 90s for PDF generation
+              };
+
+              const timeoutDuration = timeoutDurations[command] || 30000;
+
+              // First warning at 50% of timeout
+              const firstWarningId = setTimeout(() => {
+                  printToTerminal('⏳ Operación en progreso...', 'info');
+                  showNotification('Procesando - Por favor espere', 'info', 3000);
+              }, timeoutDuration * 0.5);
+
+              // Second warning at 80% of timeout
+              const secondWarningId = setTimeout(() => {
+                  printToTerminal('⚠ La operación está tomando más tiempo del esperado...', 'warning',
+                      null,
+                      ['La operación puede completarse en breve', 'Operaciones complejas pueden requerir más tiempo']
+                  );
+                  showNotification('Operación en progreso - Tomando más tiempo del esperado', 'warning', 8000);
+              }, timeoutDuration * 0.8);
+
+              // Final timeout warning
+              const finalTimeoutId = setTimeout(() => {
+                  printToTerminal('⚠ Tiempo de espera extendido - La operación puede haber fallado', 'warning',
+                      { timeout: `${timeoutDuration}ms`, command: command },
+                      ['Verifique la conexión del servidor', 'Considere reiniciar la aplicación si persiste', 'Revise los logs para más información']
+                  );
+                  showNotification('Tiempo de espera agotado - Verifique el servidor', 'warning', 12000);
+              }, timeoutDuration);
+
+              try {
+                  // Add request timeout using AbortController
+                  const controller = new AbortController();
+                  const requestTimeoutId = setTimeout(() => controller.abort(), timeoutDuration + 30000); // Extra 30s buffer
+
+                  const response = await fetch('/ejecutar', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ comando: command, args: args }),
+                      signal: controller.signal
+                  });
+
+                  // Clear all timeouts on successful response
+                  clearTimeout(firstWarningId);
+                  clearTimeout(secondWarningId);
+                  clearTimeout(finalTimeoutId);
+                  clearTimeout(requestTimeoutId);
+
+                  const data = await response.json();
+
+                  if (response.ok && data.success) {
+                      // Success response with enhanced notification
+                      const message = data.message || data.salida || 'Operación completada exitosamente';
+                      printToTerminal(message, 'success');
+
+                      // Show success notification with details if available
+                      const successMessage = getSuccessMessage(command);
+                      showNotification(successMessage, 'success', 4000);
+
+                      // Show additional data if available
+                      if (data.data && typeof data.data === 'object') {
+                          const dataKeys = Object.keys(data.data);
+                          if (dataKeys.length > 0) {
+                              printToTerminal('Datos adicionales:', 'info');
+                              dataKeys.forEach(key => {
+                                  if (key !== 'analysis_data') { // Skip complex nested data
+                                      const value = data.data[key];
+                                      if (typeof value === 'object') {
+                                          printToTerminal(`  ${key}: [objeto complejo]`, 'info');
+                                      } else {
+                                          printToTerminal(`  ${key}: ${value}`, 'info');
+                                      }
+                                  }
+                              });
+                          }
+                      }
+                  } else {
+                      // Enhanced error response handling with new backend format
+                      const message = data.message || data.salida || data.error || 'Error desconocido';
+                      const errorCode = data.error_code ? ` (${data.error_code})` : '';
+
+                      // Display error in terminal with enhanced details and suggestions
+                      printToTerminal(message + errorCode, 'error', data.details, data.suggestions);
+
+                      // Show enhanced error notification with details and suggestions
+                      const errorNotificationMessage = getErrorMessage(command, data.error_code) || message;
+                      showNotification(errorNotificationMessage, 'error', 8000, data.details, data.suggestions);
+                  }
+
+              } catch (networkError) {
+                  // Clear all timeouts on error
+                  clearTimeout(firstWarningId);
+                  clearTimeout(secondWarningId);
+                  clearTimeout(finalTimeoutId);
+
+                  // Enhanced network error handling with detailed notifications
+                  if (networkError.name === 'AbortError') {
+                      const errorMsg = 'Operación cancelada por tiempo de espera agotado';
+                      const errorDetails = {
+                          timeout: `${timeoutDuration}ms`,
+                          command: command,
+                          type: 'Request Timeout'
+                      };
+                      const suggestions = [
+                          'La operación tomó demasiado tiempo',
+                          'Verifique que el servidor esté funcionando',
+                          'Intente con una operación más simple primero'
+                      ];
+
+                      printToTerminal(errorMsg, 'error', errorDetails, suggestions);
+                      showNotification('Operación cancelada - Tiempo agotado', 'error', 10000, errorDetails, suggestions);
+                  } else if (networkError.name === 'SyntaxError') {
+                      const errorMsg = 'Error de formato en la respuesta del servidor';
+                      const errorDetails = { error: networkError.message, type: 'JSON Parse Error' };
+                      const suggestions = ['Verifique que el servidor esté funcionando correctamente', 'Revise los logs del servidor para más detalles'];
+
+                      printToTerminal(errorMsg, 'error', errorDetails, suggestions);
+                      showNotification('Error del servidor - Respuesta inválida', 'error', 8000, errorDetails, suggestions);
+                  } else if (networkError.name === 'TypeError' && networkError.message.includes('fetch')) {
+                      const errorMsg = 'Error de conexión con el servidor';
+                      const errorDetails = { error: networkError.message, type: 'Network Error' };
+                      const suggestions = ['Verifique que el servidor esté ejecutándose', 'Revise su conexión de red', 'Intente recargar la página'];
+
+                      printToTerminal(errorMsg, 'error', errorDetails, suggestions);
+                      showNotification('Sin conexión al servidor', 'error', 10000, errorDetails, suggestions);
+                  } else {
+                      const errorMsg = `Error de comunicación: ${networkError.message}`;
+                      const errorDetails = { error: networkError.message, type: networkError.name || 'Unknown Error' };
+                      const suggestions = ['Intente la operación nuevamente', 'Revise la consola del navegador para más detalles'];
+
+                      printToTerminal(errorMsg, 'error', errorDetails, suggestions);
+                      showNotification('Error de comunicación - Intente nuevamente', 'error', 6000, errorDetails, suggestions);
+                  }
+              } finally {
+                  // Clean up loading states
+                  setButtonLoading(button, false);
+                  if (progressBar && progressBar.cleanup) {
+                      progressBar.cleanup();
+                  }
+              }
+          }
+
+              try {
+                  const response = await fetch('/ejecutar', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify({ comando: command, args: args })
+                  });
+
+                  const data = await response.json();
+
+                  if (response.ok) {
+                      // Success response with notification
+                      const message = data.message || data.salida || 'Operación completada exitosamente';
+                      printToTerminal(message, 'success');
+
+                      // Show success notification
+                      showNotification(getSuccessMessage(command), 'success');
+
+                      // Show additional data if available
+                      if (data.data && typeof data.data === 'object') {
+                          const dataKeys = Object.keys(data.data);
+                          if (dataKeys.length > 0) {
+                              printToTerminal('Datos adicionales:', 'info');
+                              dataKeys.forEach(key => {
+                                  if (key !== 'analysis_data') { // Skip complex nested data
+                                      printToTerminal(`  ${key}: ${data.data[key]}`, 'info');
+                                  }
+                              });
+                          }
+                      }
+                  } else {
+                      // Error response with enhanced handling and notification
+                      const message = data.message || data.salida || data.error || 'Error desconocido';
+                      const errorCode = data.error_code ? ` (${data.error_code})` : '';
+
+                      printToTerminal(message + errorCode, 'error', data.details, data.suggestions);
+
+                      // Show error notification with actionable message
+                      const errorNotificationMessage = getErrorMessage(command, data.error_code);
+                      showNotification(errorNotificationMessage, 'error', 8000);
+                  }
+
+              } catch (networkError) {
+                  // Network or parsing errors with notifications
+                  if (networkError.name === 'SyntaxError') {
+                      const errorMsg = 'Error de formato en la respuesta del servidor';
+                      printToTerminal(errorMsg, 'error',
+                          { error: networkError.message },
+                          ['Verifique que el servidor esté funcionando correctamente', 'Revise los logs del servidor para más detalles']
+                      );
+                      showNotification('Error del servidor - Revise la configuración', 'error', 8000);
+                  } else if (networkError.name === 'TypeError' && networkError.message.includes('fetch')) {
+                      const errorMsg = 'Error de conexión con el servidor';
+                      printToTerminal(errorMsg, 'error',
+                          { error: networkError.message },
+                          ['Verifique que el servidor esté ejecutándose', 'Revise su conexión de red', 'Intente recargar la página']
+                      );
+                      showNotification('Sin conexión al servidor', 'error', 10000);
+                  } else {
+                      const errorMsg = `Error de comunicación: ${networkError.message}`;
+                      printToTerminal(errorMsg, 'error',
+                          { error: networkError.message },
+                          ['Intente la operación nuevamente', 'Revise la consola del navegador para más detalles']
+                      );
+                      showNotification('Error de comunicación - Intente nuevamente', 'error', 6000);
+                  }
+              } finally {
+                  if(button) {
+                      button.disabled = false;
+                      button.innerHTML = originalText;
+                  }
+              }
+          }
+
+          // --- HELPER FUNCTIONS FOR USER-FRIENDLY MESSAGES ---
+          function getSuccessMessage(command) {
+              const messages = {
+                  'registrar': '✓ Gasto registrado correctamente',
+                  'invertir': '✓ Inversión registrada correctamente',
+                  'analizar': '✓ Análisis financiero completado',
+                  'generar-pdf': '✓ PDF generado exitosamente'
+              };
+              return messages[command] || '✓ Operación completada exitosamente';
+          }
+
+          function getErrorMessage(command, errorCode) {
+              const commandMessages = {
+                  'registrar': 'Error al registrar gasto',
+                  'invertir': 'Error al registrar inversión',
+                  'analizar': 'Error en análisis financiero',
+                  'generar-pdf': 'Error al generar PDF'
+              };
+
+              const errorMessages = {
+                  'LATEX_ERROR': 'Error de LaTeX - Verifique la instalación',
+                  'DATA_ERROR': 'Error de datos - Verifique los archivos',
+                  'CONFIG_ERROR': 'Error de configuración',
+                  'FILE_ERROR': 'Error de archivo - Verifique permisos',
+                  'MISSING_REQUIRED_FIELDS': 'Campos requeridos faltantes',
+                  'INVALID_NUMERIC_VALUE': 'Valor numérico inválido',
+                  'INVALID_INVESTMENT_TYPE': 'Tipo de inversión inválido',
+                  'VALUE_TOO_LOW': 'Valor demasiado bajo',
+                  'VALUE_TOO_HIGH': 'Valor demasiado alto',
+                  'JSON_DECODE_ERROR': 'Error de formato JSON',
+                  'PERMISSION_ERROR': 'Error de permisos',
+                  'CONFIG_NOT_FOUND': 'Configuración no encontrada',
+                  'SYSTEM_VALIDATION_ERROR': 'Error de validación del sistema'
+              };
+
+              const baseMessage = commandMessages[command] || 'Error en la operación';
+              const specificMessage = errorCode ? errorMessages[errorCode] : null;
+
+              return specificMessage ? `${baseMessage}: ${specificMessage}` : baseMessage;
+          }
+
+          // --- ENHANCED FORM VALIDATION SYSTEM WITH REAL-TIME FEEDBACK ---
+          function validateForm(formElement) {
+              const errors = [];
+              const inputs = formElement.querySelectorAll('input[required], select[required]');
+
+              inputs.forEach(input => {
+                  const value = input.value.trim();
+                  const fieldName = input.placeholder || input.id || 'Campo';
+
+                  // Remove previous validation classes
+                  input.classList.remove('field-error', 'field-success', 'border-red-500', 'bg-red-50', 'dark:bg-red-900/20', 'border-green-500', 'bg-green-50', 'dark:bg-green-900/20');
+
+                  if (!value) {
+                      errors.push(`${fieldName} es requerido`);
+                      input.classList.add('field-error');
+                  } else {
+                      // Specific validations
+                      let isValid = true;
+
+                      if (input.type === 'number') {
+                          const numValue = parseFloat(value);
+                          if (isNaN(numValue) || numValue <= 0) {
+                              errors.push(`${fieldName} debe ser un número positivo`);
+                              isValid = false;
+                          }
+                      }
+
+                      if (input.type === 'date') {
+                          const dateValue = new Date(value);
+                          if (isNaN(dateValue.getTime())) {
+                              errors.push(`${fieldName} debe ser una fecha válida`);
+                              isValid = false;
+                          }
+                      }
+
+                      if (input.type === 'text' && input.id.includes('categoria') && value.length < 2) {
+                          errors.push(`${fieldName} debe tener al menos 2 caracteres`);
+                          isValid = false;
+                      }
+
+                      // Add success or error styling
+                      if (isValid) {
+                          input.classList.add('field-success');
+                      } else {
+                          input.classList.add('field-error');
+                      }
+                  }
+              });
+
+              return errors;
+          }
+
+          function setupRealTimeValidation() {
+              // Add real-time validation to all form inputs
+              const forms = document.querySelectorAll('form');
+
+              forms.forEach(form => {
+                  const inputs = form.querySelectorAll('input[required], select[required]');
+
+                  inputs.forEach(input => {
+                      // Validate on blur (when user leaves the field)
+                      input.addEventListener('blur', () => {
+                          validateSingleField(input);
+                      });
+
+                      // Validate on input for immediate feedback (with debounce)
+                      let validationTimeout;
+                      input.addEventListener('input', () => {
+                          clearTimeout(validationTimeout);
+                          validationTimeout = setTimeout(() => {
+                              validateSingleField(input);
+                          }, 500); // 500ms debounce
+                      });
+                  });
+              });
+          }
+
+          function validateSingleField(input) {
+              const value = input.value.trim();
+              const fieldName = input.placeholder || input.id || 'Campo';
+
+              // Remove previous validation classes
+              input.classList.remove('field-error', 'field-success');
+
+              if (!value) {
+                  input.classList.add('field-error');
+                  return false;
+              }
+
+              let isValid = true;
+
+              if (input.type === 'number') {
+                  const numValue = parseFloat(value);
+                  if (isNaN(numValue) || numValue <= 0) {
+                      isValid = false;
+                  }
+              }
+
+              if (input.type === 'date') {
+                  const dateValue = new Date(value);
+                  if (isNaN(dateValue.getTime())) {
+                      isValid = false;
+                  }
+              }
+
+              if (input.type === 'text' && input.id.includes('categoria') && value.length < 2) {
+                  isValid = false;
+              }
+
+              // Add appropriate styling
+              if (isValid) {
+                  input.classList.add('field-success');
+              } else {
+                  input.classList.add('field-error');
+              }
+
+              return isValid;
+          }
+
+          function showFormErrors(errors) {
+              if (errors.length > 0) {
+                  const errorMessage = errors.length === 1 ? errors[0] : `Se encontraron ${errors.length} errores:\n• ${errors.join('\n• ')}`;
+                  showNotification(errorMessage, 'error', 6000);
+                  return false;
+              }
+              return true;
+          }
+
+          // Real-time validation for inputs
+          function setupRealTimeValidation() {
+              const inputs = document.querySelectorAll('input, select');
+              inputs.forEach(input => {
+                  input.addEventListener('blur', () => {
+                      const value = input.value.trim();
+                      if (input.hasAttribute('required') && !value) {
+                          input.classList.add('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                      } else {
+                          input.classList.remove('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                          input.classList.add('border-green-500', 'bg-green-50', 'dark:bg-green-900/20');
+                          setTimeout(() => {
+                              input.classList.remove('border-green-500', 'bg-green-50', 'dark:bg-green-900/20');
+                          }, 1000);
+                      }
+                  });
+
+                  input.addEventListener('input', () => {
+                      if (input.classList.contains('border-red-500')) {
+                          input.classList.remove('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                      }
+                  });
+              });
+          }
+
+          // Setup initial real-time validation
+          setupRealTimeValidation();  if (isNaN(numValue) || numValue <= 0) {
+                              errors.push(`${fieldName} debe ser un número positivo`);
+                              input.classList.add('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                          }
+                      }
+
+                      if (input.type === 'date') {
+                          const dateValue = new Date(value);
+                          if (isNaN(dateValue.getTime())) {
+                              errors.push(`${fieldName} debe ser una fecha válida`);
+                              input.classList.add('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                          }
+                      }
+                  }
+              });
+
+              return errors;
+          }
+
+          function showFormErrors(errors) {
+              if (errors.length > 0) {
+                  const errorMessage = errors.length === 1 ? errors[0] : `Se encontraron ${errors.length} errores:\n• ${errors.join('\n• ')}`;
+                  showNotification(errorMessage, 'error', 6000);
+                  return false;
+              }
+              return true;
+          }
+
+          // Real-time validation for inputs
+          function setupRealTimeValidation() {
+              const inputs = document.querySelectorAll('input, select');
+              inputs.forEach(input => {
+                  input.addEventListener('blur', () => {
+                      const value = input.value.trim();
+                      if (input.hasAttribute('required') && !value) {
+                          input.classList.add('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                      } else {
+                          input.classList.remove('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                          input.classList.add('border-green-500', 'bg-green-50', 'dark:bg-green-900/20');
+                          setTimeout(() => {
+                              input.classList.remove('border-green-500', 'bg-green-50', 'dark:bg-green-900/20');
+                          }, 1000);
+                      }
+                  });
+
+                  input.addEventListener('input', () => {
+                      if (input.classList.contains('border-red-500')) {
+                          input.classList.remove('border-red-500', 'bg-red-50', 'dark:bg-red-900/20');
+                      }
+                  });
+              });
+          }
+
+          // --- MANEJADORES DE EVENTOS ---
+          document.getElementById('form-registrar').addEventListener('submit', async (e) => {
+              e.preventDefault();
+
+              const form = e.target;
+              const submitButton = form.querySelector('button[type="submit"]');
+
+              // Validate form before submission
+              const errors = validateForm(form);
+              if (!showFormErrors(errors)) {
+                  return; // Stop if validation fails
+              }
+
+              // Set form loading state
+              setFormLoading(form, true);
+
+              try {
+                  await sendCommand(submitButton, 'registrar', {
+                      fecha: document.getElementById('fecha-gasto').value,
+                      monto: document.getElementById('monto-gasto').value,
+                      categoria: document.getElementById('categoria-gasto').value,
+                      desc: document.getElementById('desc-gasto').value
+                  });
+
+                  // Clear form on successful submission
+                  form.reset();
+                  document.getElementById('fecha-gasto').value = today;
+
+                  // Remove any validation error styles
+                  form.querySelectorAll('.field-error').forEach(field => {
+                      field.classList.remove('field-error');
+                  });
+
+              } catch (error) {
+                  console.error('Error in form submission:', error);
+              } finally {
+                  setFormLoading(form, false);
+              }
+          });
+
+          document.getElementById('form-invertir').addEventListener('submit', async (e) => {
+              e.preventDefault();
+
+              const form = e.target;
+              const submitButton = form.querySelector('button[type="submit"]');
+
+              // Validate form before submission
+              const errors = validateForm(form);
+              if (!showFormErrors(errors)) {
+                  return; // Stop if validation fails
+              }
+
+              // Set form loading state
+              setFormLoading(form, true);
+
+              try {
+                  await sendCommand(submitButton, 'invertir', {
+                      fecha: document.getElementById('fecha-inversion').value,
+                      activo: document.getElementById('activo-inversion').value,
+                      tipo: document.getElementById('tipo-inversion').value,
+                      monto: document.getElementById('monto-inversion').value
+                  });
+
+                  // Clear form on successful submission
+                  form.reset();
+                  document.getElementById('fecha-inversion').value = today;
+
+                  // Remove any validation error styles
+                  form.querySelectorAll('.field-error').forEach(field => {
+                      field.classList.remove('field-error');
+                  });
+
+              } catch (error) {
+                  console.error('Error in form submission:', error);
+              } finally {
+                  setFormLoading(form, false);
+              }
+          });
+
+          document.getElementById('btn-analizar').addEventListener('click', (e) => sendCommand(e.target, 'analizar'));
+          document.getElementById('btn-clear').addEventListener('click', () => {
+              terminalOutput.innerHTML = '';
+              printToTerminal('Terminal limpiada.');
+          });
+
+          // --- LÓGICA DEL MODAL DE RESOLUCIÓN MEJORADO ---
+          const modal = document.getElementById('modal-resolucion');
+          const formContainer = document.getElementById('resolucion-form-container');
+          const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+
+          const createInput = (label, id, value, type = 'text') => `<div class="flex flex-col"><label for="${id}" class="mb-1 text-sm font-medium">${label}</label><input type="${type}" id="${id}" value="${value}" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg p-2"></div>`;
+          const createSelect = (label, id, options, selected) => `<div class="flex flex-col"><label for="${id}" class="mb-1 text-sm font-medium">${label}</label><select id="${id}" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg p-2">${options.map(o => `<option value="${o}" ${o === selected ? 'selected' : ''}>${o.charAt(0).toUpperCase() + o.slice(1)}</option>`).join('')}</select></div>`;
+          const createDynamicList = (title, listId, items, fields) => {
+              let itemsHtml = items.map((item, index) => {
+                  const itemValue = typeof item === 'object' ? item : { text: item };
+                  const itemFields = fields.map(field => `<input type="${field.type || 'text'}" value="${itemValue[field.key]}" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="${field.key}" placeholder="${field.placeholder}">`).join('');
+                  return `<div class="flex items-center gap-2 p-2 border-b border-slate-200 dark:border-slate-700">${itemFields}<button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button></div>`;
+              }).join('');
+              return `<div><h4 class="font-medium mb-2">${title}</h4><div id="${listId}">${itemsHtml}</div><button data-add-item="${listId}" class="mt-2 text-sm text-cyan-600 dark:text-cyan-500 font-semibold">+ Agregar Item</button></div>`;
+          };
+
+          document.getElementById('btn-editar-res').addEventListener('click', async () => {
+              try {
+                  const response = await fetch('/get-config');
+                  const data = await response.json();
+
+                  if (response.ok && data.success) {
+                      const currentMonthIndex = new Date().getMonth();
+                      const currentMonthName = meses[currentMonthIndex];
+                      const prevMonthName = meses[(currentMonthIndex + 11) % 12];
+
+                      formContainer.innerHTML = `
+                          <h3 class="font-bold text-lg">Datos Generales</h3>
+                          ${createSelect('Mes de la Resolución', 'config-mes', meses, data.mes_nombre || currentMonthName)}
+                          <h3 class="font-bold text-lg mt-4">Justificación (Mes Anterior)</h3>
+                          <div class="grid grid-cols-2 gap-4">
+                              ${createInput('Mes Anterior', 'config-mes-anterior', data.mes_anterior || prevMonthName, 'text')}
+                              ${createInput('Monto Mensualidad Anterior', 'config-monto-anterior', data.mensualidad_anterior_monto, 'number')}
+                          </div>
+                          ${createDynamicList('Gastos del Mes Anterior', 'gastos-list', data.gastos_mes_anterior || [], [{key: 'descripcion', placeholder: 'Descripción'}, {key: 'monto', placeholder: 'Monto'}])}
+                          ${createDynamicList('Considerandos Adicionales', 'considerandos-list', data.considerandos_adicionales || [], [{key: 'text', placeholder: 'Texto del considerando'}])}
+                          ${createDynamicList('Artículos', 'articulos-list', data.articulos || [], [{key: 'text', placeholder: 'Texto del artículo'}])}
+                      `;
+                      modal.classList.remove('hidden');
+
+                      // Setup real-time validation for modal inputs
+                      setupRealTimeValidation();
+
+                      // MEJORA: Mes anterior automático
+                      document.getElementById('config-mes').addEventListener('change', (e) => {
+                          const selectedIndex = meses.indexOf(e.target.value);
+                          const prevIndex = (selectedIndex + 11) % 12;
+                          document.getElementById('config-mes-anterior').value = meses[prevIndex];
+                      });
+
+                      // Show success notification
+                      showNotification('Configuración cargada correctamente', 'success', 3000);
+
+                  } else {
+                      // Enhanced error handling for configuration loading with new backend format
+                      const message = data.message || data.error || 'Error desconocido al cargar configuración';
+                      const errorCode = data.error_code ? ` (${data.error_code})` : '';
+                      printToTerminal(message + errorCode, 'error', data.details, data.suggestions);
+
+                      // Show enhanced error notification with details and suggestions
+                      showNotification('Error al cargar configuración', 'error', 6000, data.details, data.suggestions);
+                  }
+              } catch (networkError) {
+                  const errorDetails = { error: networkError.message, type: networkError.name || 'Network Error' };
+                  const suggestions = ['Verifique que el servidor esté funcionando', 'Intente recargar la página'];
+
+                  printToTerminal('Error de conexión al cargar configuración', 'error', errorDetails, suggestions);
+
+                  // Show enhanced network error notification
+                  showNotification('Sin conexión - No se pudo cargar la configuración', 'error', 8000, errorDetails, suggestions);
+              }
+          });
+
+          formContainer.addEventListener('click', e => {
+              const listId = e.target.dataset.addItem;
+              if (listId) {
+                  const listContainer = document.getElementById(listId);
+                  const newItem = document.createElement('div');
+                  newItem.className = 'flex items-center gap-2 p-2 border-b border-slate-200 dark:border-slate-700';
+                  if (listId === 'gastos-list') {
+                      newItem.innerHTML = `<input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="descripcion" placeholder="Descripción"><input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="monto" placeholder="Monto"><button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button>`;
+                  } else {
+                      newItem.innerHTML = `<input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="text" placeholder="Nuevo item"><button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button>`;
+                  }
+                  listContainer.appendChild(newItem);
+              }
+              // MEJORA: El listener para eliminar ahora está en el contenedor
+              if (e.target.matches('[data-remove-item]')) {
+                  e.target.closest('.flex').remove();
+              }
+          });
+
+          document.getElementById('btn-cerrar-modal').addEventListener('click', () => modal.classList.add('hidden'));
+
+          document.getElementById('btn-guardar-generar').addEventListener('click', async (e) => {
+              const newConfig = {
+                  titulo_documento: `Presupuesto mensual de ${document.getElementById('config-mes').value}`,
+                  mes_nombre: document.getElementById('config-mes').value,
+                  mes_anterior: document.getElementById('config-mes-anterior').value,
+                  mensualidad_anterior_monto: document.getElementById('config-monto-anterior').value,
+                  gastos_mes_anterior: Array.from(document.getElementById('gastos-list').children).map(item => ({
+                      descripcion: item.querySelector('[data-list-key="descripcion"]').value,
+                      monto: item.querySelector('[data-list-key="monto"]').value
+                  })),
+                  considerandos_adicionales: Array.from(document.getElementById('considerandos-list').children).map(item => item.querySelector('[data-list-key="text"]').value),
+                  articulos: Array.from(document.getElementById('articulos-list').children).map(item => item.querySelector('[data-list-key="text"]').value),
+                  anexo: {} // Se mantiene simple, el backend podría añadir más lógica si es necesario
+              };
+
+              const button = e.target;
+              const modal = document.getElementById('modal-resolucion');
+
+              // Show loading overlay for the entire modal
+              const loadingOverlay = showLoadingOverlay('Generando resolución PDF...', true);
+
+              // Set button loading state
+              setButtonLoading(button, true, 'Guardando configuración...');
+
+              // Show progress bar in terminal
+              const terminalContainer = document.getElementById('terminal-output').parentElement;
+              const progressBar = showProgressBar(terminalContainer, 60000, 'Generando resolución PDF');
+
+              // Set timeout for PDF generation (longer timeout)
+              const timeoutId = setTimeout(() => {
+                  printToTerminal('⚠ La generación de PDF está tomando más tiempo del esperado...', 'warning',
+                      null,
+                      ['La compilación de LaTeX puede ser lenta', 'El proceso continuará en segundo plano']
+                  );
+                  showNotification('PDF en proceso - Esto puede tomar varios minutos', 'warning', 10000);
+              }, 45000);
+
+              try {
+                  printToTerminal('Iniciando generación de resolución PDF...', 'info');
+
+                  // Save configuration first
+                  const saveResponse = await fetch('/save-config', {
+                      method: 'POST',
+                      headers: { 'Content-Type': 'application/json' },
+                      body: JSON.stringify(newConfig, null, 2)
+                  });
+                  const saveData = await saveResponse.json();
+
+                  if (saveResponse.ok) {
+                      const message = saveData.message || saveData.salida || 'Configuración guardada exitosamente';
+                      printToTerminal(message, 'success');
+
+                      // Update loading state for PDF generation
+                      setButtonLoading(button, true, 'Generando PDF...');
+                      printToTerminal('Compilando documento LaTeX...', 'info');
+
+                      const pdfResponse = await fetch('/generar-pdf', {
+                          method: 'POST',
+                          headers: { 'Content-Type': 'application/json' },
+                          body: JSON.stringify({
+                              titulo: newConfig.titulo_documento,
+                              mes_nombre: newConfig.mes_nombre,
+                              mes_anterior: newConfig.mes_anterior,
+                              mensualidad_anterior_monto: newConfig.mensualidad_anterior_monto,
+                              gastos_mes_anterior: newConfig.gastos_mes_anterior,
+                              considerandos_adicionales: newConfig.considerandos_adicionales,
+                              articulos: newConfig.articulos
+                          })
+                      });
+
+                      clearTimeout(timeoutId);
+                      const pdfData = await pdfResponse.json();
+
+                      if (pdfResponse.ok && pdfData.success) {
+                          const pdfMessage = pdfData.message || pdfData.salida || 'PDF generado exitosamente';
+                          printToTerminal(pdfMessage, 'success');
+
+                          // Show enhanced success notification for PDF generation
+                          showNotification('✓ Resolución PDF generada exitosamente', 'success', 6000);
+
+                          // Show PDF generation details if available
+                          if (pdfData.data) {
+                              if (pdfData.data.pdf_path) {
+                                  printToTerminal(`  📄 Archivo PDF: ${pdfData.data.pdf_path}`, 'info');
+                              }
+                              if (pdfData.data.filename) {
+                                  printToTerminal(`  📝 Nombre: ${pdfData.data.filename}`, 'info');
+                              }
+                              if (pdfData.data.tex_path) {
+                                  printToTerminal(`  📋 Archivo LaTeX: ${pdfData.data.tex_path}`, 'info');
+                              }
+                          }
+
+                          // Close modal on success
+                          setTimeout(() => {
+                              modal.classList.add('hidden');
+                          }, 1000);
+
+                      } else {
+                          // Enhanced PDF error handling with new backend format
+                          const pdfMessage = pdfData.message || pdfData.salida || pdfData.error || 'Error generando PDF';
+                          const errorCode = pdfData.error_code ? ` (${pdfData.error_code})` : '';
+                          printToTerminal(pdfMessage + errorCode, 'error', pdfData.details, pdfData.suggestions);
+
+                          // Show enhanced error notification for PDF generation
+                          showNotification('Error al generar PDF', 'error', 10000, pdfData.details, pdfData.suggestions);
+                      }
+
+                  } else {
+                      // Enhanced save error handling with new backend format
+                      const message = saveData.message || saveData.error || 'Error guardando configuración';
+                      const errorCode = saveData.error_code ? ` (${saveData.error_code})` : '';
+                      printToTerminal(message + errorCode, 'error', saveData.details, saveData.suggestions);
+
+                      // Show enhanced error notification for save operation
+                      showNotification('Error al guardar configuración', 'error', 8000, saveData.details, saveData.suggestions);
+                  }
+
+              } catch (networkError) {
+                  clearTimeout(timeoutId);
+
+                  // Enhanced network error handling
+                  if (networkError.name === 'AbortError') {
+                      printToTerminal('Operación cancelada por tiempo de espera', 'error',
+                          { timeout: '90 segundos', operation: 'PDF Generation' },
+                          ['La generación de PDF tomó demasiado tiempo', 'Verifique la instalación de LaTeX', 'Intente con un documento más simple']
+                      );
+                      showNotification('Generación de PDF cancelada - Tiempo agotado', 'error', 12000);
+                  } else if (networkError.name === 'SyntaxError') {
+                      printToTerminal('Error de formato en la respuesta del servidor', 'error',
+                          { error: networkError.message },
+                          ['Verifique que el servidor esté funcionando correctamente', 'Revise los logs del servidor']
+                      );
+                      showNotification('Error del servidor - Respuesta inválida', 'error', 8000);
+                  } else {
+                      printToTerminal(`Error de conexión: ${networkError.message}`, 'error',
+                          { error: networkError.message },
+                          ['Verifique la conexión con el servidor', 'Intente la operación nuevamente']
+                      );
+                      showNotification('Error de conexión - Intente nuevamente', 'error', 8000);
+                  }
+              } finally {
+                  // Clean up all loading states
+                  setButtonLoading(button, false);
+                  hideLoadingOverlay();
+                  if (progressBar && progressBar.cleanup) {
+                      progressBar.cleanup();
+                  }
+              }
+          });
+      });
     </script>
-</body>
+  </body>
 </html>

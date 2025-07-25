@@ -1,0 +1,190 @@
+2025-07-24 18:43:46 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 18:43:46 - peco.test_module - INFO - test_services.py:97 - Test info message
+2025-07-24 18:43:46 - peco.test_module - WARNING - test_services.py:98 - Test warning message
+2025-07-24 19:29:07 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:29:41 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:29:41 - peco.services.data_manager - INFO - data_manager.py:44 - DataManager initialized
+2025-07-24 19:29:41 - peco.services.data_manager - INFO - data_manager.py:59 - Registering expense: 1500.0 ARS, category: Prueba
+2025-07-24 19:29:41 - peco.services.data_manager - INFO - data_manager.py:87 - Expense registered successfully: 2025-07-24, Prueba, 1500.0
+2025-07-24 19:29:41 - peco.__main__ - INFO - registrar_gasto.py:30 - Expense registered successfully: Prueba - $1,500.00
+2025-07-24 19:30:55 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:30:55 - peco.services.data_manager - INFO - data_manager.py:44 - DataManager initialized
+2025-07-24 19:30:55 - peco.services.data_manager - INFO - data_manager.py:59 - Registering expense: -100.0 ARS, category: Test
+2025-07-24 19:30:55 - peco.__main__ - ERROR - registrar_gasto.py:33 - Failed to register expense: El monto debe ser mayor a 0
+2025-07-24 19:31:04 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:31:15 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:31:15 - peco.services.data_manager - INFO - data_manager.py:44 - DataManager initialized
+2025-07-24 19:31:15 - peco.services.data_manager - INFO - data_manager.py:59 - Registering expense: 100.0 ARS, category:    
+2025-07-24 19:31:15 - peco.__main__ - ERROR - registrar_gasto.py:33 - Failed to register expense: La categoría es requerida
+2025-07-24 19:37:07 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:37:28 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:37:28 - peco.services.data_manager - INFO - data_manager.py:44 - DataManager initialized
+2025-07-24 19:37:28 - peco.services.data_manager - INFO - data_manager.py:121 - Registering investment: TEST, Compra, 1000.0 ARS
+2025-07-24 19:37:29 - peco.services.data_manager - INFO - data_manager.py:152 - Investment registered successfully: 2025-07-24, TEST, Compra, 1000.0
+2025-07-24 19:37:29 - peco - INFO - registrar_inversion.py:29 - Investment registered successfully: TEST - Compra - $1,000.00
+2025-07-24 19:37:59 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:38:34 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:38:34 - peco.services.data_manager - INFO - data_manager.py:44 - DataManager initialized
+2025-07-24 19:38:34 - peco.services.data_manager - INFO - data_manager.py:121 - Registering investment: TEST, Compra, -1000.0 ARS
+2025-07-24 19:38:34 - peco - ERROR - registrar_inversion.py:32 - Failed to register investment: El monto debe ser mayor a 0
+2025-07-24 19:42:29 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:42:29 - peco.generar_resolucion - INFO - generar_resolucion.py:34 - Configuration loaded successfully from config_mes.json
+2025-07-24 19:42:29 - peco.generar_resolucion - INFO - generar_resolucion.py:59 - Resolution code generated: r24eVIIs25
+2025-07-24 19:42:30 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:42:30 - peco.services.pdf_generator - INFO - pdf_generator.py:317 - Starting PDF generation for: r24eVIIs25 - Presupuesto mensual de diciembre
+2025-07-24 19:42:30 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:42:30 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.tex
+2025-07-24 19:43:30 - peco.services.pdf_generator - ERROR - pdf_generator.py:171 - LaTeX compilation timed out
+2025-07-24 19:43:30 - peco.generar_resolucion - ERROR - generar_resolucion.py:152 - PDF generation failed: [LATEX_ERROR] LaTeX compilation timed out after 60 seconds
+2025-07-24 19:45:39 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:45:39 - peco.generar_resolucion - INFO - generar_resolucion.py:34 - Configuration loaded successfully from config_mes.json
+2025-07-24 19:45:39 - peco.generar_resolucion - INFO - generar_resolucion.py:59 - Resolution code generated: r24eVIIs25
+2025-07-24 19:45:39 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:45:39 - peco.services.pdf_generator - INFO - pdf_generator.py:317 - Starting PDF generation for: r24eVIIs25 - Presupuesto mensual de diciembre
+2025-07-24 19:45:39 - peco.services.pdf_generator - INFO - pdf_generator.py:606 - Copied template resources: logo.png, firma.png
+2025-07-24 19:45:39 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:45:39 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.tex
+2025-07-24 19:46:39 - peco.services.pdf_generator - ERROR - pdf_generator.py:171 - LaTeX compilation timed out
+2025-07-24 19:46:39 - peco.generar_resolucion - ERROR - generar_resolucion.py:152 - PDF generation failed: [LATEX_ERROR] LaTeX compilation timed out after 60 seconds
+2025-07-24 19:47:05 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:47:05 - peco.generar_resolucion - INFO - generar_resolucion.py:34 - Configuration loaded successfully from config_mes.json
+2025-07-24 19:47:05 - peco.generar_resolucion - INFO - generar_resolucion.py:59 - Resolution code generated: r24eVIIs25
+2025-07-24 19:47:06 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:47:06 - peco.services.pdf_generator - INFO - pdf_generator.py:317 - Starting PDF generation for: r24eVIIs25 - Presupuesto mensual de diciembre
+2025-07-24 19:47:06 - peco.services.pdf_generator - INFO - pdf_generator.py:606 - Copied template resources: logo.png, firma.png
+2025-07-24 19:47:06 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:47:06 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.tex
+2025-07-24 19:47:07 - peco.services.pdf_generator - ERROR - pdf_generator.py:164 - PDF compilation failed. Return code: 1
+2025-07-24 19:47:07 - peco.services.pdf_generator - ERROR - pdf_generator.py:165 - Stdout: This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+
+(C:/Users/nico/Desktop/PECO/01_Resoluciones/r24eVIIs25 - Presupuesto mensual de
+ diciembre.tex
+LaTeX2e <2023-11-01> patch level 1
+L3 programming layer <2024-01-04>
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2023/05/17 v1.4n Standard LaTeX document class
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo))
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+*************************************
+* Local config file bblopts.cfg used
+*
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/babel-spanish\spanish.ld
+f))
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/es\babel-
+spanish.tex)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
+g)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def)
+)) (C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/parskip\parskip.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty)
+) (C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty)
+) (C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdft
+ex.def)
+(C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de
+ diciembre.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mki
+i
+[Loading MPS to PDF converter (version 2006.09.02).]
+)
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-ba
+se.sty
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cf
+g))
+
+LaTeX Warning: File `../05_Templates_y_Recursos/logo.png' not found on input li
+ne 16.
+
+
+! Package pdftex.def Error: File `../05_Templates_y_Recursos/logo.png' not foun
+d: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.16 ....5cm]{../05_Templates_y_Recursos/logo.png}
+                                                  
+(C:\Users\nico\AppData\Local\Programs\MiKTeX\tex/latex/base\omscmr.fd) [1{C:/Us
+ers/nico/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+Overfull \hbox (0.43109pt too wide) in paragraph at lines 78--81
+\OT1/cmr/m/n/12 ci^^Son por lle-ga-da tar-de (\OMS/cmsy/m/n/12 n\OT1/cmr/m/n/12
+ textbf\OMS/cmsy/m/n/12 fn\TS1/cmr/m/n/12 $\OT1/cmr/m/n/12 2.500 ARS\OMS/cmsy/m
+/n/12 g\OT1/cmr/m/n/12 ) ser^^Sa des-con-ta-da del mon-to fi-nal. \OMS/cmsy/m/n
+/12 n\OT1/cmr/m/n/12 end\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 itemize\OMS/cmsy/m/n/
+12 g
+
+LaTeX Warning: File `../05_Templates_y_Recursos/firma.png' not found on input l
+ine 91.
+
+
+! Package pdftex.def Error: File `../05_Templates_y_Recursos/firma.png' not fou
+nd: using draft setting.
+
+See the pdftex.def package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.91 ...2cm]{../05_Templates_y_Recursos/firma.png}
+                                                  
+[2]
+(C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de
+ diciembre.aux) )
+(see the transcript file for additional information) <C:\Users\nico\AppData\Loc
+al\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1200.pk> <C:\Users\nico\AppDat
+a\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcbx1200.pk><C:/Users/nico/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users
+/nico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr12.pfb><C
+:/Users/nico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy1
+0.pfb><C:/Users/nico/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/
+cm/cmtt12.pfb>
+Output written on "C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Pres
+upuesto mensual de diciembre.pdf" (2 pages, 58458 bytes).
+Transcript written on "C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - 
+Presupuesto mensual de diciembre.log".
+
+2025-07-24 19:47:07 - peco.services.pdf_generator - ERROR - pdf_generator.py:166 - Stderr: pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+
+2025-07-24 19:47:07 - peco.generar_resolucion - ERROR - generar_resolucion.py:152 - PDF generation failed: PDF compilation failed: pdflatex: major issue: So far, you have not checked for MiKTeX updates.
+
+2025-07-24 19:47:54 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:47:54 - peco.generar_resolucion - INFO - generar_resolucion.py:34 - Configuration loaded successfully from config_mes.json
+2025-07-24 19:47:54 - peco.generar_resolucion - INFO - generar_resolucion.py:59 - Resolution code generated: r24eVIIs25
+2025-07-24 19:47:55 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:47:55 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r24eVIIs25 - Presupuesto mensual de diciembre
+2025-07-24 19:47:55 - peco.services.pdf_generator - INFO - pdf_generator.py:612 - Copied template resources: logo.png, firma.png
+2025-07-24 19:47:55 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:47:55 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.tex
+2025-07-24 19:47:56 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.pdf
+2025-07-24 19:47:56 - peco.services.pdf_generator - INFO - pdf_generator.py:385 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.pdf
+2025-07-24 19:47:56 - peco.services.pdf_generator - INFO - pdf_generator.py:475 - Cleaned temporary files: r24eVIIs25 - Presupuesto mensual de diciembre.aux, r24eVIIs25 - Presupuesto mensual de diciembre.log
+2025-07-24 19:47:56 - peco.generar_resolucion - INFO - generar_resolucion.py:106 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.pdf
+2025-07-24 19:52:04 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250724.log
+2025-07-24 19:52:04 - peco.generar_resolucion - INFO - generar_resolucion.py:34 - Configuration loaded successfully from config_mes.json
+2025-07-24 19:52:04 - peco.generar_resolucion - INFO - generar_resolucion.py:59 - Resolution code generated: r24eVIIs25
+2025-07-24 19:52:04 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:52:04 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r24eVIIs25 - Presupuesto mensual de diciembre
+2025-07-24 19:52:04 - peco.services.pdf_generator - INFO - pdf_generator.py:612 - Copied template resources: logo.png, firma.png
+2025-07-24 19:52:05 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-24 19:52:05 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.tex
+2025-07-24 19:52:06 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.pdf
+2025-07-24 19:52:06 - peco.services.pdf_generator - INFO - pdf_generator.py:385 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.pdf
+2025-07-24 19:52:06 - peco.services.pdf_generator - INFO - pdf_generator.py:475 - Cleaned temporary files: r24eVIIs25 - Presupuesto mensual de diciembre.aux, r24eVIIs25 - Presupuesto mensual de diciembre.log
+2025-07-24 19:52:06 - peco.generar_resolucion - INFO - generar_resolucion.py:106 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r24eVIIs25 - Presupuesto mensual de diciembre.pdf

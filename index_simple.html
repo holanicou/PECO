@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PECO - Panel de Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-8">
+    <div class="max-w-4xl mx-auto">
+        <h1 class="text-3xl font-bold text-blue-600 mb-8">Panel de Control PECO</h1>
+        
+        <!-- Registrar Gasto -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Registrar Gasto</h2>
+            <form id="form-gasto" class="space-y-4">
+                <input type="number" step="0.01" id="monto" placeholder="Monto" class="w-full p-2 border rounded" required>
+                <input type="text" id="categoria" placeholder="Categoría" class="w-full p-2 border rounded" required>
+                <input type="text" id="descripcion" placeholder="Descripción" class="w-full p-2 border rounded" required>
+                <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Registrar Gasto</button>
+            </form>
+        </div>
+
+        <!-- Registrar Inversión -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Registrar Inversión</h2>
+            <form id="form-inversion" class="space-y-4">
+                <input type="text" id="activo" placeholder="Activo (ej: AAPL)" class="w-full p-2 border rounded" required>
+                <select id="tipo" class="w-full p-2 border rounded" required>
+                    <option value="Compra">Compra</option>
+                    <option value="Venta">Venta</option>
+                </select>
+                <input type="number" step="0.01" id="monto-inv" placeholder="Monto" class="w-full p-2 border rounded" required>
+                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600">Registrar Inversión</button>
+            </form>
+        </div>
+
+        <!-- Análisis -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+            <h2 class="text-xl font-semibold mb-4">Análisis Mensual</h2>
+            <button id="btn-analizar" class="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-600">Generar Análisis</button>
+        </div>
+
+        <!-- Terminal de Salida -->
+        <div class="bg-black text-green-400 p-4 rounded-lg font-mono text-sm h-64 overflow-y-auto">
+            <div id="terminal"></div>
+        </div>
+    </div>
+
+    <script>
+        const terminal = document.getElementById('terminal');
+        
+        function log(message, type = 'info') {
+            const div = document.createElement('div');
+            const color = type === 'error' ? 'text-red-400' : type === 'success' ? 'text-green-400' : 'text-blue-400';
+            div.className = color;
+            div.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+            terminal.appendChild(div);
+            terminal.scrollTop = terminal.scrollHeight;
+        }
+
+        async function enviarComando(comando, args) {
+            try {
+                log(`Enviando comando: ${comando}`, 'info');
+                const response = await fetch('/ejecutar', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ comando, args })
+                });
+                
+                const data = await response.json();
+                
+                if (data.success) {
+                    log(data.message || data.salida, 'success');
+                } else {
+                    log(data.message || data.salida || 'Error desconocido', 'error');
+                }
+                
+                return data;
+            } catch (error) {
+                log(`Error: ${error.message}`, 'error');
+                return { success: false, message: error.message };
+            }
+        }
+
+        // Registrar Gasto
+        document.getElementById('form-gasto').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const monto = document.getElementById('monto').value;
+            const categoria = document.getElementById('categoria').value;
+            const desc = document.getElementById('descripcion').value;
+            
+            await enviarComando('registrar', { monto, categoria, desc });
+            e.target.reset();
+        });
+
+        // Registrar Inversión
+        document.getElementById('form-inversion').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const activo = document.getElementById('activo').value;
+            const tipo = document.getElementById('tipo').value;
+            const monto = document.getElementById('monto-inv').value;
+            
+            await enviarComando('invertir', { activo, tipo, monto });
+            e.target.reset();
+        });
+
+        // Análisis
+        document.getElementById('btn-analizar').addEventListener('click', async () => {
+            await enviarComando('analizar', {});
+        });
+
+        // Mensaje inicial
+        log('Sistema PECO iniciado correctamente');
+        log('Listo para recibir comandos...');
+    </script>
+</body>
+</html>

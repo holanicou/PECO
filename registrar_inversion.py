@@ -1,52 +1,53 @@
 # -*- coding: utf-8 -*-
-import os
-import pandas as pd
-from datetime import datetime
 import argparse
+from datetime import datetime
+from services.data_manager import DataManager
+from services.exceptions import PECOError
+from services.logging_config import setup_logging
 
-# --- CONFIGURACIÓN ---
-RUTA_TRACKERS = "03_Trackers"
-NOMBRE_XLSX = "inversiones.xlsx"
-RUTA_XLSX = os.path.join(RUTA_TRACKERS, NOMBRE_XLSX)
+# Setup logging
+logger = setup_logging("INFO")
 
-# --- SETUP DEL PARSER DE ARGUMENTOS ---
-parser = argparse.ArgumentParser(description="Registra una nueva inversion en el archivo de inversiones.")
-parser.add_argument("-a", "--activo", type=str, required=True, help="El ticker o nombre del activo. Ej: SPY, AAPL")
-parser.add_argument("-t", "--tipo", type=str, required=True, choices=['Compra', 'Venta'], help="El tipo de operacion: Compra o Venta.")
-parser.add_argument("-m", "--monto", type=float, required=True, help="El monto de la operacion en ARS.")
-args = parser.parse_args()
+def main(activo, tipo, monto):
+    """
+    Registra una nueva inversión usando el DataManager service.
+    """
+    try:
+        # Instantiate DataManager service
+        data_manager = DataManager()
+        
+        # Register investment using service layer
+        result = data_manager.register_investment(activo, tipo, monto)
+        
+        if result.success:
+            fecha = datetime.now().strftime("%Y-%m-%d")
+            print("\n[OK] Inversion registrada con exito!")
+            print(f"   - Fecha: {fecha}")
+            print(f"   - Activo: {activo}")
+            print(f"   - Tipo: {tipo}")
+            print(f"   - Monto: ${monto:,.2f} ARS")
+            logger.info(f"Investment registered successfully: {activo} - {tipo} - ${monto:,.2f}")
+        else:
+            print(f"\n[ERROR] {result.message}")
+            logger.error(f"Failed to register investment: {result.message}")
+            if result.error_code:
+                print(f"   Codigo de error: {result.error_code}")
 
-# --- LÓGICA PRINCIPAL ---
-try:
-    fecha = datetime.now().strftime("%Y-%m-%d")
-    nueva_inversion = pd.DataFrame([{
-        "Fecha": fecha,
-        "Activo": args.activo,
-        "Tipo": args.tipo,
-        "Monto_ARS": args.monto
-    }])
+    except PECOError as e:
+        print(f"\n[ERROR] {e.message}")
+        if e.error_code:
+            print(f"   Codigo de error: {e.error_code}")
+        logger.error(f"PECO Error in investment registration: {e.message}", extra={'error_code': e.error_code})
+    except Exception as e:
+        print(f"\n[ERROR] Ocurrio un error inesperado: {e}")
+        logger.error(f"Unexpected error in investment registration: {e}", exc_info=True)
 
-    # Verificar si el archivo existe para no sobreescribir los encabezados
-    if os.path.exists(RUTA_XLSX):
-        # Leer el archivo existente
-        df_existente = pd.read_excel(RUTA_XLSX)
-        # Concatenar el nuevo registro
-        df_actualizado = pd.concat([df_existente, nueva_inversion], ignore_index=True)
-    else:
-        # Si el archivo no existe, el nuevo dataframe es el archivo completo
-        df_actualizado = nueva_inversion
-        # Asegurarse de que la carpeta de trackers exista
-        if not os.path.exists(RUTA_TRACKERS):
-            os.makedirs(RUTA_TRACKERS)
-
-    # Guardar el DataFrame actualizado en el archivo Excel
-    df_actualizado.to_excel(RUTA_XLSX, index=False)
-
-    print("\n[OK] Inversion registrada con exito!")
-    print(f"   - Fecha: {fecha}")
-    print(f"   - Activo: {args.activo}")
-    print(f"   - Tipo: {args.tipo}")
-    print(f"   - Monto: ${args.monto:,.2f} ARS")
-
-except Exception as e:
-    print(f"\n[ERROR] Ocurrio un error inesperado: {e}")
+if __name__ == "__main__":
+    # --- SETUP DEL PARSER DE ARGUMENTOS ---
+    parser = argparse.ArgumentParser(description="Registra una nueva inversion en el archivo de inversiones.")
+    parser.add_argument("-a", "--activo", type=str, required=True, help="El ticker o nombre del activo. Ej: SPY, AAPL")
+    parser.add_argument("-t", "--tipo", type=str, required=True, choices=['Compra', 'Venta'], help="El tipo de operacion: Compra o Venta.")
+    parser.add_argument("-m", "--monto", type=float, required=True, help="El monto de la operacion en ARS.")
+    args = parser.parse_args()
+    
+    main(args.activo, args.tipo, args.monto)
