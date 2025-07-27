@@ -425,33 +425,42 @@ class SystemChecker:
         return result
     
     def _get_default_config_mes(self) -> str:
-        """Get default content for config_mes.json."""
-        from datetime import datetime, timedelta
+        """Get default content for config_mes.json using the standardized schema."""
+        from datetime import datetime
         current_date = datetime.now()
-        previous_month = (current_date.replace(day=1) - timedelta(days=1))
+        
+        # Generate mes_iso in YYYY-MM format
+        mes_iso = current_date.strftime('%Y-%m')
         
         default_config = {
-            "titulo_documento": f"Presupuesto mensual de {current_date.strftime('%B').lower()}",
-            "mes_nombre": current_date.strftime('%B').lower(),
-            "mes_anterior": previous_month.strftime('%B').lower(),
-            "mensualidad_anterior_monto": "0",
-            "gastos_mes_anterior": [
+            "mes_iso": mes_iso,
+            "titulo_base": "Presupuesto mensual",
+            "visto": "La necesidad de cubrir los gastos mensuales y mantener un control financiero.",
+            "considerandos": [
                 {
-                    "descripcion": "Ejemplo de gasto",
-                    "monto": "0"
+                    "tipo": "texto",
+                    "contenido": "Que para el mes actual se proyecta un presupuesto inicial."
+                },
+                {
+                    "tipo": "texto", 
+                    "contenido": "Que se debe mantener un registro detallado de todos los gastos."
+                },
+                {
+                    "tipo": "texto",
+                    "contenido": "Que este es un archivo de configuración generado automáticamente."
                 }
-            ],
-            "considerandos_adicionales": [
-                "Que para el mes actual se proyecta un presupuesto inicial.",
-                "Que se debe mantener un registro detallado de todos los gastos.",
-                "Que este es un archivo de configuración generado automáticamente."
             ],
             "articulos": [
                 "Aprobar el presupuesto mensual correspondiente al mes actual.",
                 "Registrar todos los gastos y movimientos financieros del período.",
                 "Mantener el control y seguimiento de las finanzas personales."
             ],
-            "anexo": {}
+            "anexo": {
+                "titulo": "Detalle del presupuesto mensual solicitado",
+                "items": [],
+                "penalizaciones": [],
+                "nota_final": "El monto final a transferir será ajustado según los adelantos y penalizaciones correspondientes."
+            }
         }
         
         return json.dumps(default_config, indent=2, ensure_ascii=False)
@@ -699,7 +708,7 @@ class SystemChecker:
     
     def _validate_config_mes_json(self, file_path: str) -> bool:
         """
-        Validate the structure of config_mes.json file.
+        Validate the structure of config_mes.json file using the new standardized schema.
         
         Args:
             file_path: Path to the config_mes.json file
@@ -708,15 +717,27 @@ class SystemChecker:
             bool: True if valid, False otherwise
         """
         try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                config_data = json.load(f)
+            from .config_validator import ConfigValidator
             
-            # Check required fields
-            required_fields = [
-                'titulo_documento', 'mes_nombre', 'mes_anterior', 
-                'mensualidad_anterior_monto', 'gastos_mes_anterior',
-                'considerandos_adicionales', 'articulos'
-            ]
+            validator = ConfigValidator()
+            result = validator.validate_and_load_config(file_path)
+            
+            if not result.success:
+                self.logger.warning(f"Configuration validation failed: {result.message}")
+                if result.validation_errors:
+                    for error in result.validation_errors:
+                        self.logger.warning(f"  - {error}")
+                return False
+            
+            if result.warnings:
+                for warning in result.warnings:
+                    self.logger.warning(f"Configuration warning: {warning}")
+            
+            return True
+            
+        except Exception as e:
+            self.logger.warning(f"Error validating config_mes.json structure: {e}")
+            return False
             
             for field in required_fields:
                 if field not in config_data:

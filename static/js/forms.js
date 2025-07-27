@@ -293,34 +293,320 @@ class FormManager {
 
     generateResolutionForm(config) {
         return `
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div>
-                    <label class="block text-sm font-medium mb-2">Título de la Resolución</label>
-                    <input type="text" id="res-titulo" value="${config.titulo || ''}" 
-                           class="input-field" placeholder="Ej: Presupuesto mensual de enero">
+            <div class="space-y-8">
+                <!-- General Data Section -->
+                <div class="bg-gray-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-gray-800">Datos Generales</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Mes (ISO Format)</label>
+                            <input type="month" id="res-mes-iso" value="${config.mes_iso || ''}" 
+                                   class="input-field" required>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Título Base</label>
+                            <input type="text" id="res-titulo-base" value="${config.titulo_base || ''}" 
+                                   class="input-field" placeholder="Ej: Presupuesto mensual" required>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Mes</label>
-                    <input type="text" id="res-mes" value="${config.mes_nombre || ''}" 
-                           class="input-field" placeholder="Ej: enero">
+
+                <!-- VISTO Section -->
+                <div class="bg-blue-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-blue-800">VISTO</h3>
+                    <div>
+                        <label class="block text-sm font-medium mb-2">Contenido del VISTO</label>
+                        <textarea id="res-visto" rows="3" class="input-field" 
+                                  placeholder="Descripción de la necesidad o situación que motiva la resolución..."
+                                  required>${config.visto || ''}</textarea>
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Mes Anterior</label>
-                    <input type="text" id="res-mes-anterior" value="${config.mes_anterior || ''}" 
-                           class="input-field" placeholder="Ej: diciembre">
+
+                <!-- CONSIDERANDO Section -->
+                <div class="bg-green-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-green-800">CONSIDERANDO</h3>
+                    <div id="considerandos-container">
+                        ${this.createListItems(config.considerandos || [], 'considerandos')}
+                    </div>
+                    <button type="button" onclick="window.formManager.addListItem('considerandos-container', 'considerandos')" 
+                            class="mt-3 px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700 transition-colors">
+                        + Agregar Considerando
+                    </button>
                 </div>
-                <div>
-                    <label class="block text-sm font-medium mb-2">Año</label>
-                    <input type="number" id="res-año" value="${config.año || new Date().getFullYear()}" 
-                           class="input-field">
+
+                <!-- ARTICULOS Section -->
+                <div class="bg-yellow-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-yellow-800">ARTÍCULOS</h3>
+                    <div id="articulos-container">
+                        ${this.createListItems(config.articulos || [], 'articulos')}
+                    </div>
+                    <button type="button" onclick="window.formManager.addListItem('articulos-container', 'articulos')" 
+                            class="mt-3 px-4 py-2 bg-yellow-600 text-white rounded hover:bg-yellow-700 transition-colors">
+                        + Agregar Artículo
+                    </button>
                 </div>
-            </div>
-            <div class="mt-6">
-                <label class="block text-sm font-medium mb-2">Contenido Adicional</label>
-                <textarea id="res-contenido" rows="4" class="input-field" 
-                          placeholder="Contenido adicional para la resolución...">${config.contenido || ''}</textarea>
+
+                <!-- ANEXO Section -->
+                <div class="bg-purple-50 p-4 rounded-lg">
+                    <h3 class="text-lg font-semibold mb-4 text-purple-800">ANEXO</h3>
+                    <div class="space-y-4">
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Título del Anexo</label>
+                            <input type="text" id="res-anexo-titulo" value="${config.anexo?.titulo || ''}" 
+                                   class="input-field" placeholder="Ej: Detalle del presupuesto mensual solicitado">
+                        </div>
+                        
+                        <div>
+                            <h4 class="text-md font-medium mb-2 text-purple-700">Items del Anexo</h4>
+                            <div id="anexo-items-container">
+                                ${this.createAnexoItems(config.anexo?.items || [], 'items')}
+                            </div>
+                            <button type="button" onclick="window.formManager.addAnexoItem('anexo-items-container', 'items')" 
+                                    class="mt-2 px-3 py-1 bg-purple-600 text-white rounded text-sm hover:bg-purple-700 transition-colors">
+                                + Agregar Item
+                            </button>
+                        </div>
+
+                        <div>
+                            <h4 class="text-md font-medium mb-2 text-purple-700">Penalizaciones</h4>
+                            <div id="anexo-penalizaciones-container">
+                                ${this.createAnexoItems(config.anexo?.penalizaciones || [], 'penalizaciones')}
+                            </div>
+                            <button type="button" onclick="window.formManager.addAnexoItem('anexo-penalizaciones-container', 'penalizaciones')" 
+                                    class="mt-2 px-3 py-1 bg-red-600 text-white rounded text-sm hover:bg-red-700 transition-colors">
+                                + Agregar Penalización
+                            </button>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium mb-2">Nota Final</label>
+                            <textarea id="res-anexo-nota" rows="2" class="input-field" 
+                                      placeholder="Nota final del anexo...">${config.anexo?.nota_final || ''}</textarea>
+                        </div>
+                    </div>
+                </div>
             </div>
         `;
+    }
+
+    createListItems(items, type) {
+        if (!items || items.length === 0) {
+            return this.getEmptyListItem(type);
+        }
+
+        return items.map((item, index) => {
+            if (type === 'considerandos') {
+                return this.createConsiderandoItem(item, index);
+            } else if (type === 'articulos') {
+                return this.createArticuloItem(item, index);
+            }
+        }).join('');
+    }
+
+    createConsiderandoItem(item, index) {
+        const isGastoAnterior = item.tipo === 'gasto_anterior';
+        return `
+            <div class="considerando-item border border-gray-200 p-3 rounded mb-3 bg-white">
+                <div class="flex justify-between items-start mb-2">
+                    <label class="text-sm font-medium">Considerando ${index + 1}</label>
+                    <button type="button" onclick="window.formManager.removeListItem(this)" 
+                            class="text-red-600 hover:text-red-800 text-sm">
+                        ✕ Eliminar
+                    </button>
+                </div>
+                <div class="mb-2">
+                    <select class="considerando-tipo input-field text-sm" onchange="window.formManager.toggleConsiderandoType(this)">
+                        <option value="texto" ${!isGastoAnterior ? 'selected' : ''}>Texto</option>
+                        <option value="gasto_anterior" ${isGastoAnterior ? 'selected' : ''}>Gasto Anterior</option>
+                    </select>
+                </div>
+                <div class="considerando-content">
+                    ${isGastoAnterior ? 
+                        `<div class="grid grid-cols-2 gap-2">
+                            <input type="text" class="considerando-descripcion input-field text-sm" 
+                                   placeholder="Descripción" value="${item.descripcion || ''}" required>
+                            <input type="number" class="considerando-monto input-field text-sm" 
+                                   placeholder="Monto" value="${item.monto || ''}" required>
+                         </div>` :
+                        `<textarea class="considerando-contenido input-field text-sm" rows="2" 
+                                   placeholder="Contenido del considerando..." required>${item.contenido || ''}</textarea>`
+                    }
+                </div>
+            </div>
+        `;
+    }
+
+    createArticuloItem(item, index) {
+        return `
+            <div class="articulo-item border border-gray-200 p-3 rounded mb-3 bg-white">
+                <div class="flex justify-between items-start mb-2">
+                    <label class="text-sm font-medium">Artículo ${index + 1}</label>
+                    <button type="button" onclick="window.formManager.removeListItem(this)" 
+                            class="text-red-600 hover:text-red-800 text-sm">
+                        ✕ Eliminar
+                    </button>
+                </div>
+                <textarea class="articulo-contenido input-field text-sm" rows="2" 
+                          placeholder="Contenido del artículo..." required>${item || ''}</textarea>
+            </div>
+        `;
+    }
+
+    createAnexoItems(items, type) {
+        if (!items || items.length === 0) {
+            return this.getEmptyAnexoItem(type);
+        }
+
+        return items.map((item, index) => this.createAnexoItem(item, index, type)).join('');
+    }
+
+    createAnexoItem(item, index, type) {
+        const isNegative = type === 'penalizaciones';
+        return `
+            <div class="anexo-item border border-gray-200 p-3 rounded mb-2 bg-white">
+                <div class="flex justify-between items-start mb-2">
+                    <label class="text-sm font-medium">${isNegative ? 'Penalización' : 'Item'} ${index + 1}</label>
+                    <button type="button" onclick="window.formManager.removeListItem(this)" 
+                            class="text-red-600 hover:text-red-800 text-sm">
+                        ✕ Eliminar
+                    </button>
+                </div>
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" class="anexo-categoria input-field text-sm" 
+                           placeholder="Categoría" value="${item.categoria || ''}" required>
+                    <input type="number" class="anexo-monto input-field text-sm" 
+                           placeholder="Monto${isNegative ? ' (será negativo)' : ''}" 
+                           value="${Math.abs(parseFloat(item.monto) || 0)}" required>
+                </div>
+            </div>
+        `;
+    }
+
+    getEmptyListItem(type) {
+        if (type === 'considerandos') {
+            return this.createConsiderandoItem({ tipo: 'texto', contenido: '' }, 0);
+        } else if (type === 'articulos') {
+            return this.createArticuloItem('', 0);
+        }
+        return '';
+    }
+
+    getEmptyAnexoItem(type) {
+        return this.createAnexoItem({ categoria: '', monto: '' }, 0, type);
+    }
+
+    toggleConsiderandoType(selectElement) {
+        const container = selectElement.closest('.considerando-item');
+        const contentDiv = container.querySelector('.considerando-content');
+        const tipo = selectElement.value;
+        
+        if (tipo === 'gasto_anterior') {
+            contentDiv.innerHTML = `
+                <div class="grid grid-cols-2 gap-2">
+                    <input type="text" class="considerando-descripcion input-field text-sm" 
+                           placeholder="Descripción" required>
+                    <input type="number" class="considerando-monto input-field text-sm" 
+                           placeholder="Monto" required>
+                </div>
+            `;
+        } else {
+            contentDiv.innerHTML = `
+                <textarea class="considerando-contenido input-field text-sm" rows="2" 
+                          placeholder="Contenido del considerando..." required></textarea>
+            `;
+        }
+    }
+
+    addListItem(containerId, key) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const existingItems = container.querySelectorAll(`.${key.slice(0, -1)}-item`);
+        const newIndex = existingItems.length;
+
+        let newItemHtml = '';
+        if (key === 'considerandos') {
+            newItemHtml = this.createConsiderandoItem({ tipo: 'texto', contenido: '' }, newIndex);
+        } else if (key === 'articulos') {
+            newItemHtml = this.createArticuloItem('', newIndex);
+        }
+
+        if (newItemHtml) {
+            container.insertAdjacentHTML('beforeend', newItemHtml);
+            this.updateItemNumbers(container, key);
+            
+            // Focus on the new item's first input
+            const newItem = container.lastElementChild;
+            const firstInput = newItem.querySelector('input, textarea');
+            if (firstInput) {
+                firstInput.focus();
+            }
+        }
+    }
+
+    addAnexoItem(containerId, key) {
+        const container = document.getElementById(containerId);
+        if (!container) return;
+
+        const existingItems = container.querySelectorAll('.anexo-item');
+        const newIndex = existingItems.length;
+        const newItemHtml = this.createAnexoItem({ categoria: '', monto: '' }, newIndex, key);
+
+        container.insertAdjacentHTML('beforeend', newItemHtml);
+        this.updateAnexoItemNumbers(container, key);
+        
+        // Focus on the new item's first input
+        const newItem = container.lastElementChild;
+        const firstInput = newItem.querySelector('input');
+        if (firstInput) {
+            firstInput.focus();
+        }
+    }
+
+    removeListItem(button) {
+        const item = button.closest('.considerando-item, .articulo-item, .anexo-item');
+        const container = item.parentElement;
+        
+        // Don't allow removing the last item
+        const items = container.querySelectorAll('.considerando-item, .articulo-item, .anexo-item');
+        if (items.length <= 1) {
+            window.notificationManager?.warning('Debe mantener al menos un elemento');
+            return;
+        }
+
+        item.remove();
+        
+        // Update numbering
+        if (container.id.includes('considerandos')) {
+            this.updateItemNumbers(container, 'considerandos');
+        } else if (container.id.includes('articulos')) {
+            this.updateItemNumbers(container, 'articulos');
+        } else if (container.id.includes('anexo')) {
+            const key = container.id.includes('penalizaciones') ? 'penalizaciones' : 'items';
+            this.updateAnexoItemNumbers(container, key);
+        }
+    }
+
+    updateItemNumbers(container, key) {
+        const items = container.querySelectorAll(`.${key.slice(0, -1)}-item`);
+        items.forEach((item, index) => {
+            const label = item.querySelector('label');
+            if (label) {
+                const itemType = key === 'considerandos' ? 'Considerando' : 'Artículo';
+                label.textContent = `${itemType} ${index + 1}`;
+            }
+        });
+    }
+
+    updateAnexoItemNumbers(container, key) {
+        const items = container.querySelectorAll('.anexo-item');
+        items.forEach((item, index) => {
+            const label = item.querySelector('label');
+            if (label) {
+                const itemType = key === 'penalizaciones' ? 'Penalización' : 'Item';
+                label.textContent = `${itemType} ${index + 1}`;
+            }
+        });
     }
 
     setupModalEvents(config) {
@@ -349,18 +635,14 @@ class FormManager {
             const modal = document.getElementById('modal-resolucion');
             const btnGuardar = document.getElementById('btn-guardar-generar');
             
-            // Recopilar datos del formulario
-            const data = {
-                titulo: document.getElementById('res-titulo')?.value || '',
-                mes_nombre: document.getElementById('res-mes')?.value || '',
-                mes_anterior: document.getElementById('res-mes-anterior')?.value || '',
-                año: parseInt(document.getElementById('res-año')?.value) || new Date().getFullYear(),
-                contenido: document.getElementById('res-contenido')?.value || ''
-            };
+            // Recopilar datos del formulario con nueva estructura
+            const data = this.collectFormData();
 
-            // Validar datos requeridos
-            if (!data.titulo || !data.mes_nombre) {
-                window.notificationManager?.error('Título y mes son requeridos');
+            // Validar datos del formulario
+            const validation = this.validateResolutionData(data);
+            if (!validation.isValid) {
+                window.notificationManager?.error('Errores en el formulario', 
+                    { errores: validation.errors.join(', ') });
                 return;
             }
 
@@ -386,6 +668,198 @@ class FormManager {
             btnGuardar.disabled = false;
             btnGuardar.innerHTML = 'Guardar y Generar PDF';
         }
+    }
+
+    collectFormData() {
+        // Datos generales
+        const mesIso = document.getElementById('res-mes-iso')?.value || '';
+        const tituloBase = document.getElementById('res-titulo-base')?.value || '';
+        const visto = document.getElementById('res-visto')?.value || '';
+
+        // Recopilar considerandos
+        const considerandos = this.collectConsiderandos();
+
+        // Recopilar artículos
+        const articulos = this.collectArticulos();
+
+        // Recopilar anexo
+        const anexo = this.collectAnexo();
+
+        return {
+            mes_iso: mesIso,
+            titulo_base: tituloBase,
+            visto: visto,
+            considerandos: considerandos,
+            articulos: articulos,
+            anexo: anexo
+        };
+    }
+
+    collectConsiderandos() {
+        const considerandos = [];
+        const items = document.querySelectorAll('#considerandos-container .considerando-item');
+        
+        items.forEach(item => {
+            const tipo = item.querySelector('.considerando-tipo')?.value || 'texto';
+            
+            if (tipo === 'gasto_anterior') {
+                const descripcion = item.querySelector('.considerando-descripcion')?.value || '';
+                const monto = item.querySelector('.considerando-monto')?.value || '';
+                
+                if (descripcion.trim() && monto.trim()) {
+                    considerandos.push({
+                        tipo: 'gasto_anterior',
+                        descripcion: descripcion.trim(),
+                        monto: monto.trim()
+                    });
+                }
+            } else {
+                const contenido = item.querySelector('.considerando-contenido')?.value || '';
+                
+                if (contenido.trim()) {
+                    considerandos.push({
+                        tipo: 'texto',
+                        contenido: contenido.trim()
+                    });
+                }
+            }
+        });
+        
+        return considerandos;
+    }
+
+    collectArticulos() {
+        const articulos = [];
+        const items = document.querySelectorAll('#articulos-container .articulo-item');
+        
+        items.forEach(item => {
+            const contenido = item.querySelector('.articulo-contenido')?.value || '';
+            
+            if (contenido.trim()) {
+                articulos.push(contenido.trim());
+            }
+        });
+        
+        return articulos;
+    }
+
+    collectAnexo() {
+        const anexoTitulo = document.getElementById('res-anexo-titulo')?.value || '';
+        const anexoNota = document.getElementById('res-anexo-nota')?.value || '';
+
+        // Recopilar items del anexo
+        const items = [];
+        const itemElements = document.querySelectorAll('#anexo-items-container .anexo-item');
+        
+        itemElements.forEach(item => {
+            const categoria = item.querySelector('.anexo-categoria')?.value || '';
+            const monto = item.querySelector('.anexo-monto')?.value || '';
+            
+            if (categoria.trim() && monto.trim()) {
+                items.push({
+                    categoria: categoria.trim(),
+                    monto: monto.trim()
+                });
+            }
+        });
+
+        // Recopilar penalizaciones
+        const penalizaciones = [];
+        const penalizacionElements = document.querySelectorAll('#anexo-penalizaciones-container .anexo-item');
+        
+        penalizacionElements.forEach(item => {
+            const categoria = item.querySelector('.anexo-categoria')?.value || '';
+            const monto = item.querySelector('.anexo-monto')?.value || '';
+            
+            if (categoria.trim() && monto.trim()) {
+                // Ensure penalizaciones are negative
+                const montoValue = parseFloat(monto);
+                const finalMonto = montoValue > 0 ? `-${monto}` : monto;
+                
+                penalizaciones.push({
+                    categoria: categoria.trim(),
+                    monto: finalMonto
+                });
+            }
+        });
+
+        return {
+            titulo: anexoTitulo.trim(),
+            items: items,
+            penalizaciones: penalizaciones,
+            nota_final: anexoNota.trim()
+        };
+    }
+
+    validateResolutionData(data) {
+        const errors = [];
+
+        // Validar mes ISO
+        if (!data.mes_iso || data.mes_iso.trim() === '') {
+            errors.push('El mes en formato ISO es requerido');
+        } else {
+            // Validar formato ISO (YYYY-MM)
+            const isoRegex = /^\d{4}-\d{2}$/;
+            if (!isoRegex.test(data.mes_iso)) {
+                errors.push('El mes debe estar en formato ISO (YYYY-MM)');
+            }
+        }
+
+        if (!data.titulo_base || data.titulo_base.trim() === '') {
+            errors.push('El título base es requerido');
+        }
+
+        if (!data.visto || data.visto.trim() === '') {
+            errors.push('El contenido del VISTO es requerido');
+        }
+
+        // Validar considerandos
+        if (!data.considerandos || data.considerandos.length === 0) {
+            errors.push('Debe incluir al menos un considerando');
+        } else {
+            data.considerandos.forEach((considerando, index) => {
+                if (considerando.tipo === 'gasto_anterior') {
+                    if (!considerando.descripcion || considerando.descripcion.trim() === '') {
+                        errors.push(`Considerando ${index + 1}: La descripción es requerida`);
+                    }
+                    if (!considerando.monto || isNaN(parseFloat(considerando.monto)) || parseFloat(considerando.monto) <= 0) {
+                        errors.push(`Considerando ${index + 1}: El monto debe ser un número mayor a 0`);
+                    }
+                } else {
+                    if (!considerando.contenido || considerando.contenido.trim() === '') {
+                        errors.push(`Considerando ${index + 1}: El contenido es requerido`);
+                    }
+                }
+            });
+        }
+
+        // Validar artículos
+        if (!data.articulos || data.articulos.length === 0) {
+            errors.push('Debe incluir al menos un artículo');
+        }
+
+        // Validar anexo items (montos numéricos)
+        if (data.anexo && data.anexo.items) {
+            data.anexo.items.forEach((item, index) => {
+                if (item.monto && (isNaN(parseFloat(item.monto)) || parseFloat(item.monto) <= 0)) {
+                    errors.push(`Item del anexo ${index + 1}: El monto debe ser un número mayor a 0`);
+                }
+            });
+        }
+
+        // Validar penalizaciones (montos numéricos)
+        if (data.anexo && data.anexo.penalizaciones) {
+            data.anexo.penalizaciones.forEach((penalizacion, index) => {
+                if (penalizacion.monto && isNaN(parseFloat(penalizacion.monto))) {
+                    errors.push(`Penalización ${index + 1}: El monto debe ser un número válido`);
+                }
+            });
+        }
+
+        return {
+            isValid: errors.length === 0,
+            errors: errors
+        };
     }
 
     async saveConfig(data) {

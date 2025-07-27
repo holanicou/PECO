@@ -4,6 +4,7 @@ import os
 from datetime import datetime
 from services.pdf_generator import PDFGenerator
 from services.latex_processor import LaTeXProcessor
+from services.config_validator import ConfigValidator
 from services.exceptions import PECOError, LaTeXError, ConfigurationError
 from services.logging_config import setup_logging, get_logger
 from config import RUTA_CONFIG_JSON, RUTA_RECURSOS, NOMBRE_PLANTILLA_RESOLUCION, RUTA_RESOLUCIONES
@@ -12,56 +13,121 @@ from config import RUTA_CONFIG_JSON, RUTA_RECURSOS, NOMBRE_PLANTILLA_RESOLUCION,
 setup_logging()  # Initialize logging system
 logger = get_logger("generar_resolucion" if __name__ == "__main__" else __name__)
 
-# --- DICCIONARIO PARA MESES EN ROMANO ---
-meses_romanos = {
-    1: "I", 2: "II", 3: "III", 4: "IV", 5: "V", 6: "VI",
-    7: "VII", 8: "VIII", 9: "IX", 10: "X", 11: "XI", 12: "XII"
-}
+
+def check_existing_resolution_today(output_dir: str, current_codigo_res: str) -> dict:
+    """
+    Check if there's already a resolution generated today and return file paths for replacement.
+    
+    Args:
+        output_dir: Directory where resolutions are stored
+        current_codigo_res: Current resolution code being generated
+        
+    Returns:
+        Dictionary with existing file paths or empty dict if none found
+    """
+    if not os.path.exists(output_dir):
+        return {}
+    
+    # Extract day and month from current resolution code (format: rDDeMMsYY)
+    if not current_codigo_res or len(current_codigo_res) < 8:
+        return {}
+    
+    try:
+        # Parse current resolution code to extract day pattern
+        # Format: r{day}e{roman_month}s{year}
+        day_part = current_codigo_res.split('e')[0][1:]  # Remove 'r' and get day
+        month_year_part = current_codigo_res.split('e')[1]  # Get month and year part
+        
+        # Look for files with the same day pattern
+        pattern_prefix = f"r{day_part}e{month_year_part}"
+        
+        existing_files = []
+        for filename in os.listdir(output_dir):
+            if filename.startswith(pattern_prefix) and filename != f"{current_codigo_res} - ":
+                file_path = os.path.join(output_dir, filename)
+                existing_files.append(file_path)
+        
+        if existing_files:
+            # Find the main PDF file
+            pdf_file = None
+            tex_file = None
+            all_files = []
+            
+            for file_path in existing_files:
+                all_files.append(file_path)
+                if file_path.endswith('.pdf'):
+                    pdf_file = file_path
+                elif file_path.endswith('.tex'):
+                    tex_file = file_path
+            
+            return {
+                'pdf_file': pdf_file,
+                'tex_file': tex_file,
+                'all_files': all_files
+            }
+    
+    except Exception as e:
+        logger.warning(f"Error checking for existing resolution: {e}")
+    
+    return {}
+
+
 
 def generar_resolucion():
     """
     Función principal que lee la configuración y genera la resolución PDF
-    usando el PDFGenerator y LaTeXProcessor services.
+    usando el ConfigValidator, PDFGenerator y LaTeXProcessor services.
     """
     print("--- [INFO] Iniciando generador de resoluciones PECO ---")
     
     try:
-        # Load configuration
-        try:
-            with open(RUTA_CONFIG_JSON, 'r', encoding='utf-8') as f:
-                config = json.load(f)
-            print("[OK] Datos de config_mes.json cargados correctamente.")
-            logger.info("Configuration loaded successfully from config_mes.json")
-        except FileNotFoundError:
+        # Initialize configuration validator
+        config_validator = ConfigValidator()
+        
+        # Load and validate configuration using the new validator
+        print("[INFO] Cargando y validando configuración...")
+        validation_result = config_validator.validate_and_load_config(RUTA_CONFIG_JSON)
+        
+        if not validation_result.success:
+            print(f"[ERROR] Validación de configuración falló: {validation_result.message}")
+            if validation_result.validation_errors:
+                print("Errores encontrados:")
+                for error in validation_result.validation_errors:
+                    print(f"  - {error}")
             raise ConfigurationError(
-                f"No se encontró el archivo de configuración: {RUTA_CONFIG_JSON}",
-                "CONFIG_FILE_NOT_FOUND"
+                f"Configuration validation failed: {validation_result.message}",
+                "CONFIG_VALIDATION_FAILED"
             )
-        except json.JSONDecodeError as e:
-            raise ConfigurationError(
-                f"Error al parsear el archivo JSON: {e}",
-                "CONFIG_JSON_INVALID"
-            )
+        
+        config = validation_result.data
+        print("[OK] Configuración cargada y validada correctamente.")
+        
+        if validation_result.warnings:
+            print("Advertencias:")
+            for warning in validation_result.warnings:
+                print(f"  - {warning}")
+        
+        logger.info("Configuration loaded and validated successfully")
 
-        # Generate resolution code and date information
-        try:
-            fecha_actual = datetime.now()
-            dia = fecha_actual.day
-            mes_romano = meses_romanos[fecha_actual.month]
-            año_corto = fecha_actual.strftime('%y')
-            codigo_res = f"r{dia}e{mes_romano}s{año_corto}"
-            nombre_archivo_base = f"{codigo_res} - {config.get('titulo_documento', 'Resolucion')}"
-            
-            # Add generated data to config
-            config['codigo_res'] = codigo_res
-            config['fecha_larga'] = fecha_actual.strftime(f'%d de {config.get("mes_nombre", "mes")} de %Y')
-            
-            logger.info(f"Resolution code generated: {codigo_res}")
-        except KeyError as e:
+        # Process configuration for template rendering
+        print("[INFO] Procesando configuración para plantilla...")
+        processing_result = config_validator.process_configuration_for_template(config)
+        
+        if not processing_result.success:
+            print(f"[ERROR] Procesamiento de configuración falló: {processing_result.message}")
             raise ConfigurationError(
-                f"Falta una clave en el archivo de configuración: {e}",
-                "CONFIG_MISSING_KEY"
+                f"Configuration processing failed: {processing_result.message}",
+                "CONFIG_PROCESSING_FAILED"
             )
+        
+        processed_config = processing_result.data
+        print("[OK] Configuración procesada correctamente.")
+        
+        # Generate filename base from processed config
+        nombre_archivo_base = processed_config.get('titulo_documento', 'Resolucion')
+        
+        logger.info(f"Resolution code generated: {processed_config.get('codigo_res', 'N/A')}")
+        logger.info(f"Configuration processing completed successfully")
 
         # Initialize services
         latex_processor = LaTeXProcessor()
@@ -78,6 +144,21 @@ def generar_resolucion():
         template_path = os.path.join(RUTA_RECURSOS, NOMBRE_PLANTILLA_RESOLUCION)
         output_dir = RUTA_RESOLUCIONES
         
+        # Check for existing resolution from today and handle replacement
+        existing_files = check_existing_resolution_today(output_dir, processed_config.get('codigo_res', ''))
+        if existing_files:
+            print(f"[INFO] Se encontró resolución existente del día de hoy: {os.path.basename(existing_files['pdf_file']) if existing_files['pdf_file'] else 'archivos relacionados'}")
+            print("[INFO] Reemplazando automáticamente...")
+            
+            # Remove existing files
+            for file_path in existing_files['all_files']:
+                try:
+                    if os.path.exists(file_path):
+                        os.remove(file_path)
+                        print(f"[INFO] Archivo eliminado: {os.path.basename(file_path)}")
+                except Exception as e:
+                    print(f"[WARNING] No se pudo eliminar {file_path}: {e}")
+        
         # Validate template file exists
         if not os.path.exists(template_path):
             raise ConfigurationError(
@@ -86,10 +167,10 @@ def generar_resolucion():
                 details={'template_path': template_path, 'expected_location': RUTA_RECURSOS}
             )
 
-        # Generate PDF using service layer with correct method signature
+        # Generate PDF using service layer with processed configuration
         result = pdf_generator.generate_resolution(
             template_path=template_path,
-            data=config,
+            data=processed_config,
             output_dir=output_dir,
             filename_base=nombre_archivo_base
         )

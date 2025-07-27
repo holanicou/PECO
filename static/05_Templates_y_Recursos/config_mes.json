@@ -14,7 +14,7 @@
   ],
   "anexo": {
     "titulo": "Detalle del presupuesto mensual solicitado",
-    "items": [
+    "presupuesto": [
       { "categoria": "Cuota Celular (2/12)", "monto": "42416" },
       { "categoria": "Inversiones CEDEARs", "monto": "50000" },
       { "categoria": "Transporte", "monto": "14000" }

@@ -1,31 +1,88 @@
 # -*- coding: utf-8 -*-
 import argparse
-import subprocess
 import sys
 
 # Import SystemChecker for startup validation
 from services.system_checker import SystemChecker
 from services.logging_config import get_logger
 
+# Direct imports for CLI commands (replacing subprocess calls)
+from analisis_mensual import main as analisis_mensual_main
+from generar_resolucion import generar_resolucion
+from services.data_manager import DataManager
+from services.exceptions import PECOError
+from datetime import datetime
+
 # Initialize logger
 logger = get_logger(__name__)
 
-def ejecutar_script(script_name, args_adicionales=[]):
+def registrar_gasto_main(monto, categoria, desc):
     """
-    Función genérica para ejecutar los otros scripts de Python.
+    Registra un nuevo gasto usando el DataManager service.
     """
-    # sys.executable se asegura de que usemos el mismo Python que está ejecutando PECO.py
-    comando = [sys.executable, script_name] + args_adicionales
     try:
-        # Se ejecuta el subproceso forzando la codificación UTF-8 para la salida
-        resultado = subprocess.run(comando, check=True, capture_output=True, text=True, encoding='utf-8', errors='ignore')
-        return resultado.stdout, resultado.stderr
-    except FileNotFoundError:
-        return f"[ERROR] No se encontro el script '{script_name}'.", ""
-    except subprocess.CalledProcessError as e:
-        return f"[ERROR] El script '{script_name}' termino con un error:\n{e.stdout}\n{e.stderr}", ""
+        # Instantiate DataManager service
+        data_manager = DataManager()
+        
+        # Register expense using service layer
+        result = data_manager.register_expense(monto, categoria, desc)
+        
+        if result.success:
+            fecha = datetime.now().strftime("%Y-%m-%d")
+            print("\n[OK] Gasto registrado con exito!")
+            print(f"   - Fecha: {fecha}")
+            print(f"   - Categoria: {categoria}")
+            print(f"   - Descripcion: {desc}")
+            print(f"   - Monto: ${monto:,.2f} ARS")
+            logger.info(f"Expense registered successfully: {categoria} - ${monto:,.2f}")
+        else:
+            print(f"\n[ERROR] {result.message}")
+            logger.error(f"Failed to register expense: {result.message}")
+            if result.error_code:
+                print(f"   Codigo de error: {result.error_code}")
+
+    except PECOError as e:
+        print(f"\n[ERROR] {e.message}")
+        if e.error_code:
+            print(f"   Codigo de error: {e.error_code}")
+        logger.error(f"PECO Error in expense registration: {e.message}", extra={'error_code': e.error_code})
     except Exception as e:
-        return f"[ERROR] Ocurrio un error inesperado: {e}", ""
+        print(f"\n[ERROR] Ocurrio un error inesperado: {e}")
+        logger.error(f"Unexpected error in expense registration: {e}", exc_info=True)
+
+def registrar_inversion_main(activo, tipo, monto):
+    """
+    Registra una nueva inversión usando el DataManager service.
+    """
+    try:
+        # Instantiate DataManager service
+        data_manager = DataManager()
+        
+        # Register investment using service layer
+        result = data_manager.register_investment(activo, tipo, monto)
+        
+        if result.success:
+            fecha = datetime.now().strftime("%Y-%m-%d")
+            print("\n[OK] Inversion registrada con exito!")
+            print(f"   - Fecha: {fecha}")
+            print(f"   - Activo: {activo}")
+            print(f"   - Tipo: {tipo}")
+            print(f"   - Monto: ${monto:,.2f} ARS")
+            logger.info(f"Investment registered successfully: {activo} - {tipo} - ${monto:,.2f}")
+        else:
+            print(f"\n[ERROR] {result.message}")
+            logger.error(f"Failed to register investment: {result.message}")
+            if result.error_code:
+                print(f"   Codigo de error: {result.error_code}")
+
+    except PECOError as e:
+        print(f"\n[ERROR] {e.message}")
+        if e.error_code:
+            print(f"   Codigo de error: {e.error_code}")
+        logger.error(f"PECO Error in investment registration: {e.message}", extra={'error_code': e.error_code})
+    except Exception as e:
+        print(f"\n[ERROR] Ocurrio un error inesperado: {e}")
+        logger.error(f"Unexpected error in investment registration: {e}", exc_info=True)
 
 # --- CONFIGURACIÓN DEL PARSER PRINCIPAL ---
 parser = argparse.ArgumentParser(
@@ -84,26 +141,33 @@ if __name__ == "__main__":
     
     args = parser.parse_args()
 
-    stdout_output = ""
-    stderr_output = ""
+    try:
+        if args.comando == "registrar":
+            # Call registrar_gasto main function directly
+            logger.info(f"Executing registrar command: monto={args.monto}, categoria={args.categoria}, desc={args.desc}")
+            registrar_gasto_main(args.monto, args.categoria, args.desc)
+        
+        elif args.comando == "invertir":
+            # Call registrar_inversion main function directly
+            logger.info(f"Executing invertir command: activo={args.activo}, tipo={args.tipo}, monto={args.monto}")
+            registrar_inversion_main(args.activo, args.tipo, args.monto)
 
-    if args.comando == "registrar":
-        args_para_script = ["--monto", str(args.monto), "--categoria", args.categoria, "--desc", args.desc]
-        stdout_output, stderr_output = ejecutar_script("registrar_gasto.py", args_para_script)
-    
-    elif args.comando == "invertir":
-        # Lógica para llamar al nuevo script de inversiones
-        args_para_script = ["--activo", args.activo, "--tipo", args.tipo, "--monto", str(args.monto)]
-        stdout_output, stderr_output = ejecutar_script("registrar_inversion.py", args_para_script)
+        elif args.comando == "generar":
+            # Call generar_resolucion function directly
+            logger.info("Executing generar command")
+            generar_resolucion()
 
-    elif args.comando == "generar":
-        stdout_output, stderr_output = ejecutar_script("generar_resolucion.py")
-
-    elif args.comando == "analizar":
-        stdout_output, stderr_output = ejecutar_script("analisis_mensual.py")
-    
-    if stdout_output:
-        print(stdout_output)
-    if stderr_output:
-        print(stderr_output)
+        elif args.comando == "analizar":
+            # Call analisis_mensual main function directly
+            logger.info("Executing analizar command")
+            analisis_mensual_main()
+            
+    except KeyboardInterrupt:
+        logger.info("Command execution interrupted by user")
+        print("\n[INFO] Operación interrumpida por el usuario")
+        sys.exit(1)
+    except Exception as e:
+        logger.error(f"Error executing command '{args.comando}': {e}", exc_info=True)
+        print(f"\n[ERROR] Error ejecutando comando '{args.comando}': {e}")
+        sys.exit(1)
 

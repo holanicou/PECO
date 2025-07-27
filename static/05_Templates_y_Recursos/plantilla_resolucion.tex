@@ -25,7 +25,7 @@
 \vspace{1cm}
 
 \begin{center}
-  \textbf{\large Resolución {{ codigo_res }} – {{ titulo_documento }}}
+  \textbf{\large Resolución {{ codigo_res }} – {{ titulo_base }} de {{ mes_nombre }} {{ anio }}}
 \end{center}
 
 \vspace{0.8cm}
@@ -37,15 +37,12 @@
 
 \textbf{CONSIDERANDO:}
 \begin{itemize}
-  \item Que la mensualidad correspondiente al mes de {{ mes_anterior }} fue de \textbf{\${{ mensualidad_anterior_monto }} ARS}.
-  \item Que dicho monto fue utilizado en los siguientes conceptos:
-    \begin{itemize}
-      {% for gasto in gastos_mes_anterior %}
-      \item {{ gasto.descripcion }}: \textbf{\${{ gasto.monto }}}
-      {% endfor %}
-    \end{itemize}
-  {% for item in considerandos_adicionales %}
-  \item {{ item }}
+  {% for considerando in considerandos %}
+    {% if considerando.tipo == "gasto_anterior" %}
+  \item Que el gasto de {{ considerando.descripcion }} del mes anterior fue de \textbf{\${{ considerando.monto }} ARS}.
+    {% elif considerando.tipo == "texto" %}
+  \item {{ considerando.contenido }}
+    {% endif %}
   {% endfor %}
 \end{itemize}
 
@@ -66,7 +63,7 @@
 \end{flushright}
 
 % === PÁGINA 2: ANEXO I (SI EXISTE) ===
-{% if anexo %}
+{% if anexo and (anexo['anexo_items'] or anexo['presupuesto'] or anexo['penalizaciones']) %}
 \newpage
 
 \begin{center}
@@ -79,16 +76,26 @@
 \hline
 \textbf{Categoría} & \textbf{Monto (ARS)} \\
 \hline
-{% for item in anexo.presupuesto %}
+{% if anexo['anexo_items'] %}
+{% for item in anexo['anexo_items'] %}
 {{ item.categoria }} & \${{ item.monto }} \\
 {% endfor %}
+{% elif anexo['presupuesto'] %}
+{% for item in anexo['presupuesto'] %}
+{{ item.categoria }} & \${{ item.monto }} \\
+{% endfor %}
+{% endif %}
 \hline
 \textbf{Subtotal} & \textbf{\${{ anexo.subtotal }}} \\
 \hline
-{% if anexo.penalizacion %}
-{{ anexo.penalizacion.descripcion }} & - \${{ anexo.penalizacion.monto }} \\
+{% if anexo['penalizaciones'] %}
+{% for penalizacion in anexo['penalizaciones'] %}
+{{ penalizacion.categoria }} & -\${{ penalizacion.monto|string|replace('-', '') }} \\
+{% endfor %}
 \hline
 \textbf{Total solicitado} & \textbf{\${{ anexo.total_solicitado }}} \\
+{% else %}
+\textbf{Total solicitado} & \textbf{\${{ anexo.subtotal }}} \\
 {% endif %}
 \hline
 \end{tabular}

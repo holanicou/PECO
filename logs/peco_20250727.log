@@ -1,0 +1,566 @@
+2025-07-27 17:29:22 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:29:22 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:31:14 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:31:14 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:31:46 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:31:46 - peco.generar_resolucion - INFO - generar_resolucion.py:132 - Configuration loaded successfully from config_mes.json
+2025-07-27 17:31:46 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:31:46 - peco.generar_resolucion - INFO - generar_resolucion.py:160 - Resolution code generated: r27eVIIs25
+2025-07-27 17:31:47 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:31:47 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:31:47 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:31:47 - peco.generar_resolucion - ERROR - generar_resolucion.py:253 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:32:35 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:32:35 - peco.generar_resolucion - INFO - generar_resolucion.py:75 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:33:45 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:33:45 - peco.generar_resolucion - INFO - generar_resolucion.py:135 - Configuration loaded successfully from config_mes.json
+2025-07-27 17:33:45 - peco.generar_resolucion - INFO - generar_resolucion.py:75 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:33:45 - peco.generar_resolucion - INFO - generar_resolucion.py:163 - Resolution code generated: r27eVIIs25
+2025-07-27 17:33:46 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:33:46 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:33:46 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:33:46 - peco.generar_resolucion - ERROR - generar_resolucion.py:256 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:34:20 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:34:20 - peco.generar_resolucion - INFO - generar_resolucion.py:135 - Configuration loaded successfully from config_mes.json
+2025-07-27 17:34:20 - peco.generar_resolucion - INFO - generar_resolucion.py:75 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:34:20 - peco.generar_resolucion - INFO - generar_resolucion.py:163 - Resolution code generated: r27eVIIs25
+2025-07-27 17:34:21 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:34:21 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:34:21 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:34:21 - peco.generar_resolucion - ERROR - generar_resolucion.py:256 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:34:53 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:34:53 - peco.generar_resolucion - INFO - generar_resolucion.py:75 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:37:41 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:37:41 - peco.generar_resolucion - INFO - generar_resolucion.py:75 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:38:11 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:38:11 - peco.generar_resolucion - INFO - generar_resolucion.py:135 - Configuration loaded successfully from config_mes.json
+2025-07-27 17:38:11 - peco.generar_resolucion - INFO - generar_resolucion.py:75 - Anexo calculations: subtotal=106416.0, penalizaciones=2500.0, total=103916.0
+2025-07-27 17:38:11 - peco.generar_resolucion - INFO - generar_resolucion.py:163 - Resolution code generated: r27eVIIs25
+2025-07-27 17:38:11 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:38:11 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:38:12 - peco.services.pdf_generator - INFO - pdf_generator.py:612 - Copied template resources: logo.png, firma.png
+2025-07-27 17:38:13 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:38:13 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 17:38:17 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 17:38:17 - peco.services.pdf_generator - INFO - pdf_generator.py:385 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 17:38:17 - peco.services.pdf_generator - INFO - pdf_generator.py:475 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 17:38:17 - peco.generar_resolucion - INFO - generar_resolucion.py:210 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 17:44:20 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:44:20 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:44:20 - peco.ConfigValidator - INFO - config_validator.py:648 - Generated resolution code: r27eVIIs25
+2025-07-27 17:44:20 - peco.generar_resolucion - INFO - generar_resolucion.py:71 - Resolution code generated: r27eVIIs25
+2025-07-27 17:44:20 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Configuration processing completed successfully
+2025-07-27 17:44:20 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:44:20 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:44:20 - peco.services.pdf_generator - INFO - pdf_generator.py:612 - Copied template resources: logo.png, firma.png
+2025-07-27 17:44:21 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:44:21 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 17:44:23 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 17:44:23 - peco.services.pdf_generator - INFO - pdf_generator.py:385 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 17:44:23 - peco.services.pdf_generator - INFO - pdf_generator.py:475 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 17:44:23 - peco.generar_resolucion - INFO - generar_resolucion.py:114 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 17:51:33 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:51:33 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:680 - Normalizing configuration structure
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:694 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:51:33 - peco.ConfigValidator - INFO - config_validator.py:653 - Generated resolution code: r27eVIIs25
+2025-07-27 17:51:33 - peco.generar_resolucion - INFO - generar_resolucion.py:71 - Resolution code generated: r27eVIIs25
+2025-07-27 17:51:33 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Configuration processing completed successfully
+2025-07-27 17:51:34 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:51:34 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:51:34 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: object of type 'builtin_function_or_method' has no len()
+2025-07-27 17:51:34 - peco.generar_resolucion - ERROR - generar_resolucion.py:160 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: object of type 'builtin_function_or_method' has no len()
+2025-07-27 17:52:31 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:52:31 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:680 - Normalizing configuration structure
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:694 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:52:31 - peco.ConfigValidator - INFO - config_validator.py:653 - Generated resolution code: r27eVIIs25
+2025-07-27 17:52:31 - peco.generar_resolucion - INFO - generar_resolucion.py:71 - Resolution code generated: r27eVIIs25
+2025-07-27 17:52:31 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Configuration processing completed successfully
+2025-07-27 17:52:32 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:52:32 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:52:32 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:52:32 - peco.generar_resolucion - ERROR - generar_resolucion.py:160 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:52:52 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:52:52 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:680 - Normalizing configuration structure
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:694 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 17:52:52 - peco.ConfigValidator - INFO - config_validator.py:653 - Generated resolution code: r27eVIIs25
+2025-07-27 17:52:52 - peco.generar_resolucion - INFO - generar_resolucion.py:78 - Resolution code generated: r27eVIIs25
+2025-07-27 17:52:52 - peco.generar_resolucion - INFO - generar_resolucion.py:79 - Configuration processing completed successfully
+2025-07-27 17:52:52 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 17:52:52 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 17:52:52 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 17:52:52 - peco.generar_resolucion - ERROR - generar_resolucion.py:167 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:10:19 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:10:19 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:680 - Normalizing configuration structure
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:694 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:10:19 - peco.ConfigValidator - INFO - config_validator.py:653 - Generated resolution code: r27eVIIs25
+2025-07-27 18:10:19 - peco.generar_resolucion - INFO - generar_resolucion.py:78 - Resolution code generated: r27eVIIs25
+2025-07-27 18:10:19 - peco.generar_resolucion - INFO - generar_resolucion.py:79 - Configuration processing completed successfully
+2025-07-27 18:10:19 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:10:19 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:10:19 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:10:19 - peco.generar_resolucion - ERROR - generar_resolucion.py:167 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:11:02 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:11:02 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:680 - Normalizing configuration structure
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:694 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:11:02 - peco.ConfigValidator - INFO - config_validator.py:653 - Generated resolution code: r27eVIIs25
+2025-07-27 18:11:02 - peco.generar_resolucion - INFO - generar_resolucion.py:78 - Resolution code generated: r27eVIIs25
+2025-07-27 18:11:02 - peco.generar_resolucion - INFO - generar_resolucion.py:79 - Configuration processing completed successfully
+2025-07-27 18:11:02 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:11:02 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:11:02 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:11:02 - peco.generar_resolucion - ERROR - generar_resolucion.py:167 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:13:17 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:13:17 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:680 - Normalizing configuration structure
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:694 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:13:17 - peco.ConfigValidator - INFO - config_validator.py:653 - Generated resolution code: r27eVIIs25
+2025-07-27 18:13:17 - peco.generar_resolucion - INFO - generar_resolucion.py:78 - Resolution code generated: r27eVIIs25
+2025-07-27 18:13:17 - peco.generar_resolucion - INFO - generar_resolucion.py:79 - Configuration processing completed successfully
+2025-07-27 18:13:17 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:13:17 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:13:17 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:13:17 - peco.generar_resolucion - ERROR - generar_resolucion.py:167 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:15:42 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:15:42 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:15:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:15:42 - peco.generar_resolucion - INFO - generar_resolucion.py:78 - Resolution code generated: r27eVIIs25
+2025-07-27 18:15:42 - peco.generar_resolucion - INFO - generar_resolucion.py:79 - Configuration processing completed successfully
+2025-07-27 18:15:43 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:15:43 - peco.services.pdf_generator - INFO - pdf_generator.py:323 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:15:43 - peco.services.pdf_generator - ERROR - pdf_generator.py:250 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:15:43 - peco.generar_resolucion - ERROR - generar_resolucion.py:167 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:16:17 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:16:17 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:16:17 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:16:17 - peco.generar_resolucion - INFO - generar_resolucion.py:78 - Resolution code generated: r27eVIIs25
+2025-07-27 18:16:17 - peco.generar_resolucion - INFO - generar_resolucion.py:79 - Configuration processing completed successfully
+2025-07-27 18:16:17 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:16:17 - peco.services.pdf_generator - INFO - pdf_generator.py:334 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:16:17 - peco.services.pdf_generator - ERROR - pdf_generator.py:261 - Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:16:17 - peco.generar_resolucion - ERROR - generar_resolucion.py:167 - PDF generation failed: Template processing failed: [LATEX_ERROR] Template processing failed: 'builtin_function_or_method' object is not iterable
+2025-07-27 18:19:10 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:19:10 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'items' for standardization
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:19:10 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:19:10 - peco.generar_resolucion - INFO - generar_resolucion.py:71 - Resolution code generated: r27eVIIs25
+2025-07-27 18:19:10 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Configuration processing completed successfully
+2025-07-27 18:19:11 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:19:11 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:19:11 - peco.services.pdf_generator - INFO - pdf_generator.py:613 - Copied template resources: logo.png, firma.png
+2025-07-27 18:19:12 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:19:12 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 18:19:15 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:19:15 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:19:15 - peco.services.pdf_generator - INFO - pdf_generator.py:476 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 18:19:15 - peco.generar_resolucion - INFO - generar_resolucion.py:114 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:25:37 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:25:37 - peco.generar_resolucion - INFO - generar_resolucion.py:52 - Configuration loaded and validated successfully
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:25:37 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:25:37 - peco.generar_resolucion - INFO - generar_resolucion.py:71 - Resolution code generated: r27eVIIs25
+2025-07-27 18:25:37 - peco.generar_resolucion - INFO - generar_resolucion.py:72 - Configuration processing completed successfully
+2025-07-27 18:25:38 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:25:38 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:25:38 - peco.services.pdf_generator - INFO - pdf_generator.py:613 - Copied template resources: logo.png, firma.png
+2025-07-27 18:25:39 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:25:39 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 18:25:41 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:25:41 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:25:41 - peco.services.pdf_generator - INFO - pdf_generator.py:476 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 18:25:41 - peco.generar_resolucion - INFO - generar_resolucion.py:114 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:26:54 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:26:54 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:26:54 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:26:54 - peco.generar_resolucion - ERROR - generar_resolucion.py:245 - Unexpected error in resolution generation: cannot access local variable 'output_dir' where it is not associated with a value
+Traceback (most recent call last):
+  File "C:\Users\nico\Desktop\PECO\generar_resolucion.py", line 130, in generar_resolucion
+    existing_files = check_existing_resolution_today(output_dir, processed_config.get('codigo_res', ''))
+                                                     ^^^^^^^^^^
+UnboundLocalError: cannot access local variable 'output_dir' where it is not associated with a value
+2025-07-27 18:27:48 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:27:48 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:27:48 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:27:48 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: r27eVIIs25
+2025-07-27 18:27:48 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-27 18:27:48 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:27:48 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:27:49 - peco.services.pdf_generator - INFO - pdf_generator.py:613 - Copied template resources: logo.png, firma.png
+2025-07-27 18:27:49 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:27:49 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 18:27:52 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:27:52 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:27:52 - peco.services.pdf_generator - INFO - pdf_generator.py:476 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 18:27:52 - peco.generar_resolucion - INFO - generar_resolucion.py:187 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:28:38 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:28:38 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:28:38 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:28:38 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: r27eVIIs25
+2025-07-27 18:28:38 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-27 18:28:39 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:28:39 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:28:39 - peco.services.pdf_generator - INFO - pdf_generator.py:613 - Copied template resources: logo.png, firma.png
+2025-07-27 18:28:40 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:28:40 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 18:28:42 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:28:42 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:28:42 - peco.services.pdf_generator - INFO - pdf_generator.py:476 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 18:28:42 - peco.generar_resolucion - INFO - generar_resolucion.py:187 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:31:08 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:31:08 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:31:10 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:31:10 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:31:10 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:31:10 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:31:10 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:31:10 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:31:10 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:31:11 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:31:11 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:31:11 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:31:11 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:31:11 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:31:11 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:31:11 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:31:11 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:31:12 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:31:12 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:31:12 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:31:24 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:31:24 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:31:25 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:31:25 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:31:25 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:31:25 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:31:25 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:31:25 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:31:25 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:31:26 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:31:26 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:31:26 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:31:26 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:31:26 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:31:26 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:31:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:31:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:31:27 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:31:27 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:31:27 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:31:27 - peco.__main__ - INFO - PECO.py:93 - Executing analizar command
+2025-07-27 18:31:27 - peco.analisis_mensual - INFO - analisis_mensual.py:578 - Starting financial analysis for 7/2025
+2025-07-27 18:31:27 - peco.DatabaseManager - INFO - database.py:77 - Initializing database at: peco.db
+2025-07-27 18:31:27 - peco.DatabaseManager - INFO - database.py:133 - Database initialized successfully
+2025-07-27 18:31:27 - peco.services.data_manager - INFO - data_manager.py:52 - DataManager initialized with SQLite database
+2025-07-27 18:31:27 - peco.services.data_manager - INFO - data_manager.py:57 - DataManager initialized
+2025-07-27 18:31:27 - peco.analisis_mensual - INFO - analisis_mensual.py:587 - DataManager initialized successfully
+2025-07-27 18:31:27 - peco.services.data_manager - INFO - data_manager.py:183 - Starting data integrity validation
+2025-07-27 18:31:27 - peco.services.data_manager - INFO - data_manager.py:264 - Database integrity validation completed successfully
+2025-07-27 18:31:27 - peco.analisis_mensual - INFO - analisis_mensual.py:35 - Getting analysis data for 7/2025
+2025-07-27 18:31:27 - peco.services.data_manager - INFO - data_manager.py:143 - Generating monthly analysis for 7/2025
+2025-07-27 18:31:27 - peco.analisis_mensual - INFO - analisis_mensual.py:278 - Starting chart generation for 7/2025
+2025-07-27 18:31:28 - peco.analisis_mensual - INFO - analisis_mensual.py:295 - Data validation passed: Datos validados: 6 categorías, total $79,211.00
+2025-07-27 18:31:28 - peco.analisis_mensual - INFO - analisis_mensual.py:330 - Attempting main chart generation
+2025-07-27 18:31:30 - peco.analisis_mensual - INFO - analisis_mensual.py:395 - Chart saved successfully with alta calidad: C:\Users\nico\Desktop\PECO\06_Reportes\reporte_gastos_2025_07.png
+2025-07-27 18:31:30 - peco.analisis_mensual - INFO - analisis_mensual.py:650 - Chart generated successfully: C:\Users\nico\Desktop\PECO\06_Reportes\reporte_gastos_2025_07.png
+2025-07-27 18:31:30 - peco.analisis_mensual - INFO - analisis_mensual.py:670 - Financial analysis completed successfully
+2025-07-27 18:32:48 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:34:05 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:34:46 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:34:46 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:34:47 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:34:47 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:34:47 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:34:47 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:34:48 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:34:48 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:34:48 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:34:48 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:34:48 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:34:49 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:34:49 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:34:49 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:35:16 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:35:16 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:35:17 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:35:17 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:35:17 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:35:17 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:35:18 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:35:18 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:35:18 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:35:18 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:35:18 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:35:19 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:35:19 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:35:19 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:35:19 - peco.__main__ - INFO - PECO.py:78 - Executing registrar command: monto=100.0, categoria=Test CLI, desc=Testing unified CLI
+2025-07-27 18:35:19 - peco.DatabaseManager - INFO - database.py:77 - Initializing database at: peco.db
+2025-07-27 18:35:19 - peco.DatabaseManager - INFO - database.py:133 - Database initialized successfully
+2025-07-27 18:35:19 - peco.services.data_manager - INFO - data_manager.py:52 - DataManager initialized with SQLite database
+2025-07-27 18:35:19 - peco.services.data_manager - INFO - data_manager.py:57 - DataManager initialized
+2025-07-27 18:35:19 - peco.services.data_manager - INFO - data_manager.py:72 - Registering expense: 100.0 ARS, category: Test CLI
+2025-07-27 18:35:19 - peco.DatabaseManager - INFO - database.py:171 - Expense added successfully with ID: 10
+2025-07-27 18:35:19 - peco.registrar_gasto - INFO - registrar_gasto.py:30 - Expense registered successfully: Test CLI - $100.00
+2025-07-27 18:36:14 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:36:14 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:36:15 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:36:16 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:36:16 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:36:16 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:36:16 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:36:16 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:36:16 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:36:17 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:36:17 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:36:17 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:36:17 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:36:17 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:36:17 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:36:17 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:36:17 - peco.__main__ - INFO - PECO.py:88 - Executing generar command
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:36:17 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:36:17 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r27eVIIs25
+2025-07-27 18:36:17 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: r27eVIIs25
+2025-07-27 18:36:17 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-27 18:36:18 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:36:18 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: r27eVIIs25 - Presupuesto mensual
+2025-07-27 18:36:18 - peco.services.pdf_generator - INFO - pdf_generator.py:613 - Copied template resources: logo.png, firma.png
+2025-07-27 18:36:19 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-27 18:36:19 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.tex
+2025-07-27 18:36:22 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:36:22 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:36:22 - peco.services.pdf_generator - INFO - pdf_generator.py:476 - Cleaned temporary files: r27eVIIs25 - Presupuesto mensual.aux, r27eVIIs25 - Presupuesto mensual.log
+2025-07-27 18:36:22 - peco.generar_resolucion - INFO - generar_resolucion.py:187 - PDF generated successfully: C:\Users\nico\Desktop\PECO\01_Resoluciones\r27eVIIs25 - Presupuesto mensual.pdf
+2025-07-27 18:42:14 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:42:14 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:42:15 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:42:15 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:42:15 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:42:15 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:42:15 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:42:15 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:42:15 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:42:16 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:42:16 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:42:16 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:42:16 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:42:16 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:42:16 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:42:16 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:42:16 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:42:16 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:42:16 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:42:16 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:42:43 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:42:43 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:42:44 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:42:44 - peco.__main__ - INFO - PECO.py:49 - Starting PECO CLI application
+2025-07-27 18:42:44 - peco.__main__ - INFO - PECO.py:52 - Performing startup system validation...
+2025-07-27 18:42:44 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:42:44 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:42:44 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:42:44 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:42:45 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:42:45 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:42:45 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:42:45 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:42:45 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:42:45 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:42:45 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:42:45 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:42:45 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:42:45 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:42:45 - peco.__main__ - INFO - PECO.py:71 - All system dependencies validated successfully
+2025-07-27 18:44:42 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:44:42 - peco.__main__ - INFO - PECO.py:118 - Starting PECO CLI application
+2025-07-27 18:44:42 - peco.__main__ - INFO - PECO.py:121 - Performing startup system validation...
+2025-07-27 18:44:42 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:44:42 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:44:42 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:44:42 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:44:43 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:44:43 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:44:43 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:44:43 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:44:43 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:44:43 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:44:43 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:44:43 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:44:43 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:44:43 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:44:43 - peco.__main__ - INFO - PECO.py:140 - All system dependencies validated successfully
+2025-07-27 18:45:38 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:45:39 - peco.__main__ - INFO - PECO.py:118 - Starting PECO CLI application
+2025-07-27 18:45:39 - peco.__main__ - INFO - PECO.py:121 - Performing startup system validation...
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:45:39 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:45:39 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:45:39 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:45:39 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:45:39 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:45:40 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:45:40 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:45:40 - peco.__main__ - INFO - PECO.py:140 - All system dependencies validated successfully
+2025-07-27 18:48:54 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250727.log
+2025-07-27 18:48:54 - peco.__main__ - INFO - PECO.py:118 - Starting PECO CLI application
+2025-07-27 18:48:54 - peco.__main__ - INFO - PECO.py:121 - Performing startup system validation...
+2025-07-27 18:48:54 - peco.SystemChecker - INFO - system_checker.py:575 - Validating startup requirements
+2025-07-27 18:48:54 - peco.SystemChecker - INFO - system_checker.py:579 - System info: {'platform': 'Windows', 'platform_version': '10.0.26120', 'architecture': '64bit', 'python_version': '3.13.2', 'python_executable': 'C:\\Users\\nico\\Desktop\\PECO\\.venv\\Scripts\\python.exe', 'path_directories': 29}
+2025-07-27 18:48:54 - peco.SystemChecker - INFO - system_checker.py:69 - Starting system dependency check
+2025-07-27 18:48:54 - peco.SystemChecker - INFO - system_checker.py:113 - pdflatex found at: C:\Users\nico\AppData\Local\Programs\MiKTeX\miktex\bin\x64\pdflatex.EXE
+2025-07-27 18:48:55 - peco.SystemChecker - INFO - system_checker.py:125 - pdflatex is working: MiKTeX-pdfTeX 4.18 (MiKTeX 24.1)
+2025-07-27 18:48:55 - peco.SystemChecker - INFO - system_checker.py:173 - Python 3.13.2 found at: C:\Users\nico\Desktop\PECO\.venv\Scripts\python.exe
+2025-07-27 18:48:55 - peco.SystemChecker - INFO - system_checker.py:96 - All system dependencies are available
+2025-07-27 18:48:55 - peco.SystemChecker - INFO - system_checker.py:249 - Starting comprehensive configuration validation
+2025-07-27 18:48:55 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-27 18:48:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-27 18:48:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-27 18:48:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-27 18:48:56 - peco.SystemChecker - WARNING - system_checker.py:914 - Missing expected template variables: ['{{ titulo_documento }}', '{{ gastos_mes_anterior }}', '{{ considerandos_adicionales }}', '{{ articulos }}']
+2025-07-27 18:48:56 - peco.SystemChecker - INFO - system_checker.py:621 - All startup requirements validated successfully
+2025-07-27 18:48:56 - peco.__main__ - INFO - PECO.py:140 - All system dependencies validated successfully

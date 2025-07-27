@@ -225,8 +225,9 @@ class PDFGenerator:
         try:
             logger.debug(f"Processing template: {template_path}")
             
+
             # Set up Jinja2 environment
-            template_dir = os.path.dirname(template_path)
+            template_dir = os.path.dirname(template_path) if os.path.dirname(template_path) else '.'
             template_name = os.path.basename(template_path)
             
             env = Environment(loader=FileSystemLoader(template_dir))
