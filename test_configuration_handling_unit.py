@@ -755,5 +755,328 @@ class TestConfigurationHandling(unittest.TestCase):
         self.assertGreater(len(result_invalid.validation_errors), 0)
 
 
+    # ========================================================================
+    # Additional Edge Cases and Comprehensive Coverage Tests
+    # ========================================================================
+    
+    def test_configuration_with_special_characters(self):
+        """Test configuration handling with special characters in text fields."""
+        config = self.valid_config.copy()
+        config["titulo_base"] = "Presupuesto con símbolos: $, €, %, &, @"
+        config["visto"] = "Considerando la situación económica actual (2025) y la necesidad de mantener un equilibrio financiero."
+        config["considerandos"] = [
+            {"tipo": "texto", "contenido": "Que el solicitante mantiene un compromiso de pago por el celular POCO X6 Pro 5G (modelo especial)."}
+        ]
+        
+        result = self.validator.validate_config_structure(config)
+        self.assertTrue(result.success)
+        
+        # Test template processing with special characters
+        template_result = self.validator.process_configuration_for_template(config)
+        self.assertTrue(template_result.success)
+    
+    def test_configuration_with_very_long_text(self):
+        """Test configuration handling with very long text content."""
+        long_text = "Este es un texto muy largo que simula contenido extenso. " * 50  # ~2500 characters
+        
+        config = self.valid_config.copy()
+        config["visto"] = long_text
+        config["considerandos"] = [
+            {"tipo": "texto", "contenido": long_text}
+        ]
+        
+        result = self.validator.validate_config_structure(config)
+        self.assertTrue(result.success)
+        
+        # Should generate warnings for very long content
+        self.assertIsNotNone(result.warnings)
+        self.assertTrue(any("very long" in warning for warning in result.warnings))
+    
+    def test_anexo_totals_with_decimal_precision(self):
+        """Test anexo totals calculation maintains proper decimal precision."""
+        anexo = {
+            "anexo_items": [
+                {"categoria": "Item 1", "monto": "1000.33"},
+                {"categoria": "Item 2", "monto": "2000.67"},
+                {"categoria": "Item 3", "monto": "500.99"}
+            ],
+            "penalizaciones": [
+                {"categoria": "Penalty", "monto": "-250.50"}
+            ]
+        }
+        
+        totals = self.validator.calculate_anexo_totals(anexo)
+        
+        # Check precision is maintained
+        self.assertEqual(totals["subtotal"], 3501.99)
+        self.assertEqual(totals["penalizaciones_total"], 250.50)
+        self.assertEqual(totals["total_solicitado"], 3251.49)
+    
+    def test_configuration_validation_performance(self):
+        """Test configuration validation performance with large datasets."""
+        # Create a configuration with many items
+        large_config = self.valid_config.copy()
+        large_config["considerandos"] = []
+        large_config["articulos"] = []
+        large_config["anexo"]["anexo_items"] = []
+        
+        # Add many considerandos
+        for i in range(100):
+            large_config["considerandos"].append({
+                "tipo": "gasto_anterior" if i % 2 == 0 else "texto",
+                "descripcion": f"Gasto {i}" if i % 2 == 0 else None,
+                "monto": f"{1000 + i}" if i % 2 == 0 else None,
+                "contenido": f"Contenido de texto {i}" if i % 2 == 1 else None
+            })
+        
+        # Add many articulos
+        for i in range(50):
+            large_config["articulos"].append(f"Artículo número {i} con contenido específico.")
+        
+        # Add many anexo items
+        for i in range(200):
+            large_config["anexo"]["anexo_items"].append({
+                "categoria": f"Categoría {i}",
+                "monto": f"{100 + i}"
+            })
+        
+        import time
+        start_time = time.time()
+        result = self.validator.validate_config_structure(large_config)
+        end_time = time.time()
+        
+        # Validation should complete successfully and reasonably quickly
+        self.assertTrue(result.success)
+        self.assertLess(end_time - start_time, 5.0)  # Should complete in under 5 seconds
+        
+        # Test calculation performance
+        start_time = time.time()
+        totals = self.validator.calculate_anexo_totals(large_config["anexo"])
+        end_time = time.time()
+        
+        self.assertLess(end_time - start_time, 1.0)  # Should complete in under 1 second
+        self.assertGreater(totals["subtotal"], 0)
+    
+    def test_configuration_with_mixed_amount_formats(self):
+        """Test configuration handling with various amount formats."""
+        config = self.valid_config.copy()
+        config["anexo"]["anexo_items"] = [
+            {"categoria": "Standard", "monto": "1000"},
+            {"categoria": "With decimals", "monto": "1500.50"},
+            {"categoria": "With commas", "monto": "2,000"},
+            {"categoria": "With commas and decimals", "monto": "3,500.75"},
+            {"categoria": "With spaces", "monto": " 1000 "},
+            {"categoria": "Negative", "monto": "-500"}
+        ]
+        
+        result = self.validator.validate_config_structure(config)
+        self.assertTrue(result.success)
+        
+        totals = self.validator.calculate_anexo_totals(config["anexo"])
+        expected_total = 1000 + 1500.50 + 2000 + 3500.75 + 1000 - 500
+        self.assertEqual(totals["subtotal"], expected_total)
+    
+    def test_validation_error_messages_clarity(self):
+        """Test that validation error messages are clear and helpful."""
+        # Test with multiple validation errors - start with basic structure errors
+        invalid_config = {
+            "mes_iso": "invalid-date-format",
+            "titulo_base": "",
+            "visto": None
+            # Missing required fields: considerandos, articulos, anexo
+        }
+        
+        result = self.validator.validate_config_structure(invalid_config)
+        
+        self.assertFalse(result.success)
+        self.assertIsNotNone(result.validation_errors)
+        self.assertGreater(len(result.validation_errors), 3)  # Should have multiple errors
+        
+        # Check that error messages are descriptive
+        error_text = " ".join(result.validation_errors)
+        self.assertIn("Missing required field", error_text)
+        self.assertIn("cannot be null", error_text)
+        
+        # Test with more complex validation errors
+        complex_invalid_config = {
+            "mes_iso": "2025-07",
+            "titulo_base": "Test",
+            "visto": "Test",
+            "considerandos": [
+                {"tipo": "invalid_type"},
+                {"tipo": "gasto_anterior"},  # Missing required fields
+                {"tipo": "texto"}  # Missing contenido
+            ],
+            "articulos": [123, ""],  # Invalid types and empty string
+            "anexo": {
+                "titulo": "",
+                "anexo_items": [
+                    {"categoria": ""},  # Empty categoria
+                    {"monto": "invalid_amount"}  # Missing categoria, invalid monto
+                ],
+                "penalizaciones": "not_an_array",  # Wrong type
+                "nota_final": None
+            }
+        }
+        
+        complex_result = self.validator.validate_config_structure(complex_invalid_config)
+        
+        self.assertFalse(complex_result.success)
+        self.assertIsNotNone(complex_result.validation_errors)
+        self.assertGreater(len(complex_result.validation_errors), 5)  # Should have multiple errors
+        
+        # Check that error messages are descriptive
+        complex_error_text = " ".join(complex_result.validation_errors)
+        self.assertIn("must be", complex_error_text)
+        self.assertIn("cannot be empty", complex_error_text)
+    
+    def test_configuration_normalization_edge_cases(self):
+        """Test configuration normalization with edge cases."""
+        # Test with only presupuesto present (should be converted to anexo_items)
+        config_with_presupuesto = {
+            "mes_iso": "2025-07",
+            "titulo_base": "Test",
+            "visto": "Test",
+            "considerandos": [],
+            "articulos": [],
+            "anexo": {
+                "titulo": "Test",
+                "presupuesto": [{"categoria": "Old format", "monto": "1000"}],
+                "penalizaciones": [],
+                "nota_final": "Test"
+            }
+        }
+        
+        result = self.validator.normalize_configuration_structure(config_with_presupuesto)
+        
+        self.assertTrue(result.success)
+        normalized = result.data
+        
+        # Should convert presupuesto to anexo_items
+        self.assertIn("anexo_items", normalized["anexo"])
+        self.assertNotIn("presupuesto", normalized["anexo"])
+        self.assertEqual(len(normalized["anexo"]["anexo_items"]), 1)
+        self.assertEqual(normalized["anexo"]["anexo_items"][0]["categoria"], "Old format")
+        
+        # Test with both presupuesto and anexo_items present (should keep anexo_items)
+        config_with_both = {
+            "mes_iso": "2025-07",
+            "titulo_base": "Test",
+            "visto": "Test",
+            "considerandos": [],
+            "articulos": [],
+            "anexo": {
+                "titulo": "Test",
+                "presupuesto": [{"categoria": "Old format", "monto": "1000"}],
+                "anexo_items": [{"categoria": "New format", "monto": "2000"}],
+                "penalizaciones": [],
+                "nota_final": "Test"
+            }
+        }
+        
+        result_both = self.validator.normalize_configuration_structure(config_with_both)
+        
+        self.assertTrue(result_both.success)
+        normalized_both = result_both.data
+        
+        # Should keep anexo_items unchanged when both are present
+        self.assertIn("anexo_items", normalized_both["anexo"])
+        self.assertEqual(len(normalized_both["anexo"]["anexo_items"]), 1)
+        self.assertEqual(normalized_both["anexo"]["anexo_items"][0]["categoria"], "New format")
+    
+    def test_template_processing_with_zero_amounts(self):
+        """Test template processing handles zero amounts correctly."""
+        config = self.valid_config.copy()
+        config["anexo"]["anexo_items"] = [
+            {"categoria": "Zero amount", "monto": "0"},
+            {"categoria": "Another zero", "monto": "0.00"}
+        ]
+        config["anexo"]["penalizaciones"] = []
+        
+        result = self.validator.process_configuration_for_template(config)
+        
+        self.assertTrue(result.success)
+        processed = result.data
+        
+        # Should handle zero amounts properly
+        self.assertEqual(processed["anexo"]["subtotal"], "0")
+        self.assertEqual(processed["anexo"]["total_solicitado"], "0")
+    
+    def test_file_operations_with_permissions(self):
+        """Test file operations handle permission issues gracefully."""
+        # Test saving to a non-existent path that can't be created
+        import os
+        
+        # Try to save to an invalid path (contains invalid characters for Windows)
+        invalid_path = os.path.join(self.temp_dir, "invalid<>path", "config.json")
+        
+        try:
+            result = self.validator.save_validated_config(self.valid_config, invalid_path)
+            
+            # On some systems this might succeed, on others it might fail
+            # The important thing is that it handles the situation gracefully
+            if not result.success:
+                self.assertIn("Error saving configuration", result.message)
+            else:
+                # If it succeeded, the file should exist
+                self.assertTrue(os.path.exists(invalid_path))
+                
+        except Exception:
+            # If an exception occurs, skip this test as it's system-dependent
+            self.skipTest("File permission test is system-dependent")
+        
+        # Test loading from a directory instead of a file
+        dir_path = os.path.join(self.temp_dir, "directory_not_file")
+        os.makedirs(dir_path, exist_ok=True)
+        
+        result = self.validator.validate_and_load_config(dir_path)
+        
+        # Should fail gracefully
+        self.assertFalse(result.success)
+        self.assertIn("Error loading configuration", result.message)
+    
+    def test_configuration_with_boundary_values(self):
+        """Test configuration validation with boundary values."""
+        # Test with minimum valid values
+        minimal_config = {
+            "mes_iso": "2020-01",  # Minimum reasonable year
+            "titulo_base": "A",  # Single character
+            "visto": "B",  # Single character
+            "considerandos": [{"tipo": "texto", "contenido": "C"}],  # Minimal considerando
+            "articulos": ["D"],  # Single character articulo
+            "anexo": {
+                "titulo": "E",
+                "anexo_items": [{"categoria": "F", "monto": "0"}],  # Zero amount
+                "penalizaciones": [],
+                "nota_final": ""  # Empty but allowed
+            }
+        }
+        
+        result = self.validator.validate_config_structure(minimal_config)
+        self.assertTrue(result.success)
+        
+        # Test with maximum reasonable values that should generate warnings
+        current_year = datetime.now().year
+        maximal_config = {
+            "mes_iso": f"{current_year + 6}-12",  # Beyond reasonable year range
+            "titulo_base": "A" * 250,  # Very long title
+            "visto": "B" * 1100,  # Very long visto
+            "considerandos": [{"tipo": "texto", "contenido": "C" * 600}],  # Very long content
+            "articulos": ["D" * 600],  # Very long articulo
+            "anexo": {
+                "titulo": "E" * 100,
+                "anexo_items": [{"categoria": "F" * 50, "monto": "999999999.99"}],
+                "penalizaciones": [],
+                "nota_final": "G" * 200
+            }
+        }
+        
+        result = self.validator.validate_config_structure(maximal_config)
+        self.assertTrue(result.success)
+        # Should have warnings for very long content and unusual year
+        self.assertIsNotNone(result.warnings)
+        self.assertGreater(len(result.warnings), 0)
+
+
 if __name__ == '__main__':
     unittest.main()

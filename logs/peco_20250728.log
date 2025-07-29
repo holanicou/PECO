@@ -1,0 +1,948 @@
+2025-07-28 13:19:04 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:19:05 - peco.PECO - INFO - PECO.py:37 - Expense registered successfully: Comida - $150.50
+2025-07-28 13:19:05 - peco.PECO - ERROR - PECO.py:40 - Failed to register expense: Database error
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 43000.0, Penalizaciones: 0.0, Total: 43000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 35000.0, Penalizaciones: 1000.0, Total: 34000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 115000.0, Penalizaciones: 5000.0, Total: 110000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp352rqx69\config_mes.json
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 115000.0, Penalizaciones: 5000.0, Total: 110000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 13:19:05 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-28 13:19:05 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: N/A
+2025-07-28 13:19:05 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-28 13:19:05 - peco.generar_resolucion - ERROR - generar_resolucion.py:245 - Unexpected error in resolution generation: 'Mock' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\nico\Desktop\PECO\generar_resolucion.py", line 182, in generar_resolucion
+    cleanup = result.details['cleanup_result']
+              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: 'Mock' object is not subscriptable
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: test_resolution
+2025-07-28 13:19:05 - peco.services.pdf_generator - INFO - pdf_generator.py:619 - Some template resources were not found: ['logo.png', 'firma.png']
+2025-07-28 13:19:05 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-28 13:19:05 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\AppData\Local\Temp\tmpmg9ag7sp\output\test_resolution.tex
+2025-07-28 13:19:05 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\AppData\Local\Temp\tmpmg9ag7sp\output\test_resolution.pdf
+2025-07-28 13:19:05 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\AppData\Local\Temp\tmpmg9ag7sp\output\test_resolution.pdf
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 0.0, Total: 0.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 1000.0, Total: -1000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000000.0, Penalizaciones: 0.0, Total: 1000000.0
+2025-07-28 13:19:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:22:00 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:22:14 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:22:15 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:22:15 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:22:15 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:22:15 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:22:15 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:22:15 - peco.services.pdf_generator - ERROR - pdf_generator.py:251 - Template processing failed: expected token ':', got '}'
+2025-07-28 13:23:15 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:23:17 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:23:17 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:23:17 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:23:17 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:23:17 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:23:47 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:23:49 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:23:49 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:23:49 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:23:49 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:23:49 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:43 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:31:44 - peco.PECO - INFO - PECO.py:37 - Expense registered successfully: Comida - $150.50
+2025-07-28 13:31:44 - peco.PECO - ERROR - PECO.py:40 - Failed to register expense: Database error
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 43000.0, Penalizaciones: 0.0, Total: 43000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 35000.0, Penalizaciones: 1000.0, Total: 34000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 115000.0, Penalizaciones: 5000.0, Total: 110000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpa7iqd9ap\config_mes.json
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 115000.0, Penalizaciones: 5000.0, Total: 110000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 13:31:44 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-28 13:31:44 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: N/A
+2025-07-28 13:31:44 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-28 13:31:44 - peco.generar_resolucion - ERROR - generar_resolucion.py:245 - Unexpected error in resolution generation: 'Mock' object is not subscriptable
+Traceback (most recent call last):
+  File "C:\Users\nico\Desktop\PECO\generar_resolucion.py", line 182, in generar_resolucion
+    cleanup = result.details['cleanup_result']
+              ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+TypeError: 'Mock' object is not subscriptable
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.services.pdf_generator - INFO - pdf_generator.py:324 - Starting PDF generation for: test_resolution
+2025-07-28 13:31:44 - peco.services.pdf_generator - INFO - pdf_generator.py:619 - Some template resources were not found: ['logo.png', 'firma.png']
+2025-07-28 13:31:44 - peco.services.pdf_generator - INFO - pdf_generator.py:85 - pdflatex is available
+2025-07-28 13:31:44 - peco.services.pdf_generator - INFO - pdf_generator.py:135 - Compiling LaTeX file: C:\Users\nico\AppData\Local\Temp\tmpwk6wewx5\output\test_resolution.tex
+2025-07-28 13:31:44 - peco.services.pdf_generator - INFO - pdf_generator.py:168 - PDF compilation successful: C:\Users\nico\AppData\Local\Temp\tmpwk6wewx5\output\test_resolution.pdf
+2025-07-28 13:31:44 - peco.services.pdf_generator - INFO - pdf_generator.py:386 - PDF generation successful: C:\Users\nico\AppData\Local\Temp\tmpwk6wewx5\output\test_resolution.pdf
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 50000.0, Penalizaciones: 5000.0, Total: 45000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 0.0, Total: 0.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 1000.0, Total: -1000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000000.0, Penalizaciones: 0.0, Total: 1000000.0
+2025-07-28 13:31:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:41 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp14m_jbmf\test_Current_format_with_'presupuesto'.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmp14m_jbmf\test_Current_format_with_'presupuesto'.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp14m_jbmf\test_New_format_with_'anexo_items'.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmp14m_jbmf\test_New_format_with_'anexo_items'.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-28 13:42:42 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: r28eVIIs25
+2025-07-28 13:42:42 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-28 13:42:42 - peco.generar_resolucion - INFO - generar_resolucion.py:187 - PDF generated successfully: /test/path.pdf
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmpe4v30y7l\config_mes.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmppyu8xipn\config\current_config.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmppyu8xipn\config\current_config.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmppyu8xipn\config\new_config.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmppyu8xipn\config\new_config.json
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 10000.0, Penalizaciones: 0.0, Total: 10000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 13:42:42 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 13:56:23 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:56:24 - peco.DatabaseManager - INFO - database.py:77 - Initializing database at: peco.db
+2025-07-28 13:56:24 - peco.DatabaseManager - INFO - database.py:133 - Database initialized successfully
+2025-07-28 13:56:24 - peco.services.data_manager - INFO - data_manager.py:52 - DataManager initialized with SQLite database
+2025-07-28 13:56:24 - peco.services.data_manager - INFO - data_manager.py:57 - DataManager initialized
+2025-07-28 13:57:05 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 13:57:06 - peco.DatabaseManager - INFO - database.py:77 - Initializing database at: peco.db
+2025-07-28 13:57:06 - peco.DatabaseManager - INFO - database.py:133 - Database initialized successfully
+2025-07-28 13:57:06 - peco.services.data_manager - INFO - data_manager.py:52 - DataManager initialized with SQLite database
+2025-07-28 13:57:06 - peco.services.data_manager - INFO - data_manager.py:57 - DataManager initialized
+2025-07-28 14:05:55 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp1c06a52m\test_Current_format_with_'presupuesto'.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmp1c06a52m\test_Current_format_with_'presupuesto'.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp1c06a52m\test_New_format_with_'anexo_items'.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmp1c06a52m\test_New_format_with_'anexo_items'.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.DatabaseManager - INFO - database.py:77 - Initializing database at: peco.db
+2025-07-28 14:05:56 - peco.DatabaseManager - INFO - database.py:133 - Database initialized successfully
+2025-07-28 14:05:56 - peco.services.data_manager - INFO - data_manager.py:52 - DataManager initialized with SQLite database
+2025-07-28 14:05:56 - peco.services.data_manager - INFO - data_manager.py:57 - DataManager initialized
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\Desktop\PECO\static\05_Templates_y_Recursos\config_mes.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-28 14:05:56 - peco.generar_resolucion - INFO - generar_resolucion.py:110 - Configuration loaded and validated successfully
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 106416.0, Penalizaciones: 2500.0, Total: 103916.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.generar_resolucion - INFO - generar_resolucion.py:129 - Resolution code generated: r28eVIIs25
+2025-07-28 14:05:56 - peco.generar_resolucion - INFO - generar_resolucion.py:130 - Configuration processing completed successfully
+2025-07-28 14:05:56 - peco.generar_resolucion - INFO - generar_resolucion.py:187 - PDF generated successfully: /test/path.pdf
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmphu5j_k0b\config_mes.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp7f4gx8lc\config\current_config.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmp7f4gx8lc\config\current_config.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp7f4gx8lc\config\new_config.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmp7f4gx8lc\config\new_config.json
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 10000.0, Penalizaciones: 0.0, Total: 10000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:05:56 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpsd39vdxx\test_load.json
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmpsd39vdxx\test_load.json
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 0.0, Total: 0.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpk2zcx53a\scenario_New_user_with_minimal_data.json
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpk2zcx53a\scenario_Regular_user_with_typical_monthly_budget.json
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpk2zcx53a\scenario_Power_user_with_complex_budget.json
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:10:44 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:12:02 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpr48_mcz1\test_load.json
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmpr48_mcz1\test_load.json
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 0.0, Total: 0.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpqcetrxsp\scenario_New_user_with_minimal_data.json
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpqcetrxsp\scenario_Regular_user_with_typical_monthly_budget.json
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpqcetrxsp\scenario_Power_user_with_complex_budget.json
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:12:02 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:05 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpaih5c09b\test_load.json
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmpaih5c09b\test_load.json
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 0.0, Total: 0.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 365000.0, Penalizaciones: 4000.0, Total: 361000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp4c0ljaio\scenario_New_user_with_minimal_data.json
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 1000.0, Penalizaciones: 0.0, Total: 1000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp4c0ljaio\scenario_Regular_user_with_typical_monthly_budget.json
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 60000.0, Penalizaciones: 1500.0, Total: 58500.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmp4c0ljaio\scenario_Power_user_with_complex_budget.json
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:13:05 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:54 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:696 - Converted 'presupuesto' field to 'anexo_items' for standardization
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpatfcxn70\test_Current_format_with_'presupuesto'.json
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmpatfcxn70\test_Current_format_with_'presupuesto'.json
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 41000.0, Penalizaciones: 0.0, Total: 41000.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmpatfcxn70\test_New_format_with_'anexo_items'.json
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmpatfcxn70\test_New_format_with_'anexo_items'.json
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:13:55 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 64000.0, Penalizaciones: 2500.0, Total: 61500.0
+2025-07-28 14:14:26 - peco - INFO - logging_config.py:80 - Logging initialized - Level: INFO, File: C:\Users\nico\Desktop\PECO\logs\peco_20250728.log
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:536 - Validating and saving configuration to: C:\Users\nico\AppData\Local\Temp\tmppgf29hco\test_load.json
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:560 - Configuration saved successfully
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:481 - Loading and validating configuration from: C:\Users\nico\AppData\Local\Temp\tmppgf29hco\test_load.json
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:47 - Starting configuration structure validation
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 155000.0, Penalizaciones: 4000.0, Total: 151000.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 0.0, Penalizaciones: 0.0, Total: 0.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:586 - Processing configuration for template rendering
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:681 - Normalizing configuration structure
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:422 - Calculating anexo totals
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:463 - Calculated totals - Subtotal: 65000.0, Penalizaciones: 1500.0, Total: 63500.0
+2025-07-28 14:14:26 - peco.ConfigValidator - INFO - config_validator.py:654 - Generated resolution code: r28eVIIs25
