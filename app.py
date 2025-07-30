@@ -957,4 +957,6 @@ if __name__ == '__main__':
     logger.info("Iniciando el servidor Flask...")
     print("Servidor PECO y Bot de Telegram iniciados.")
     print("Abre http://127.0.0.1:5000 en tu navegador para ver la interfaz web.")
-    app.run(debug=True, port=5000, use_reloader=False)
+    #app.run(debug=True, port=5000, use_reloader=False)
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
