@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="es" class=""> <!-- La clase 'dark' se añadirá aquí con JS -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Control - ECOP</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = { darkMode: 'class' }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            /* MEJORA: Gradiente animado para MODO CLARO */
+            background: linear-gradient(-45deg, #e0f2fe, #f1f5f9, #f8fafc, #e0f2fe);
+            background-size: 400% 400%;
+            animation: gradientBG 20s ease infinite;
+        }
+        .dark body {
+            background: linear-gradient(-45deg, #0f172a, #1e293b, #334155, #082f49);
+            background-size: 400% 400%;
+            animation: gradientBG 15s ease infinite;
+        }
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        #terminal-output::-webkit-scrollbar, #modal-content::-webkit-scrollbar { width: 8px; }
+        #terminal-output::-webkit-scrollbar-track, #modal-content::-webkit-scrollbar-track { background: #f1f5f9; }
+        .dark #terminal-output::-webkit-scrollbar-track, .dark #modal-content::-webkit-scrollbar-track { background: #1e293b; }
+        #terminal-output::-webkit-scrollbar-thumb, #modal-content::-webkit-scrollbar-thumb { background-color: #cbd5e1; border-radius: 10px; }
+        .dark #terminal-output::-webkit-scrollbar-thumb, .dark #modal-content::-webkit-scrollbar-thumb { background-color: #475569; }
+        
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .main-content { display: none; }
+        .main-content.visible { display: grid; animation: fadeIn 0.8s ease-in-out forwards; }
+    </style>
+</head>
+<body class="text-slate-800 dark:text-slate-200 flex items-center justify-center min-h-screen p-4 overflow-hidden">
+
+    <!-- Contenido Principal -->
+    <div id="main-content" class="main-content w-full max-w-6xl bg-white/70 dark:bg-slate-800/50 backdrop-blur-xl border border-slate-200 dark:border-slate-700/50 rounded-2xl shadow-2xl p-6 md:p-8 grid-cols-1 lg:grid-cols-5 gap-8">
+        
+        <!-- Columna de Acciones -->
+        <div class="lg:col-span-3 flex flex-col gap-6">
+            <header class="flex justify-between items-center">
+                <div class="flex items-center gap-4">
+                    <img src="/static/05_Templates_y_Recursos/logo.png" alt="Logo ECOP" class="h-12 w-12 dark:hidden" onerror="this.onerror=null;this.src='https://placehold.co/48x48/1e293b/ffffff?text=N';">
+                    <img src="/static/05_Templates_y_Recursos/logo_light.png" alt="Logo ECOP" class="h-12 w-12 hidden dark:block" onerror="this.onerror=null;this.src='https://placehold.co/48x48/e2e8f0/1e293b?text=N';">
+                    <div>
+                        <h1 class="text-3xl font-bold text-cyan-600 dark:text-cyan-400">Panel de Control ECOP</h1>
+                        <p class="text-slate-500 dark:text-slate-400 mt-1">Tu centro de gestión financiera personal.</p>
+                    </div>
+                </div>
+                <button id="theme-toggle" class="p-2 rounded-full bg-slate-200 dark:bg-slate-700 text-slate-600 dark:text-slate-300 hover:bg-slate-300 dark:hover:bg-slate-600 transition-colors">
+                    <svg class="w-6 h-6 hidden dark:block" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <svg class="w-6 h-6 dark:hidden" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+                </button>
+            </header>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- Registrar Gasto -->
+                <div class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                    <h2 class="text-xl font-semibold mb-4">Registrar Gasto</h2>
+                    <form id="form-registrar" class="flex flex-col gap-4">
+                        <input type="date" id="fecha-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none">
+                        <input type="number" step="0.01" id="monto-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none" placeholder="Monto (ARS)">
+                        <input type="text" id="categoria-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none" placeholder="Categoría">
+                        <input type="text" id="desc-gasto" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-cyan-500 focus:outline-none" placeholder="Descripción">
+                        <button type="submit" class="w-full bg-cyan-600 hover:bg-cyan-500 text-white font-bold py-2.5 rounded-lg transition-all">Registrar</button>
+                    </form>
+                </div>
+                <!-- Registrar Inversión -->
+                <div class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                    <h2 class="text-xl font-semibold mb-4">Registrar Inversión</h2>
+                    <form id="form-invertir" class="flex flex-col gap-4">
+                        <input type="date" id="fecha-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                        <input type="text" id="activo-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Activo (Ej: SPY)">
+                        <select id="tipo-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none">
+                            <option value="Compra">Compra</option>
+                            <option value="Venta">Venta</option>
+                        </select>
+                        <input type="number" step="0.01" id="monto-inversion" required class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg px-3 py-2 focus:ring-2 focus:ring-indigo-500 focus:outline-none" placeholder="Monto (ARS)">
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2.5 rounded-lg transition-all">Registrar</button>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Acciones Generales -->
+            <div class="bg-white/70 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 p-6 rounded-xl">
+                <h2 class="text-xl font-semibold mb-4">Acciones Generales</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <button id="btn-editar-res" class="w-full bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg transition-all">Editar y Generar Resolución</button>
+                    <button id="btn-analizar" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-2.5 rounded-lg transition-all">Analizar Finanzas</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Columna de la Terminal -->
+        <div class="lg:col-span-2 flex flex-col bg-white/50 dark:bg-slate-900/70 border border-slate-200 dark:border-slate-700 rounded-xl p-6 h-[40rem] lg:h-auto">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-lg font-semibold text-slate-500 dark:text-slate-400">Terminal de Salida</h2>
+                <button id="btn-clear" title="Limpiar terminal" class="text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 transition-colors">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18"/><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg>
+                </button>
+            </div>
+            <div id="terminal-output" class="flex-grow bg-slate-100 dark:bg-black/50 rounded-lg p-4 font-mono text-xs text-slate-600 dark:text-slate-300 overflow-y-auto"></div>
+        </div>
+    </div>
+
+    <!-- Modal para Editar Resolución -->
+    <div id="modal-resolucion" class="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 hidden">
+        <div id="modal-content" class="bg-white dark:bg-slate-800 w-full max-w-4xl rounded-xl shadow-lg p-6 flex flex-col max-h-[90vh]">
+            <h2 class="text-2xl font-bold mb-4">Editor de Resolución</h2>
+            <div id="resolucion-form-container" class="space-y-6 overflow-y-auto pr-4">
+                <!-- El contenido del formulario se generará aquí con JS -->
+            </div>
+            <div class="flex gap-4 mt-6 pt-4 border-t border-slate-200 dark:border-slate-700">
+                <button id="btn-guardar-generar" class="flex-grow bg-purple-600 hover:bg-purple-500 text-white font-bold py-2.5 rounded-lg">Guardar y Generar PDF</button>
+                <button id="btn-cerrar-modal" class="bg-slate-200 hover:bg-slate-300 dark:bg-slate-700 dark:hover:bg-slate-600 font-bold py-2.5 px-4 rounded-lg">Cancelar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // --- INICIALIZACIÓN Y ELEMENTOS DEL DOM ---
+            const mainContent = document.getElementById('main-content');
+            mainContent.classList.add('visible');
+
+            // --- LÓGICA DE MODO OSCURO ---
+            const themeToggle = document.getElementById('theme-toggle');
+            const applyTheme = (theme) => document.documentElement.classList.toggle('dark', theme === 'dark');
+            themeToggle.addEventListener('click', () => {
+                const isDark = document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+            });
+            const savedTheme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+            applyTheme(savedTheme);
+
+            // --- LÓGICA DE FECHAS ---
+            const today = new Date().toISOString().split('T')[0];
+            document.getElementById('fecha-gasto').value = today;
+            document.getElementById('fecha-inversion').value = today;
+            
+            // --- LÓGICA DE LA TERMINAL ---
+            const terminalOutput = document.getElementById('terminal-output');
+            function printToTerminal(text, type = 'info') {
+                const lines = String(text).split('\n');
+                lines.forEach(line => {
+                    if (line.trim() === '') return;
+                    const p = document.createElement('p');
+                    p.style.opacity = 0;
+                    let prefix = '>'; let textColor = 'dark:text-slate-300 text-slate-600';
+                    if (type === 'command') { prefix = '$'; textColor = 'dark:text-cyan-400 text-cyan-600'; }
+                    if (type === 'success') { prefix = '[OK]'; textColor = 'dark:text-emerald-400 text-emerald-600'; }
+                    if (type === 'error') { prefix = '[ERROR]'; textColor = 'dark:text-red-400 text-red-500'; }
+                    p.innerHTML = `<span class="dark:text-green-400 text-green-600 flex-shrink-0">${prefix}&nbsp;</span> <span class="${textColor}">${line.replace(/</g, "&lt;").replace(/>/g, "&gt;")}</span>`;
+                    p.className = 'flex';
+                    terminalOutput.appendChild(p);
+                    setTimeout(() => p.style.opacity = 1, 10);
+                });
+                // CORRECCIÓN SCROLL
+                terminalOutput.scrollTo({ top: terminalOutput.scrollHeight, behavior: 'smooth' });
+            }
+            printToTerminal('Bienvenido al panel de control de ECOP.');
+            printToTerminal('Servidor local conectado. Esperando acciones...');
+
+            // --- LÓGICA DE COMUNICACIÓN CON EL BACKEND ---
+            async function sendCommand(button, command, args = {}) {
+                if(button) button.disabled = true;
+                const originalText = button ? button.innerHTML : '';
+                if(button) button.innerHTML = `<span class="animate-pulse">Ejecutando...</span>`;
+                const commandString = `python ecop.py ${command}` + (Object.keys(args).length > 0 ? ' ...' : '');
+                printToTerminal(commandString, 'command');
+                try {
+                    const response = await fetch('/ejecutar', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ comando: command, args: args })
+                    });
+                    const data = await response.json();
+                    printToTerminal(data.salida, response.ok ? 'info' : 'error');
+                } catch (error) {
+                    printToTerminal(`Error de conexión con el servidor: ${error}`, 'error');
+                } finally {
+                    if(button) {
+                        button.disabled = false;
+                        button.innerHTML = originalText;
+                    }
+                }
+            }
+
+            // --- MANEJADORES DE EVENTOS ---
+            document.getElementById('form-registrar').addEventListener('submit', (e) => {
+                e.preventDefault();
+                sendCommand(e.target.querySelector('button'), 'registrar', {
+                    fecha: document.getElementById('fecha-gasto').value,
+                    monto: document.getElementById('monto-gasto').value,
+                    categoria: document.getElementById('categoria-gasto').value,
+                    desc: document.getElementById('desc-gasto').value
+                });
+                e.target.reset();
+                document.getElementById('fecha-gasto').value = today;
+            });
+
+            document.getElementById('form-invertir').addEventListener('submit', (e) => {
+                e.preventDefault();
+                sendCommand(e.target.querySelector('button'), 'invertir', {
+                    fecha: document.getElementById('fecha-inversion').value,
+                    activo: document.getElementById('activo-inversion').value,
+                    tipo: document.getElementById('tipo-inversion').value,
+                    monto: document.getElementById('monto-inversion').value
+                });
+                e.target.reset();
+                document.getElementById('fecha-inversion').value = today;
+            });
+
+            document.getElementById('btn-analizar').addEventListener('click', (e) => sendCommand(e.target, 'analizar'));
+            document.getElementById('btn-clear').addEventListener('click', () => {
+                terminalOutput.innerHTML = '';
+                printToTerminal('Terminal limpiada.');
+            });
+
+            // --- LÓGICA DEL MODAL DE RESOLUCIÓN MEJORADO ---
+            const modal = document.getElementById('modal-resolucion');
+            const formContainer = document.getElementById('resolucion-form-container');
+            const meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
+            
+            const createInput = (label, id, value, type = 'text') => `<div class="flex flex-col"><label for="${id}" class="mb-1 text-sm font-medium">${label}</label><input type="${type}" id="${id}" value="${value}" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg p-2"></div>`;
+            const createSelect = (label, id, options, selected) => `<div class="flex flex-col"><label for="${id}" class="mb-1 text-sm font-medium">${label}</label><select id="${id}" class="w-full bg-slate-100 dark:bg-slate-700 border border-slate-300 dark:border-slate-600 rounded-lg p-2">${options.map(o => `<option value="${o}" ${o === selected ? 'selected' : ''}>${o.charAt(0).toUpperCase() + o.slice(1)}</option>`).join('')}</select></div>`;
+            const createDynamicList = (title, listId, items, fields) => {
+                let itemsHtml = items.map((item, index) => {
+                    const itemValue = typeof item === 'object' ? item : { text: item };
+                    const itemFields = fields.map(field => `<input type="${field.type || 'text'}" value="${itemValue[field.key]}" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="${field.key}" placeholder="${field.placeholder}">`).join('');
+                    return `<div class="flex items-center gap-2 p-2 border-b border-slate-200 dark:border-slate-700">${itemFields}<button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button></div>`;
+                }).join('');
+                return `<div><h4 class="font-medium mb-2">${title}</h4><div id="${listId}">${itemsHtml}</div><button data-add-item="${listId}" class="mt-2 text-sm text-cyan-600 dark:text-cyan-500 font-semibold">+ Agregar Item</button></div>`;
+            };
+
+            document.getElementById('btn-editar-res').addEventListener('click', async () => {
+                const response = await fetch('/get-config');
+                const data = await response.json();
+                if (response.ok) {
+                    const currentMonthIndex = new Date().getMonth();
+                    const currentMonthName = meses[currentMonthIndex];
+                    const prevMonthName = meses[(currentMonthIndex + 11) % 12];
+
+                    formContainer.innerHTML = `
+                        <h3 class="font-bold text-lg">Datos Generales</h3>
+                        ${createSelect('Mes de la Resolución', 'config-mes', meses, data.mes_nombre || currentMonthName)}
+                        <h3 class="font-bold text-lg mt-4">Justificación (Mes Anterior)</h3>
+                        <div class="grid grid-cols-2 gap-4">
+                            ${createInput('Mes Anterior', 'config-mes-anterior', data.mes_anterior || prevMonthName, 'text')}
+                            ${createInput('Monto Mensualidad Anterior', 'config-monto-anterior', data.mensualidad_anterior_monto, 'number')}
+                        </div>
+                        ${createDynamicList('Gastos del Mes Anterior', 'gastos-list', data.gastos_mes_anterior, [{key: 'descripcion', placeholder: 'Descripción'}, {key: 'monto', placeholder: 'Monto'}])}
+                        ${createDynamicList('Considerandos Adicionales', 'considerandos-list', data.considerandos_adicionales, [{key: 'text', placeholder: 'Texto del considerando'}])}
+                        ${createDynamicList('Artículos', 'articulos-list', data.articulos, [{key: 'text', placeholder: 'Texto del artículo'}])}
+                    `;
+                    modal.classList.remove('hidden');
+                    // MEJORA: Mes anterior automático
+                    document.getElementById('config-mes').addEventListener('change', (e) => {
+                        const selectedIndex = meses.indexOf(e.target.value);
+                        const prevIndex = (selectedIndex + 11) % 12;
+                        document.getElementById('config-mes-anterior').value = meses[prevIndex];
+                    });
+                } else {
+                    printToTerminal(`Error al cargar la configuracion: ${data.error}`, 'error');
+                }
+            });
+
+            formContainer.addEventListener('click', e => {
+                const listId = e.target.dataset.addItem;
+                if (listId) {
+                    const listContainer = document.getElementById(listId);
+                    const newItem = document.createElement('div');
+                    newItem.className = 'flex items-center gap-2 p-2 border-b border-slate-200 dark:border-slate-700';
+                    if (listId === 'gastos-list') {
+                        newItem.innerHTML = `<input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="descripcion" placeholder="Descripción"><input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="monto" placeholder="Monto"><button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button>`;
+                    } else {
+                        newItem.innerHTML = `<input type="text" value="" class="flex-grow bg-slate-200 dark:bg-slate-600 rounded p-1" data-list-key="text" placeholder="Nuevo item"><button data-remove-item class="text-red-500 hover:text-red-400 font-bold">X</button>`;
+                    }
+                    listContainer.appendChild(newItem);
+                }
+                // MEJORA: El listener para eliminar ahora está en el contenedor
+                if (e.target.matches('[data-remove-item]')) { 
+                    e.target.closest('.flex').remove(); 
+                }
+            });
+
+            document.getElementById('btn-cerrar-modal').addEventListener('click', () => modal.classList.add('hidden'));
+
+            document.getElementById('btn-guardar-generar').addEventListener('click', async (e) => {
+                const newConfig = {
+                    titulo_documento: `Presupuesto mensual de ${document.getElementById('config-mes').value}`,
+                    mes_nombre: document.getElementById('config-mes').value,
+                    mes_anterior: document.getElementById('config-mes-anterior').value,
+                    mensualidad_anterior_monto: document.getElementById('config-monto-anterior').value,
+                    gastos_mes_anterior: Array.from(document.getElementById('gastos-list').children).map(item => ({
+                        descripcion: item.querySelector('[data-list-key="descripcion"]').value,
+                        monto: item.querySelector('[data-list-key="monto"]').value
+                    })),
+                    considerandos_adicionales: Array.from(document.getElementById('considerandos-list').children).map(item => item.querySelector('[data-list-key="text"]').value),
+                    articulos: Array.from(document.getElementById('articulos-list').children).map(item => item.querySelector('[data-list-key="text"]').value),
+                    anexo: {} // Se mantiene simple, el backend podría añadir más lógica si es necesario
+                };
+                
+                const button = e.target;
+                button.disabled = true;
+                button.innerHTML = `<span class="animate-pulse">Guardando...</span>`;
+                try {
+                    const saveResponse = await fetch('/save-config', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(newConfig, null, 2)
+                    });
+                    const saveData = await saveResponse.json();
+                    printToTerminal(saveData.salida || saveData.error, saveResponse.ok ? 'success' : 'error');
+                    if (saveResponse.ok) {
+                        await sendCommand(null, 'generar');
+                    }
+                } catch (error) {
+                    printToTerminal(`Error al guardar: ${error}`, 'error');
+                } finally {
+                    button.disabled = false;
+                    button.innerHTML = "Guardar y Generar PDF";
+                    modal.classList.add('hidden');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
