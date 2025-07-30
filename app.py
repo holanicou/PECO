@@ -1,5 +1,8 @@
 # -*- coding: utf-8 -*-
 from flask import Flask, render_template, request, jsonify
+from dotenv import load_dotenv
+
+load_dotenv()
 import os
 import json
 from datetime import datetime
@@ -814,7 +817,144 @@ def validar_sistema():
             'error_code': 'SYSTEM_VALIDATION_ERROR'
         }), 500
 
-# --- INICIAR EL SERVIDOR ---
+# ----------- BOT DE TELEGRAM (AGREGADO) -----------
+import threading
+import asyncio
+from telegram import Update
+from telegram.constants import ParseMode
+from telegram.ext import Application, CommandHandler, MessageHandler, CallbackContext, filters
+
+# ----------- HANDLERS TELEGRAM BOT -----------
+async def start_bot(update: Update, context: CallbackContext) -> None:
+    user_name = update.effective_user.first_name
+    message = (
+        f"¡Hola, {user_name}! 👋 Soy tu bot de economía personal **PECO**.\n\n"
+        "Puedes usarme para registrar tus gastos e inversiones directamente desde Telegram.\n\n"
+        "Escribe /ayuda para ver todos los comandos disponibles."
+    )
+    await update.message.reply_text(message, parse_mode=ParseMode.MARKDOWN)
+
+async def ayuda_bot(update: Update, context: CallbackContext) -> None:
+    help_text = (
+        "Aquí tienes los comandos que puedes usar:\n\n"
+        "**/registrar** `<monto> <categoría> <descripción>`\n"
+        "*Registra un nuevo gasto.*\n"
+        "*Ejemplo:* `/registrar 550.50 comida almuerzo con amigos`\n\n"
+        "**/invertir** `<activo> <tipo> <monto>`\n"
+        "*Registra una inversión. El tipo puede ser `Compra` o `Venta`.*\n"
+        "*Ejemplo:* `/invertir BTC Compra 25000`\n\n"
+        "**/analizar** `[mes] [año]`\n"
+        "*Muestra el resumen de gastos del mes actual o el especificado.*\n"
+        "*Ejemplo:* `/analizar 7 2025`\n\n"
+        "**/start** - Inicia la conversación con el bot.\n"
+        "**/ayuda** - Muestra este mensaje de ayuda."
+    )
+    await update.message.reply_text(help_text, parse_mode=ParseMode.MARKDOWN)
+
+async def registrar_gasto_bot(update: Update, context: CallbackContext) -> None:
+    try:
+        if len(context.args) < 3:
+            await update.message.reply_text("⚠️ **Error:** Faltan argumentos.\nUso: `/registrar <monto> <categoría> <descripción>`", parse_mode=ParseMode.MARKDOWN)
+            return
+        monto_str = context.args[0]
+        categoria = context.args[1]
+        descripcion = " ".join(context.args[2:])
+        try:
+            monto = float(monto_str)
+            if monto <= 0:
+                raise ValueError("El monto debe ser positivo.")
+        except ValueError:
+            await update.message.reply_text("⚠️ **Error:** El monto debe ser un número válido y positivo.", parse_mode=ParseMode.MARKDOWN)
+            return
+        result = data_manager.register_expense(monto, categoria, descripcion)
+        if result.success:
+            await update.message.reply_text(f"✅ ¡Gasto registrado con éxito!\n\n- **Monto:** ${monto:,.2f}\n- **Categoría:** {categoria}\n- **Descripción:** {descripcion}", parse_mode=ParseMode.MARKDOWN)
+        else:
+            await update.message.reply_text(f"❌ **Error al registrar:** {result.message}", parse_mode=ParseMode.MARKDOWN)
+    except Exception as e:
+        logger.error(f"Error en registrar_gasto_bot: {e}")
+        await update.message.reply_text("Ocurrió un error inesperado al procesar tu solicitud.")
+
+async def invertir_bot(update: Update, context: CallbackContext) -> None:
+    try:
+        if len(context.args) != 3:
+            await update.message.reply_text("⚠️ **Error:** Argumentos incorrectos.\nUso: `/invertir <activo> <tipo> <monto>`\n(El tipo es `Compra` o `Venta`)", parse_mode=ParseMode.MARKDOWN)
+            return
+        activo = context.args[0]
+        tipo = context.args[1].capitalize()
+        monto_str = context.args[2]
+        if tipo not in ['Compra', 'Venta']:
+            await update.message.reply_text("⚠️ **Error:** El tipo de operación debe ser `Compra` o `Venta`.", parse_mode=ParseMode.MARKDOWN)
+            return
+        try:
+            monto = float(monto_str)
+            if monto <= 0:
+                raise ValueError("El monto debe ser positivo.")
+        except ValueError:
+            await update.message.reply_text("⚠️ **Error:** El monto debe ser un número válido y positivo.", parse_mode=ParseMode.MARKDOWN)
+            return
+        result = data_manager.register_investment(activo, tipo, monto)
+        if result.success:
+            await update.message.reply_text(f"✅ ¡Inversión registrada con éxito!\n\n- **Activo:** {activo}\n- **Tipo:** {tipo}\n- **Monto:** ${monto:,.2f}", parse_mode=ParseMode.MARKDOWN)
+        else:
+            await update.message.reply_text(f"❌ **Error al registrar:** {result.message}", parse_mode=ParseMode.MARKDOWN)
+    except Exception as e:
+        logger.error(f"Error en invertir_bot: {e}")
+        await update.message.reply_text("Ocurrió un error inesperado al procesar tu solicitud.")
+
+async def analizar_bot(update: Update, context: CallbackContext) -> None:
+    try:
+        month = int(context.args[0]) if context.args else datetime.now().month
+        year = int(context.args[1]) if len(context.args) > 1 else datetime.now().year
+        result = data_manager.get_monthly_analysis(month, year)
+        if result.success:
+            mes_nombre = datetime(year, month, 1).strftime('%B').capitalize()
+            respuesta = f"📊 *Análisis de {mes_nombre} de {year}*\n\n"
+            respuesta += f"Gastos Totales: *${result.total_expenses:,.2f}*\n"
+            respuesta += f"Inversiones Totales: *${result.total_investments:,.2f}*\n\n"
+            if result.expenses_by_category:
+                respuesta += "*Gastos por Categoría:*\n"
+                for categoria, total in result.expenses_by_category.items():
+                    respuesta += f"  - {categoria.capitalize()}: `${total:,.2f}`\n"
+            else:
+                respuesta += "No se encontraron gastos para este mes.\n"
+            await update.message.reply_text(respuesta, parse_mode=ParseMode.MARKDOWN)
+        else:
+            await update.message.reply_text(f"❌ **Error al analizar:** {result.message}", parse_mode=ParseMode.MARKDOWN)
+    except (ValueError, IndexError):
+        await update.message.reply_text("⚠️ **Error:** Formato incorrecto.\nUso: `/analizar [mes] [año]` (ambos opcionales).", parse_mode=ParseMode.MARKDOWN)
+    except Exception as e:
+        logger.error(f"Error en analizar_bot: {e}")
+        await update.message.reply_text("Ocurrió un error inesperado al analizar los datos.")
+
+async def unknown_command(update: Update, context: CallbackContext) -> None:
+    await update.message.reply_text("Lo siento, no reconozco ese comando. Escribe /ayuda para ver la lista de comandos disponibles.")
+
+def run_bot():
+    TOKEN = os.environ.get("TELEGRAM_TOKEN")
+    if not TOKEN:
+        logger.error("Error: TELEGRAM_TOKEN environment variable not set.")
+        return
+
+    application = Application.builder().token(TOKEN).build()
+
+    application.add_handler(CommandHandler("start", start_bot))
+    application.add_handler(CommandHandler("ayuda", ayuda_bot))
+    application.add_handler(CommandHandler("registrar", registrar_gasto_bot))
+    application.add_handler(CommandHandler("invertir", invertir_bot))
+    application.add_handler(CommandHandler("analizar", analizar_bot))
+    application.add_handler(MessageHandler(filters.COMMAND, unknown_command))
+
+    logger.info("Bot de Telegram iniciado y escuchando...")
+    asyncio.run(application.run_polling())
+
+# --- INICIAR EL SERVIDOR FLASK Y EL BOT ---
 if __name__ == '__main__':
-    print("🚀 Servidor PECO iniciado. Abre http://127.0.0.1:5000 en tu navegador.")
-    app.run(debug=True, port=5000)
+    logger.info("Iniciando el hilo para el bot de Telegram...")
+    bot_thread = threading.Thread(target=run_bot)
+    bot_thread.daemon = True
+    bot_thread.start()
+    logger.info("Iniciando el servidor Flask...")
+    print("Servidor PECO y Bot de Telegram iniciados.")
+    print("Abre http://127.0.0.1:5000 en tu navegador para ver la interfaz web.")
+    app.run(debug=True, port=5000, use_reloader=False)

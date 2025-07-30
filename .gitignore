@@ -1,0 +1,29 @@
+#-*- mode: gitignore -*-
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Cache files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.Python
+build/
+dist/
+
+# Environment
+.env
+.venv/
+
+# Logs
+*.log
+
+# Databases
+*.db
+*.sqlite3
+
+# Backups
+*.backup_*
